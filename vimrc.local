@@ -1,0 +1,10 @@
+colorscheme molokai
+" For Dash.app
+set paste
+
+" ####### Dash #######
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+
+" ####### scrooloose/nerdtree #######
+map <C-o>   :NERDTreeToggle<CR>
