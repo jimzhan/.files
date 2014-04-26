@@ -40,7 +40,14 @@ curl http://j.mp/spf13-vim3 -L -o - | sh
 lnif $dotfiles/vimrc.local $HOME/.vimrc.local
 lnif $dotfiles/gvimrc.local $HOME/.gvimrc.local
 
+# emacs
+echo "Setting up emacs...\n"
+lnif $dotfiles/emacs    $HOME/.emacs
+lnif $dotfiles/emacs.d  $HOME/.emacs.d
+
 # dev
 echo "Setting up dev tools...\n"
+lnif $dotfiles/hg       $HOME/.hg
+lnif $dotfiles/hgrc     $HOME/.hgrc
 lnif $dotfiles/gitconfig $HOME/.gitconfig
 lnif $dotfiles/gitignore_global $HOME/.gitignore_global
