@@ -2,8 +2,10 @@
 
 prefs="$HOME/.dotfiles"
 repos="https://github.com/jimzhan/dotfiles.git"
-zsh="https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
+
+zsh="$pref/oh-my-zsh"
 vim="https://raw.githubusercontent.com/spf13/spf13-vim/3.0/bootstrap.sh"
+
 
 # to error out
 warn() {
@@ -30,10 +32,14 @@ else
   echo "Updating preferences\n"
   cd $prefs && git pull
 fi
+# fetch submodules (zsh)
+git submodule init
+git submodule update
+
 
 # zsh (as dotfiles's submodule)
 echo "Setting up zsh...\n"
-curl -L $zsh | ZSH=$HOME/.dotfiles/oh-my-zsh sh
+$zsh/tools/install.sh | ZSH=$HOME/.dotfiles/oh-my-zsh sh
 # zsh install .zshrc template by default.
 cp $prefs/zshrc $HOME/.zshrc
 
