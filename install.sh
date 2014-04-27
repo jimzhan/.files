@@ -43,7 +43,10 @@ echo "Setting up zsh...\n"
 export ZSH="$zsh"
 $zsh/tools/install.sh
 # zsh install .zshrc template by default.
-cp $prefs/zshrc $HOME/.zshrc
+if [ -e $HOME/.zshrc ]; then
+    rm $HOME/.zshrc
+fi
+lnif $prefs/zshrc	$HOME/.zshrc
 
 # vim
 echo "Setting up editors...\n"
