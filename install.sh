@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-prefs="$HOME/.prefs"
+prefs="$HOME/.dotfiles"
 repos="https://github.com/jimzhan/dotfiles.git"
 
 # to error out
@@ -35,19 +35,16 @@ curl -L http://install.ohmyz.sh | sh
 lnif $prefs/zshrc $HOME/.zshrc
 
 # vim
-echo "Setting up vim...\n"
+echo "Setting up editors...\n"
 curl http://j.mp/spf13-vim3 -L -o - | sh
 lnif $prefs/vimrc.local $HOME/.vimrc.local
 lnif $prefs/gvimrc.local $HOME/.gvimrc.local
-
-# emacs
-echo "Setting up emacs...\n"
 lnif $prefs/emacs    $HOME/.emacs
 lnif $prefs/emacs.d  $HOME/.emacs.d
 
 # dev
 echo "Setting up dev tools...\n"
-lnif $prefs/hg       $HOME/.hg
-lnif $prefs/hgrc     $HOME/.hgrc
-lnif $prefs/gitconfig $HOME/.gitconfig
+lnif $prefs/hg               $HOME/.hg
+lnif $prefs/hgrc             $HOME/.hgrc
+lnif $prefs/gitconfig        $HOME/.gitconfig
 lnif $prefs/gitignore_global $HOME/.gitignore_global
