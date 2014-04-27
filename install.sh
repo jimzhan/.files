@@ -39,7 +39,8 @@ git submodule update
 
 # zsh (as dotfiles's submodule)
 echo "Setting up zsh...\n"
-$zsh/tools/install.sh | ZSH=$HOME/.dotfiles/oh-my-zsh sh
+export ZSH="$zsh"
+$zsh/tools/install.sh
 # zsh install .zshrc template by default.
 cp $prefs/zshrc $HOME/.zshrc
 
