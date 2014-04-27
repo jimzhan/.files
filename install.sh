@@ -32,7 +32,8 @@ fi
 # zsh
 echo "Setting up zsh...\n"
 curl -L http://install.ohmyz.sh | sh
-lnif $prefs/zshrc $HOME/.zshrc
+# zsh install .zshrc template by default.
+cp $prefs/zshrc $HOME/.zshrc
 
 # vim
 echo "Setting up editors...\n"
