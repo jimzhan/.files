@@ -51,8 +51,7 @@ git submodule foreach git pull
 # zsh (as dotfiles's submodule)
 printf '\033[0;34m%s\033[0m\n' "Setting up ZSH..."
 export ZSH="$zsh"
-rm $HOME/.zcompdump* $HOME/.zsh*
-$zsh/tools/install.sh
+chsh -s /bin/zsh
 link $prefs/zshrc	$HOME/.zshrc
 
 # vim
