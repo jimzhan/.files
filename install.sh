@@ -30,16 +30,13 @@ if [ ! -e $prefs/.git ]; then
   echo "Start cloning...\n"
   git clone $repos $prefs
   cd $prefs
-  # fetch submodules (zsh)
-  git submodule init
-  git submodule update
 else
   echo "Start updating...\n"
   cd $prefs && git pull
-  # fetch submodules (zsh)
-  git submodule init
-  git submodule update
 fi
+# fetch submodules (zsh)
+git submodule init
+git submodule update
 
 # zsh (as dotfiles's submodule)
 echo "Setting up zsh...\n"
