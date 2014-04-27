@@ -34,7 +34,7 @@ link() {
 }
 
 echo "================================================================================"
-echo "Setting up preferences...\n"
+printf '\033[0;34m%s\033[0m\n' "Setting up preferences...\n"
 
 if [ ! -e $prefs/.git ]; then
   echo "Start cloning..."
