@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 
-prefs="$HOME/.dotfiles"
+dotfiles="$HOME/.dotfiles"
 repos="https://github.com/jimzhan/dotfiles.git"
 
-zsh="$prefs/oh-my-zsh"
+zsh="$dotfiles/oh-my-zsh"
 vim="https://raw.githubusercontent.com/spf13/spf13-vim/3.0/bootstrap.sh"
 
 
@@ -30,38 +30,35 @@ link() {
 echo "================================================================================"
 printf '\033[0;34m%s\033[0m\n' "Setting up preferences..."
 
-
-if [ -d $prefs ]; then
-  echo "TODO prefs updating..."
-  cd $prefs
-else
+if [ ! -d $dotfiles ]; then
   # setup a brand new system
-  git clone --recursive $repos $prefs
-  cd $prefs
-  # fetch submodules (zsh)
+  git clone --recursive $repos $dotfiles
+  cd $dotfiles
   git submodule foreach git pull
 
   # zsh (as dotfiles's submodule)
   printf '\033[0;34m%s\033[0m\n' "Setting up ZSH..."
   export ZSH="$zsh"
   chsh -s /bin/zsh
-  link $prefs/zshrc	$HOME/.zshrc
+  link $dotfiles/zshrc	$HOME/.zshrc
   printf '\033[0;34m%s\033[0m\n' "Switching into new ZSH environment..."
   source $HOME/.zshrc
 
   # vim
   printf '\033[0;34m%s\033[0m\n' "Setting up editors..."
   #curl http://j.mp/spf13-vim3 -L -o - | sh
-  #lnif $prefs/vimrc.local $HOME/.vimrc.local
-  #lnif $prefs/gvimrc.local $HOME/.gvimrc.local
-  link $prefs/emacs    $HOME/.emacs
-  link $prefs/emacs.d  $HOME/.emacs.d
+  #lnif $dotfiles/vimrc.local $HOME/.vimrc.local
+  #lnif $dotfiles/gvimrc.local $HOME/.gvimrc.local
+  link $dotfiles/emacs    $HOME/.emacs
+  link $dotfiles/emacs.d  $HOME/.emacs.d
 
   # dev
   printf '\033[0;34m%s\033[0m\n' "Setting up dev. tools..."
-  link $prefs/hg               $HOME/.hg
-  link $prefs/hgrc             $HOME/.hgrc
-  link $prefs/gitconfig        $HOME/.gitconfig
-  link $prefs/gitignore_global $HOME/.gitignore_global
+  link $dotfiles/hg               $HOME/.hg
+  link $dotfiles/hgrc             $HOME/.hgrc
+  link $dotfiles/gitconfig        $HOME/.gitconfig
+  link $dotfiles/gitignore_global $HOME/.gitignore_global
+else
+  echo "TODO dotfiles updating..."
+  cd $dotfiles
 fi
-
