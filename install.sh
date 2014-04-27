@@ -49,18 +49,14 @@ git submodule foreach git pull
 
 
 # zsh (as dotfiles's submodule)
-echo "Setting up zsh...\n"
+printf '\033[0;34m%s\033[0m\n' "Setting up ZSH..."
 export ZSH="$zsh"
+rm $HOME/.zcompdump* $HOME/.zsh*
 $zsh/tools/install.sh
-# zsh install .zshrc template by default.
-if [ -e $HOME/.zshrc ]; then
-    echo "Replacing default .zshrc...\n"
-    rm $HOME/.zshrc
-fi
-lnif $prefs/zshrc	$HOME/.zshrc
+link $prefs/zshrc	$HOME/.zshrc
 
 # vim
-echo "Setting up editors...\n"
+printf '\033[0;34m%s\033[0m\n' "Setting up VIM..."
 #curl http://j.mp/spf13-vim3 -L -o - | sh
 #lnif $prefs/vimrc.local $HOME/.vimrc.local
 #lnif $prefs/gvimrc.local $HOME/.gvimrc.local
@@ -68,7 +64,7 @@ echo "Setting up editors...\n"
 #link $prefs/emacs.d  $HOME/.emacs.d
 
 # dev
-#echo "Setting up dev tools...\n"
+printf '\033[0;34m%s\033[0m\n' "Setting up dev. tools..."
 #link $prefs/hg               $HOME/.hg
 #link $prefs/hgrc             $HOME/.hgrc
 link $prefs/gitconfig        $HOME/.gitconfig
