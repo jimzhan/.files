@@ -74,6 +74,10 @@ fi
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 #
 
+
+# Automatically update ZSH without prompting
+DISABLE_UPDATE_PROMPT=true
+
 # NVM
 if [ -s ~/.nvm/nvm.sh ]; then
     NVM_DIR=~/.nvm
