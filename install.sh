@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-dotfiles="$HOME/dotfiles"
+prefs="$HOME/.prefs"
 repos="https://github.com/jimzhan/dotfiles.git"
 
 # to error out
@@ -19,35 +19,35 @@ lnif() {
   fi
 }
 
-echo "Installing/Updating dotfiles...\n"
+echo "Setting up preferences...\n"
 
-if [ ! -e $dotfiles/.git ]; then
-  echo "Cloning dotfiles\n"
-  git clone $repos $dotfiles
+if [ ! -e $prefs/.git ]; then
+  echo "Cloning preferences\n"
+  git clone $repos $prefs
 else
-  echo "Updating dotfiles\n"
-  cd $dotfiles && git pull
+  echo "Updating preferences\n"
+  cd $prefs && git pull
 fi
 
 # zsh
 echo "Setting up zsh...\n"
 curl -L http://install.ohmyz.sh | sh
-lnif $dotfiles/zshrc $HOME/.zshrc
+lnif $prefs/zshrc $HOME/.zshrc
 
 # vim
 echo "Setting up vim...\n"
 curl http://j.mp/spf13-vim3 -L -o - | sh
-lnif $dotfiles/vimrc.local $HOME/.vimrc.local
-lnif $dotfiles/gvimrc.local $HOME/.gvimrc.local
+lnif $prefs/vimrc.local $HOME/.vimrc.local
+lnif $prefs/gvimrc.local $HOME/.gvimrc.local
 
 # emacs
 echo "Setting up emacs...\n"
-lnif $dotfiles/emacs    $HOME/.emacs
-lnif $dotfiles/emacs.d  $HOME/.emacs.d
+lnif $prefs/emacs    $HOME/.emacs
+lnif $prefs/emacs.d  $HOME/.emacs.d
 
 # dev
 echo "Setting up dev tools...\n"
-lnif $dotfiles/hg       $HOME/.hg
-lnif $dotfiles/hgrc     $HOME/.hgrc
-lnif $dotfiles/gitconfig $HOME/.gitconfig
-lnif $dotfiles/gitignore_global $HOME/.gitignore_global
+lnif $prefs/hg       $HOME/.hg
+lnif $prefs/hgrc     $HOME/.hgrc
+lnif $prefs/gitconfig $HOME/.gitconfig
+lnif $prefs/gitignore_global $HOME/.gitignore_global
