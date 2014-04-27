@@ -2,6 +2,7 @@
 
 prefs="$HOME/.dotfiles"
 repos="https://github.com/jimzhan/dotfiles.git"
+zsh="https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
 
 # to error out
 warn() {
@@ -31,7 +32,7 @@ fi
 
 # zsh
 echo "Setting up zsh...\n"
-curl -L http://install.ohmyz.sh | sh
+curl -L $zsh | ZSH=$HOME/.dotfiles/oh-my-zsh sh
 # zsh install .zshrc template by default.
 cp $prefs/zshrc $HOME/.zshrc
 
