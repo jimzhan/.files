@@ -3,6 +3,7 @@
 prefs="$HOME/.dotfiles"
 repos="https://github.com/jimzhan/dotfiles.git"
 zsh="https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
+vim="https://raw.githubusercontent.com/spf13/spf13-vim/3.0/bootstrap.sh"
 
 # to error out
 warn() {
@@ -30,7 +31,7 @@ else
   cd $prefs && git pull
 fi
 
-# zsh
+# zsh (as dotfiles's submodule)
 echo "Setting up zsh...\n"
 curl -L $zsh | ZSH=$HOME/.dotfiles/oh-my-zsh sh
 # zsh install .zshrc template by default.
@@ -38,15 +39,15 @@ cp $prefs/zshrc $HOME/.zshrc
 
 # vim
 echo "Setting up editors...\n"
-curl http://j.mp/spf13-vim3 -L -o - | sh
-lnif $prefs/vimrc.local $HOME/.vimrc.local
-lnif $prefs/gvimrc.local $HOME/.gvimrc.local
-lnif $prefs/emacs    $HOME/.emacs
-lnif $prefs/emacs.d  $HOME/.emacs.d
+#curl http://j.mp/spf13-vim3 -L -o - | sh
+#lnif $prefs/vimrc.local $HOME/.vimrc.local
+#lnif $prefs/gvimrc.local $HOME/.gvimrc.local
+#lnif $prefs/emacs    $HOME/.emacs
+#lnif $prefs/emacs.d  $HOME/.emacs.d
 
 # dev
-echo "Setting up dev tools...\n"
-lnif $prefs/hg               $HOME/.hg
-lnif $prefs/hgrc             $HOME/.hgrc
-lnif $prefs/gitconfig        $HOME/.gitconfig
-lnif $prefs/gitignore_global $HOME/.gitignore_global
+#echo "Setting up dev tools...\n"
+#lnif $prefs/hg               $HOME/.hg
+#lnif $prefs/hgrc             $HOME/.hgrc
+#lnif $prefs/gitconfig        $HOME/.gitconfig
+#lnif $prefs/gitignore_global $HOME/.gitignore_global
