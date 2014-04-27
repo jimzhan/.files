@@ -32,7 +32,7 @@ printf '\033[0;34m%s\033[0m\n' "Setting up preferences..."
 
 
 if [ -d $prefs ]; then
-  #TODO update
+  echo "TODO prefs updating..."
 elif
   # setup a brand new system
   git clone --recursive $repos $prefs
