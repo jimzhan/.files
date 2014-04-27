@@ -49,6 +49,9 @@ if [ ! -d $dotfiles ]; then
   curl $vim -L -o - | sh
   link $dotfiles/vimrc.local	$HOME/.vimrc.local
   link $dotfiles/gvimrc.local	$HOME/.gvimrc.local
+  link $dotfiles/vimrc.before.local     $HOME/.vimrc.before.local
+  link $dotfiles/vimrc.bundles.local    $HOME/.vimrc.bundles.local
+
   link $dotfiles/emacs    $HOME/.emacs
   link $dotfiles/emacs.d  $HOME/.emacs.d
 
