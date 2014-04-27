@@ -1,8 +1,0 @@
-[ui]
-editor = vim
-username = Jim Zhan <jim@xigital.com>
-
-[extensions]
-hgext.deps = ~/deps.py
-# or, if deps.py is not in the hgext dir:
-# deps = /path/to/deps.py

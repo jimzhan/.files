@@ -5,6 +5,7 @@ repos="https://github.com/jimzhan/dotfiles.git"
 
 zsh="$dotfiles/oh-my-zsh"
 vim="https://raw.githubusercontent.com/spf13/spf13-vim/3.0/bootstrap.sh"
+spf13="$HOME/.spf13-vim-3"
 
 
 # to error out
@@ -41,14 +42,14 @@ if [ ! -d $dotfiles ]; then
   export ZSH="$zsh"
   chsh -s /bin/zsh
   link $dotfiles/zshrc	$HOME/.zshrc
-  printf '\033[0;34m%s\033[0m\n' "ZSH is successfully set up."
+  printf "\e[32m[✔]\e[0m Successfully installed ZSH."
   echo "================================================================================"
 
   # vim
   printf '\033[0;34m%s\033[0m\n' "Setting up editors..."
   curl $vim -L -o - | sh
-  link $dotfiles/vimrc.local	$HOME/.vimrc.local
-  link $dotfiles/gvimrc.local	$HOME/.gvimrc.local
+  link $dotfiles/vimrc.local	        $HOME/.vimrc.local
+  link $dotfiles/gvimrc.local	        $HOME/.gvimrc.local
   link $dotfiles/vimrc.before.local     $HOME/.vimrc.before.local
   link $dotfiles/vimrc.bundles.local    $HOME/.vimrc.bundles.local
 
@@ -57,12 +58,17 @@ if [ ! -d $dotfiles ]; then
 
   # dev
   printf '\033[0;34m%s\033[0m\n' "Setting up dev. tools..."
-  link $dotfiles/hg               $HOME/.hg
   link $dotfiles/hgrc             $HOME/.hgrc
   link $dotfiles/gitconfig        $HOME/.gitconfig
   link $dotfiles/gitignore_global $HOME/.gitignore_global
 #================================================================================
 else
-  echo "TODO dotfiles updating..."
   cd $dotfiles
+  printf '\033[0;34m%s\033[0m\n' "Updating ZSH..."
+  git pull
+  git submodule foreach git pull
+  if [ -d $spf13 ]; then
+    printf '\033[0;34m%s\033[0m\n' "Updating VIM..."
+    curl $vim -L -o - | sh
+  fi
 fi
