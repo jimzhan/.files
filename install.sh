@@ -23,13 +23,14 @@ lnif() {
   fi
 }
 
+echo "================================================================================"
 echo "Setting up preferences...\n"
 
 if [ ! -e $prefs/.git ]; then
-  echo "Cloning preferences\n"
+  echo "Start cloning...\n"
   git clone $repos $prefs
 else
-  echo "Updating preferences\n"
+  echo "Start updating...\n"
   cd $prefs && git pull
 fi
 # fetch submodules (zsh)
