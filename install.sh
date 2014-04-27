@@ -23,20 +23,30 @@ lnif() {
   fi
 }
 
+# force remove any existing link or file before creating custom links.
+link() {
+  if [ -h $2 ] ; then
+    unlink $1
+  elif [ -e $2 ]; then
+    rm $1
+  fi
+  ln -s $1 $2
+}
+
 echo "================================================================================"
 echo "Setting up preferences...\n"
 
 if [ ! -e $prefs/.git ]; then
-  echo "Start cloning...\n"
-  git clone $repos $prefs
-  cd $prefs
+  echo "Start cloning..."
+  git clone --recursive $repos $prefs
 else
-  echo "Start updating...\n"
-  cd $prefs && git pull
+  echo "Start updating..."
 fi
+
+cd $prefs
 # fetch submodules (zsh)
-git submodule init
-git submodule update
+git submodule foreach git pull
+
 
 # zsh (as dotfiles's submodule)
 echo "Setting up zsh...\n"
@@ -54,12 +64,12 @@ echo "Setting up editors...\n"
 #curl http://j.mp/spf13-vim3 -L -o - | sh
 #lnif $prefs/vimrc.local $HOME/.vimrc.local
 #lnif $prefs/gvimrc.local $HOME/.gvimrc.local
-#lnif $prefs/emacs    $HOME/.emacs
-#lnif $prefs/emacs.d  $HOME/.emacs.d
+#link $prefs/emacs    $HOME/.emacs
+#link $prefs/emacs.d  $HOME/.emacs.d
 
 # dev
 #echo "Setting up dev tools...\n"
-#lnif $prefs/hg               $HOME/.hg
-#lnif $prefs/hgrc             $HOME/.hgrc
-#lnif $prefs/gitconfig        $HOME/.gitconfig
-#lnif $prefs/gitignore_global $HOME/.gitignore_global
+#link $prefs/hg               $HOME/.hg
+#link $prefs/hgrc             $HOME/.hgrc
+link $prefs/gitconfig        $HOME/.gitconfig
+link $prefs/gitignore_global $HOME/.gitignore_global
