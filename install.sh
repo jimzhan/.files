@@ -3,7 +3,7 @@
 prefs="$HOME/.dotfiles"
 repos="https://github.com/jimzhan/dotfiles.git"
 
-zsh="$pref/oh-my-zsh"
+zsh="$prefs/oh-my-zsh"
 vim="https://raw.githubusercontent.com/spf13/spf13-vim/3.0/bootstrap.sh"
 
 
