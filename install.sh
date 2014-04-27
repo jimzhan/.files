@@ -41,8 +41,8 @@ if [ ! -d $dotfiles ]; then
   export ZSH="$zsh"
   chsh -s /bin/zsh
   link $dotfiles/zshrc	$HOME/.zshrc
-  printf '\033[0;34m%s\033[0m\n' "Switching into new ZSH environment..."
-  source $HOME/.zshrc
+  printf '\033[0;34m%s\033[0m\n' "ZSH is successfully set up."
+  echo "================================================================================"
 
   # vim
   printf '\033[0;34m%s\033[0m\n' "Setting up editors..."
@@ -58,6 +58,7 @@ if [ ! -d $dotfiles ]; then
   link $dotfiles/hgrc             $HOME/.hgrc
   link $dotfiles/gitconfig        $HOME/.gitconfig
   link $dotfiles/gitignore_global $HOME/.gitignore_global
+#================================================================================
 else
   echo "TODO dotfiles updating..."
   cd $dotfiles
