@@ -26,15 +26,15 @@ lnif() {
 # force remove any existing link or file before creating custom links.
 link() {
   if [ -h $2 ] ; then
-    unlink $1
+    unlink $2
   elif [ -e $2 ]; then
-    rm $1
+    rm $2
   fi
   ln -s $1 $2
 }
 
 echo "================================================================================"
-printf '\033[0;34m%s\033[0m\n' "Setting up preferences...\n"
+printf '\033[0;34m%s\033[0m\n' "Setting up preferences..."
 
 if [ ! -e $prefs/.git ]; then
   echo "Start cloning..."
