@@ -46,9 +46,9 @@ if [ ! -d $dotfiles ]; then
 
   # vim
   printf '\033[0;34m%s\033[0m\n' "Setting up editors..."
-  #curl http://j.mp/spf13-vim3 -L -o - | sh
-  #lnif $dotfiles/vimrc.local $HOME/.vimrc.local
-  #lnif $dotfiles/gvimrc.local $HOME/.gvimrc.local
+  curl $vim -L -o - | sh
+  link $dotfiles/vimrc.local	$HOME/.vimrc.local
+  link $dotfiles/gvimrc.local	$HOME/.gvimrc.local
   link $dotfiles/emacs    $HOME/.emacs
   link $dotfiles/emacs.d  $HOME/.emacs.d
 
