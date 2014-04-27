@@ -44,6 +44,7 @@ export ZSH="$zsh"
 $zsh/tools/install.sh
 # zsh install .zshrc template by default.
 if [ -e $HOME/.zshrc ]; then
+    echo "Replacing default .zshrc...\n"
     rm $HOME/.zshrc
 fi
 lnif $prefs/zshrc	$HOME/.zshrc
