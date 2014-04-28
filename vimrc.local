@@ -1,5 +1,42 @@
-colorscheme molokai
-set paste
+colorscheme grb256
 
-" ####### scrooloose/nerdtree #######
+let mapleader = ','
+set pastetoggle=<S-P>
+
+" toggle folding using `space`. (spf13 use it to open ONLY).
+"   do not fold lines under 5.
+"set foldlevel=9
+"set foldminlines=6
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc':'zo')<CR>
+
+
+" ### Plugin: Tagbar ###
+let g:tagbar_width = 25
+
+
+" ### Plugin: scrooloose/nerdtree ###
 map <C-o>   :NERDTreeToggle<CR>
+
+" ### plugin: fholgado/minibufexpl.vim ###
+" buffer shortcuts
+:nmap <C-l> :MBEbn<cr>
+:nmap <C-h> :MBEbp<cr>
+:nmap <C-k> :MBEbd<cr>
+" MiniBufExpl Colors
+let g:did_minibufexplorer_syntax_inits = 1
+""hi MBENormal               guifg=#808080 guibg=fg
+""hi MBEChanged              guifg=#CD5907 guibg=fg
+""hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
+""hi MBEVisibleChanged       guifg=#F1266F guibg=fg
+""hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
+""hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
+hi MBENormal guifg=#CECECE ctermbg=250 cterm=Bold gui=Bold
+hi MBEVisibleChanged ctermfg=255 cterm=Bold guifg=#FFFFFF gui=Bold
+hi MBENumber guifg=#E79E4C gui=Bold ctermbg=166 cterm=Bold
+hi link MBEChanged MBEVisibleChanged 
+hi MBEVisibleNormal ctermfg=70  cterm=Bold  guifg=#CAFE00   gui=Bold
+"hi MBENormal guibg=darkblue ctermbg=darkblue ""termbg=white
+
+" place the buffers's windows on top.
+let g:miniBufExplBRSplit = 0
+" allow recursively switching
