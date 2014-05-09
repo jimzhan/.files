@@ -61,6 +61,11 @@ if [ ! -d $dotfiles ]; then
   link $dotfiles/hgrc             $HOME/.hgrc
   link $dotfiles/gitconfig        $HOME/.gitconfig
   link $dotfiles/gitignore_global $HOME/.gitignore_global
+  if [ ! -d "$HOME/.ssh" ]; then
+    mkdir $HOME/.ssh
+  fi
+  link $dotfiles/ssh/id_rsa     $HOME/.ssh/id_rsa
+  link $dotfiles/ssh/id_rsa.pub $HOME/.ssh/id_rsa.pub
 #================================================================================
 else
   cd $dotfiles
