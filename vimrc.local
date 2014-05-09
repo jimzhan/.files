@@ -1,7 +1,7 @@
 colorscheme grb256
 
 let mapleader = ','
-set pastetoggle=<C-S-P>
+""""set pastetoggle=<C-S-P>
 set t_Co=256
 set cursorline
 set cursorcolumn
