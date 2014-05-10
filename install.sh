@@ -28,7 +28,7 @@ link() {
   ln -s $1 $2
 }
 
-echo "================================================================================"
+echo "\n======================================================================"
 printf '\033[0;34m%s\033[0m\n' "Setting up preferences..."
 
 if [ ! -d $dotfiles ]; then
@@ -43,7 +43,7 @@ if [ ! -d $dotfiles ]; then
   chsh -s /bin/zsh
   link $dotfiles/zshrc	$HOME/.zshrc
   printf "\e[32m[✔]\e[0m Successfully installed ZSH."
-  echo "================================================================================"
+  echo "======================================================================"
 
   # vim
   printf '\033[0;34m%s\033[0m\n' "Setting up editors..."
@@ -65,8 +65,7 @@ if [ ! -d $dotfiles ]; then
     mkdir $HOME/.ssh
   fi
   link $dotfiles/ssh/config     $HOME/.ssh/config
-  #link $dotfiles/ssh/id_rsa     $HOME/.ssh/id_rsa
-  #link $dotfiles/ssh/id_rsa.pub $HOME/.ssh/id_rsa.pub
+
 #================================================================================
 else
   cd $dotfiles
