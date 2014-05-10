@@ -65,8 +65,8 @@ if [ ! -d $dotfiles ]; then
     mkdir $HOME/.ssh
   fi
   link $dotfiles/ssh/config     $HOME/.ssh/config
-  link $dotfiles/ssh/id_rsa     $HOME/.ssh/id_rsa
-  link $dotfiles/ssh/id_rsa.pub $HOME/.ssh/id_rsa.pub
+  #link $dotfiles/ssh/id_rsa     $HOME/.ssh/id_rsa
+  #link $dotfiles/ssh/id_rsa.pub $HOME/.ssh/id_rsa.pub
 #================================================================================
 else
   cd $dotfiles
