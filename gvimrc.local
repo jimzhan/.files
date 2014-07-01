@@ -9,3 +9,16 @@ hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
 hi MBEVisibleChanged       guifg=#F1266F guibg=fg
 hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
 hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
+
+
+" place the buffers's windows on top.
+let g:miniBufExplBRSplit = 0
+"let g:miniBufExplForceSyntaxEnable = 0
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"let g:miniBufExplMapWindowNavVim = 1
+"let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMaxSize = 0
+"let g:miniBufExplModSelTarget = 1
+"let g:miniBufExplTabWrap = 1
+"let g:miniBufExplUseSingleClick = 1
+"let g:miniBufExplCheckDupeBufs = 0
