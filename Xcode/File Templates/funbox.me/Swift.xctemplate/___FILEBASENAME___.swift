@@ -1,10 +1,11 @@
-/**
- *  ___PROJECTNAME___
- *  ___FILENAME___
- *
- *  Copyright © ___YEAR___ ___FULLUSERNAME___
- *  All rights reserved.
- */
-
+/******************************************************
+ | ___PROJECTNAME___
+ |******************************************************
+ | ___FILENAME___
+ |
+ | Created on ___DATE___ By ___FULLUSERNAME___
+ |*********************************************************************
+ |  Copyright © ___YEAR___ ___FULLUSERNAME___ All rights reserved.
+ |*********************************************************************/
 
 import Foundation
