@@ -89,3 +89,17 @@ alias vi="vim"
 if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
     alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 fi
+
+#============================================================
+#
+##  ALIASES AND FUNCTIONS
+##
+##  Arguably, some functions defined here are quite big.
+##  If you want to make this file smaller, these functions can
+##+ be converted into scripts and removed from here.
+##
+##============================================================
+#
+##-------------------
+## Personnal Aliases
+##-------------------

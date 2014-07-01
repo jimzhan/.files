@@ -8,6 +8,12 @@ vim="https://raw.githubusercontent.com/spf13/spf13-vim/3.0/bootstrap.sh"
 spf13="$HOME/.spf13-vim-3"
 
 
+Xcode=$HOME/Library/Developer/Xcode
+XcodeThemes=$Xcode/UserData/FontAndColorThemes
+XcodeFileTemplates="$Xcode/Templates/File Templates"
+XcodeProjectTemplates="$Xcode/Templates/Project Templates"
+
+
 # to error out
 warn() {
   echo "$1" >&2
@@ -53,12 +59,12 @@ if [ ! -d $dotfiles ]; then
   link $dotfiles/vimrc.before.local     $HOME/.vimrc.before.local
   link $dotfiles/vimrc.bundles.local    $HOME/.vimrc.bundles.local
 
-  link $dotfiles/emacs    $HOME/.emacs
-  link $dotfiles/emacs.d  $HOME/.emacs.d
+  #link $dotfiles/emacs    $HOME/.emacs
+  #link $dotfiles/emacs.d  $HOME/.emacs.d
 
   # dev
-  printf '\033[0;34m%s\033[0m\n' "Setting up dev. tools..."
-  link $dotfiles/hgrc             $HOME/.hgrc
+  printf '\033[0;34m%s\033[0m\n' "Setting up git & ssh..."
+  #link $dotfiles/hgrc             $HOME/.hgrc
   link $dotfiles/gitconfig        $HOME/.gitconfig
   link $dotfiles/gitignore_global $HOME/.gitignore_global
   if [ ! -d "$HOME/.ssh" ]; then
@@ -66,14 +72,54 @@ if [ ! -d $dotfiles ]; then
   fi
   link $dotfiles/ssh/config     $HOME/.ssh/config
 
+  if [ -d $Xcode ]; then
+    # Xcode
+    printf '\033[0;34m%s\033[0m\n' "Setting up Xcode..."
+    if [ -L $XcodeThemes ]; then
+      unlink $XcodeThemes
+    elif [ -d $XcodeThemes ]; then
+      rm -rf $XcodeThemes
+    fi
+    link $dotfile/Xcode/FontAndColorThemes    $XcodeThemes
+
+    if [ -L $XcodeFileTemplates ]; then
+      unlink $XcodeFileTemplates
+    elif [ -d $XcodeFileTemplates ]; then
+      rm -rf $XcodeFileTemplates
+    fi
+    mkdir $XcodeFileTemplates
+    link $dotfile/Xcode/Templates/File\ Templates/funbox.me   $XcodeFileTemplates/funbox.me
+  fi
 #================================================================================
 else
   cd $dotfiles
-  printf '\033[0;34m%s\033[0m\n' "Updating ZSH..."
-  git pull
-  git submodule foreach git pull
-  if [ -d $spf13 ]; then
-    printf '\033[0;34m%s\033[0m\n' "Updating VIM..."
-    curl $vim -L -o - | sh
+  #printf '\033[0;34m%s\033[0m\n' "Updating ZSH..."
+  #git pull
+  #git submodule foreach git pull
+
+  #if [ -d $spf13 ]; then
+  #  printf '\033[0;34m%s\033[0m\n' "Updating VIM..."
+  #  curl $vim -L -o - | sh
+  #fi
+
+  #Xcode
+  if [ -d $Xcode ]; then
+    #printf '\033[0;34m%s\033[0m\n' "Updating Xcode..."
+    #if [ -L $XcodeThemes ]; then
+      #unlink $XcodeThemes
+    #elif [ -d $XcodeThemes ]; then
+      #rm -rf $XcodeThemes
+    #fi
+    #link $dotfile/Xcode/FontAndColorThemes    $XcodeThemes
+
+    echo "Path: $XcodeFileTemplates"
+
+    if [ -L $XcodeFileTemplates ]; then
+      unlink "$XcodeFileTemplates"
+    elif [ -d `$XcodeFileTemplates` ]; then
+      rm -rf "$XcodeFileTemplates"
+    fi
+    mkdir -p "$XcodeFileTemplates"
+    link $dotfile/Xcode/Templates/File\ Templates/funbox.me   "$XcodeFileTemplates/funbox.me"
   fi
 fi

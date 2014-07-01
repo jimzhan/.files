@@ -6,7 +6,7 @@
 
 [alias]
   st = status -s
-  ci = commit
+  ci = commit -a
   l = log --oneline --decorate -12 --color
   ll = log --oneline --decorate --color
   lc = log --graph --color
