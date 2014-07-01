@@ -5,8 +5,8 @@
 	default = current
 
 [alias]
-  st = status -s
-  ci = commit -a
+  st = status
+  ci = commit -am
   l = log --oneline --decorate -12 --color
   ll = log --oneline --decorate --color
   lc = log --graph --color
