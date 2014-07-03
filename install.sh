@@ -55,8 +55,9 @@ setup_xcode() {
     elif [ -d "$XcodeFileTemplates" ]; then
       rm -rf "$XcodeFileTemplates"
     fi
-    mkdir -p "$XcodeFileTemplates"
-    ln -s "$dotfiles/Xcode/File Templates/funbox.me" "$XcodeFileTemplates/funbox.me"
+    ln -s "$dotfiles/Xcode/File Templates"  "$XcodeFileTemplates"
+    #mkdir -p "$XcodeFileTemplates"
+    #ln -s "$dotfiles/Xcode/File Templates/funbox.me" "$XcodeFileTemplates/funbox.me"
   fi
 }
 
