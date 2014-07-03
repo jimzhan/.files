@@ -50,12 +50,20 @@ setup_xcode() {
     fi
     ln -s $dotfiles/Xcode/FontAndColorThemes    $XcodeThemes
 
+    if [ -L "$XcodeProjectTemplates" ]; then
+      unlink "$XcodeProjectTemplates"
+    elif [ -d "$XcodeProjectTemplates" ]; then
+      rm -rf "$XcodeProjectTemplates"
+    fi
+    ln -s "$dotfiles/Xcode/Project Templates"  "$XcodeProjectTemplates"
+
     if [ -L "$XcodeFileTemplates" ]; then
       unlink "$XcodeFileTemplates"
     elif [ -d "$XcodeFileTemplates" ]; then
       rm -rf "$XcodeFileTemplates"
     fi
     ln -s "$dotfiles/Xcode/File Templates"  "$XcodeFileTemplates"
+
     #mkdir -p "$XcodeFileTemplates"
     #ln -s "$dotfiles/Xcode/File Templates/funbox.me" "$XcodeFileTemplates/funbox.me"
   fi
