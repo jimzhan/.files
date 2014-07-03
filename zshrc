@@ -103,3 +103,4 @@ fi
 ##-------------------
 ## Personnal Aliases
 ##-------------------
+alias ip="ipython"
