@@ -5,9 +5,9 @@
 	<key>Kind</key>
 	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
 	<key>Description</key>
-	<string>An empty Swift file.</string>
+	<string>An empty Swift file with Apache 2.0 license declared.</string>
 	<key>Summary</key>
-	<string>An empty Swift file</string>
+	<string>An empty Swift file with Apache 2.0 license declared</string>
 	<key>SortOrder</key>
 	<string>5</string>
 	<key>AllowedTypes</key>
