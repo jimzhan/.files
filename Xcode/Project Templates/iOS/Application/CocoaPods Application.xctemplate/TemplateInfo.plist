@@ -6,7 +6,7 @@
     <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 
     <key>Identifier</key>
-    <string>me.funbox.templates.cocoaPodsApplication</string>
+    <string>me.funbox.templates.iphoneos.CocoaPods</string>
 
     <key>Ancestors</key>
     <array>
@@ -23,6 +23,8 @@
     <dict>
         <key>Bridging-Header.h</key>
         <dict>
+            <key>Group</key>
+            <string>Supporting Files</string>
             <key>Path</key>
             <string>Bridging-Header.h</string>
         </dict>
@@ -45,5 +47,25 @@
     <array>
         <string>com.apple.platform.iphoneos</string>
     </array>
+
+    <key>Project</key>
+    <dict>
+        <key>SDK</key>
+        <string>iphoneos</string>
+        <key>Configurations</key>
+        <dict>
+            <key>Debug</key>
+            <dict>
+                <key>SWIFT_OBJC_BRIDGING_HEADER</key>
+                <string>$(PROJECT_NAME)/Bridging-Header.h</string>
+            </dict>
+            <key>Release</key>
+            <dict>
+                <key>SWIFT_OBJC_BRIDGING_HEADER</key>
+                <string>$(PROJECT_NAME)/Bridging-Header.h</string>
+            </dict>
+        </dict>
+    </dict>
+
 </dict>
 </plist>
