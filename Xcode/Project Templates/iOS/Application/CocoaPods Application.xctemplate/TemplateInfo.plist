@@ -17,10 +17,15 @@
     <true/>
 
     <key>Description</key>
-    <string>A starting point for any CocoaPoads based application. It provides just an application delegate and a window along with Podfile skeleton.</string>
+    <string>A starting point for any CocoaPods based application. It provides just an application delegate and a window along with Podfile skeleton.</string>
 
     <key>Definitions</key>
     <dict>
+        <key>Bridging-Header.h</key>
+        <dict>
+            <key>Path</key>
+            <string>Bridging-Header.h</string>
+        </dict>
         <key>../Podfile</key>
         <dict>
             <key>Group</key>
@@ -32,6 +37,7 @@
 
     <key>Nodes</key>
     <array>
+        <string>Bridging-Header.h</string>
         <string>../Podfile</string>
     </array>
 
