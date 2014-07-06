@@ -53,17 +53,17 @@ setup_xcode() {
       printf '\033[0;34m%s\033[0m\n' "Updating Xcode preferences..."
     fi
 
-    deldir $XcodeKeys
-    ln -s $dotfiles/Xcode/UserData/KeyBindings		$XcodeKeys
+    #deldir $XcodeKeys
+    #ln -s $dotfiles/Xcode/UserData/KeyBindings		$XcodeKeys
 
     deldir $XcodeThemes
     ln -s $dotfiles/Xcode/UserData/FontAndColorThemes	$XcodeThemes
 
-    deldir "$XcodeProjectTemplates"
-    ln -s "$dotfiles/Xcode/Project Templates"		"$XcodeProjectTemplates"
+    #deldir "$XcodeProjectTemplates"
+    #ln -s "$dotfiles/Xcode/Project Templates"		"$XcodeProjectTemplates"
 
-    deldir "$XcodeFileTemplates"
-    ln -s "$dotfiles/Xcode/File Templates"		"$XcodeFileTemplates"
+    #deldir "$XcodeFileTemplates"
+    #ln -s "$dotfiles/Xcode/File Templates"		"$XcodeFileTemplates"
 
   fi
 }
