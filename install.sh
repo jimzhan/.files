@@ -10,8 +10,7 @@ spf13="$HOME/.spf13-vim-3"
 Xcode=$HOME/Library/Developer/Xcode
 XcodeKeys=$Xcode/UserData/KeyBindings
 XcodeThemes=$Xcode/UserData/FontAndColorThemes
-XcodeFileTemplates="$Xcode/Templates/File Templates"
-XcodeProjectTemplates="$Xcode/Templates/Project Templates"
+XcodeTemplates=$Xcode/Templates
 
 
 # to error out
@@ -53,17 +52,14 @@ setup_xcode() {
       printf '\033[0;34m%s\033[0m\n' "Updating Xcode preferences..."
     fi
 
-    #deldir $XcodeKeys
-    #ln -s $dotfiles/Xcode/UserData/KeyBindings		$XcodeKeys
+    deldir $XcodeKeys
+    ln -s $dotfiles/Xcode/UserData/KeyBindings		$XcodeKeys
 
     deldir $XcodeThemes
     ln -s $dotfiles/Xcode/UserData/FontAndColorThemes	$XcodeThemes
 
-    #deldir "$XcodeProjectTemplates"
-    #ln -s "$dotfiles/Xcode/Project Templates"		"$XcodeProjectTemplates"
-
-    #deldir "$XcodeFileTemplates"
-    #ln -s "$dotfiles/Xcode/File Templates"		"$XcodeFileTemplates"
+    deldir ${XcodeTemplates}
+    ln -s "$dotfiles/Xcode/Templates"                   $XcodeTemplates
 
   fi
 }
@@ -109,14 +105,14 @@ if [ ! -d $dotfiles ]; then
 #================================================================================
 else
   cd $dotfiles
-  #printf '\033[0;34m%s\033[0m\n' "Updating ZSH..."
-  #git pull
-  #git submodule foreach git pull
+  printf '\033[0;34m%s\033[0m\n' "Updating ZSH..."
+  git pull
+  git submodule foreach git pull
 
-  #if [ -d $spf13 ]; then
-  #  printf '\033[0;34m%s\033[0m\n' "Updating VIM..."
-  #  curl $vim -L -o - | sh
-  #fi
+  if [ -d $spf13 ]; then
+    printf '\033[0;34m%s\033[0m\n' "Updating VIM..."
+    curl $vim -L -o - | sh
+  fi
 
   setup_xcode false
 fi
