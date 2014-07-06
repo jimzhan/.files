@@ -27,9 +27,9 @@ die() {
 # forcely remove any existing link or directory.
 deldir() {
   if [ -L $1 ]; then
-    unlink $1 
+    unlink "$1"
   elif [ -d $1 ]; then
-    rm -rf $1 
+    rm -rf "$1"
   fi
 }
 
@@ -109,14 +109,14 @@ if [ ! -d $dotfiles ]; then
 #================================================================================
 else
   cd $dotfiles
-  printf '\033[0;34m%s\033[0m\n' "Updating ZSH..."
-  git pull
-  git submodule foreach git pull
+  #printf '\033[0;34m%s\033[0m\n' "Updating ZSH..."
+  #git pull
+  #git submodule foreach git pull
 
-  if [ -d $spf13 ]; then
-    printf '\033[0;34m%s\033[0m\n' "Updating VIM..."
-    curl $vim -L -o - | sh
-  fi
+  #if [ -d $spf13 ]; then
+  #  printf '\033[0;34m%s\033[0m\n' "Updating VIM..."
+  #  curl $vim -L -o - | sh
+  #fi
 
   setup_xcode false
 fi
