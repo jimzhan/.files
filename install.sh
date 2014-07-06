@@ -60,10 +60,10 @@ setup_xcode() {
     ln -s $dotfiles/Xcode/UserData/FontAndColorThemes	$XcodeThemes
 
     deldir "$XcodeProjectTemplates"
-    ln -s "$dotfiles/Xcode/Project Templates"  "$XcodeProjectTemplates"
+    ln -s "$dotfiles/Xcode/Project Templates"		"$XcodeProjectTemplates"
 
     deldir "$XcodeFileTemplates"
-    ln -s "$dotfiles/Xcode/File Templates"  "$XcodeFileTemplates"
+    ln -s "$dotfiles/Xcode/File Templates"		"$XcodeFileTemplates"
 
   fi
 }
