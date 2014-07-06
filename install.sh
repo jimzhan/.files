@@ -3,11 +3,12 @@
 dotfiles="$HOME/.dotfiles"
 repos="https://github.com/jimzhan/dotfiles.git"
 
-zsh="$dotfiles/oh-my-zsh"
+zsh="$dotfiles/zsh/oh-my-zsh"
 vim="https://raw.githubusercontent.com/spf13/spf13-vim/3.0/bootstrap.sh"
 spf13="$HOME/.spf13-vim-3"
 
 Xcode=$HOME/Library/Developer/Xcode
+XcodeKeys=$Xcode/UserData/KeyBindings
 XcodeThemes=$Xcode/UserData/FontAndColorThemes
 XcodeFileTemplates="$Xcode/Templates/File Templates"
 XcodeProjectTemplates="$Xcode/Templates/Project Templates"
@@ -23,7 +24,16 @@ die() {
   exit 1
 }
 
-# force remove any existing link or file before creating custom links.
+# forcely remove any existing link or directory.
+deldir() {
+  if [ -L $1 ]; then
+    unlink $1 
+  elif [ -d $1 ]; then
+    rm -rf $1 
+  fi
+}
+
+# forcely remove any existing link or file before creating custom links.
 link() {
   if [ -h $2 ] ; then
     unlink $2
@@ -43,29 +53,18 @@ setup_xcode() {
       printf '\033[0;34m%s\033[0m\n' "Updating Xcode preferences..."
     fi
 
-    if [ -L $XcodeThemes ]; then
-      unlink $XcodeThemes
-    elif [ -d $XcodeThemes ]; then
-      rm -rf $XcodeThemes
-    fi
-    ln -s $dotfiles/Xcode/FontAndColorThemes    $XcodeThemes
+    deldir $XcodeKeys
+    ln -s $dotfiles/Xcode/UserData/KeyBindings		$XcodeKeys
 
-    if [ -L "$XcodeProjectTemplates" ]; then
-      unlink "$XcodeProjectTemplates"
-    elif [ -d "$XcodeProjectTemplates" ]; then
-      rm -rf "$XcodeProjectTemplates"
-    fi
+    deldir $XcodeThemes
+    ln -s $dotfiles/Xcode/UserData/FontAndColorThemes	$XcodeThemes
+
+    deldir "$XcodeProjectTemplates"
     ln -s "$dotfiles/Xcode/Project Templates"  "$XcodeProjectTemplates"
 
-    if [ -L "$XcodeFileTemplates" ]; then
-      unlink "$XcodeFileTemplates"
-    elif [ -d "$XcodeFileTemplates" ]; then
-      rm -rf "$XcodeFileTemplates"
-    fi
+    deldir "$XcodeFileTemplates"
     ln -s "$dotfiles/Xcode/File Templates"  "$XcodeFileTemplates"
 
-    #mkdir -p "$XcodeFileTemplates"
-    #ln -s "$dotfiles/Xcode/File Templates/funbox.me" "$XcodeFileTemplates/funbox.me"
   fi
 }
 
@@ -82,26 +81,25 @@ if [ ! -d $dotfiles ]; then
   printf '\033[0;34m%s\033[0m\n' "Setting up ZSH..."
   export ZSH="$zsh"
   chsh -s /bin/zsh
-  link $dotfiles/zshrc	$HOME/.zshrc
+  link $dotfiles/zsh/zshrc	$HOME/.zshrc
   printf "\e[32m[✔]\e[0m Successfully installed ZSH."
   echo "======================================================================"
 
   # vim
   printf '\033[0;34m%s\033[0m\n' "Setting up editors..."
   curl $vim -L -o - | sh
-  link $dotfiles/vimrc.local	        $HOME/.vimrc.local
-  link $dotfiles/gvimrc.local	        $HOME/.gvimrc.local
-  link $dotfiles/vimrc.before.local     $HOME/.vimrc.before.local
-  link $dotfiles/vimrc.bundles.local    $HOME/.vimrc.bundles.local
+  link $dotfiles/vim/vimrc.local	        $HOME/.vimrc.local
+  link $dotfiles/vim/gvimrc.local	        $HOME/.gvimrc.local
+  link $dotfiles/vim/vimrc.before.local     	$HOME/.vimrc.before.local
+  link $dotfiles/vim/vimrc.bundles.local    	$HOME/.vimrc.bundles.local
 
-  #link $dotfiles/emacs    $HOME/.emacs
-  #link $dotfiles/emacs.d  $HOME/.emacs.d
+  #link $dotfiles/emacs/emacs    $HOME/.emacs
+  #link $dotfiles/emacs/emacs.d  $HOME/.emacs.d
 
   # dev
   printf '\033[0;34m%s\033[0m\n' "Setting up git & ssh..."
-  #link $dotfiles/hgrc             $HOME/.hgrc
-  link $dotfiles/gitconfig        $HOME/.gitconfig
-  link $dotfiles/gitignore_global $HOME/.gitignore_global
+  link $dotfiles/git/gitconfig        $HOME/.gitconfig
+  link $dotfiles/git/gitignore_global $HOME/.gitignore_global
   if [ ! -d "$HOME/.ssh" ]; then
     mkdir $HOME/.ssh
   fi
