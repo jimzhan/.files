@@ -1,3 +1,6 @@
+UnBundle    'spf13/vim-autoclose'
+
+
 " ### MiniBufExpl (replace builtin's bufferline)###
 UnBundle    'vim-bufferline'
 Bundle      'fholgado/minibufexpl.vim'

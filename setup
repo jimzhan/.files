@@ -12,7 +12,6 @@ XcodeKeys=$Xcode/UserData/KeyBindings
 XcodeThemes=$Xcode/UserData/FontAndColorThemes
 XcodeTemplates=$Xcode/Templates
 
-
 # to error out
 warn() {
   echo "$1" >&2

@@ -1,3 +1,13 @@
+" encodings
+if has("win32")
+    set termencoding=cp936
+else
+    set termencoding=utf-8
+endif
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,chinese,euc-jp,gb18030,gbk,big5,latin1
+
+
 colorscheme grb256
 
 let mapleader = ','
