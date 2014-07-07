@@ -59,6 +59,8 @@ Thumbs.db
 *.xcworkspace
 xcuserdata
 
+##
 # [CocoaPods](http://cocoapods.org) generated files/directories
+##
 Pods
 Podfile.lock
