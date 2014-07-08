@@ -8,7 +8,7 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese,euc-jp,gb18030,gbk,big5,latin1
 
 
-colorscheme grb256
+colorscheme vividchalk
 
 let mapleader = ','
 """"set pastetoggle=<C-S-P>

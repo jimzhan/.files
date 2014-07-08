@@ -1,4 +1,7 @@
+UnBundle    'Puppet-Syntax-Highlighting'
+UnBundle    'scrooloose/syntastic'
 UnBundle    'spf13/vim-autoclose'
+UnBundle    'spf13/PIV'
 
 
 " ### MiniBufExpl (replace builtin's bufferline)###
@@ -9,4 +12,3 @@ Bundle      'fholgado/minibufexpl.vim'
 " ### Dash ###
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
-
