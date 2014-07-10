@@ -39,7 +39,7 @@
         <dict>
             <key>Group</key>
             <array>
-                <string>Supporting Files</string>
+                <string>lib</string>
             </array>
             <key>Path</key>
             <string>/usr/lib/libxml2.dylib</string>
