@@ -6,7 +6,7 @@
     <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 
     <key>Identifier</key>
-    <string>me.funbox.templates.iphoneos.AFNetworking</string>
+    <string>me.funbox.templates.iphoneos.AFNetworkingApp</string>
 
     <key>Ancestors</key>
     <array>
