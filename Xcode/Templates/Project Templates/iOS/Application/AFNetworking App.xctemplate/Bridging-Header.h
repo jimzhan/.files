@@ -27,7 +27,4 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-#import <MobileCoreServices/MobileCoreServices.h>
-#import <SystemConfiguration/SystemConfiguration.h>
-
 #import <AFNetworking/AFNetworking.h>
