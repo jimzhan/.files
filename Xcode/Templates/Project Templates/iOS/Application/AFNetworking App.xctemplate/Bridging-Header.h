@@ -1,8 +1,9 @@
 /**
  *  ------------------------------------------------------------
- *  @project ___PROJECTNAME___
- *  @file    ___FILENAME___
- *  @author  ___FULLUSERNAME___
+ *  @project    ___PROJECTNAME___
+ *  @file       ___FILENAME___
+ *  @date       ___DATE___
+ *  @author     ___FULLUSERNAME___
  *
  *  Copyright © ___YEAR___ ___FULLUSERNAME___.
  *

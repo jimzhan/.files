@@ -1,8 +1,9 @@
 /**
  *  ------------------------------------------------------------
- *  @project ___PROJECTNAME___
- *  @file    ___FILENAME___
- *  @author  ___FULLUSERNAME___
+ *  @project    ___PROJECTNAME___
+ *  @file       ___FILENAME___
+ *  @date       ___DATE___
+ *  @author     ___FULLUSERNAME___
  *
  *  Copyright © ___YEAR___ ___FULLUSERNAME___.
  *
@@ -26,5 +27,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <MobileCoreServices/MobileCoreServices.h>

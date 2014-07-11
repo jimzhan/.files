@@ -105,6 +105,9 @@ fi
 ## Personnal Aliases
 ##-------------------
 alias ip="ipython"
+if [ -d /Applications/AppCode.app ]; then
+    alias AppCode='open -a /Applications/AppCode.app'
+fi
 
 
 ##-------------------
