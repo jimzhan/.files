@@ -6,7 +6,7 @@
     <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 
     <key>Identifier</key>
-    <string>me.funbox.templates.iphoneos.RESTful</string>
+    <string>me.funbox.templates.iphoneos.CocoaPods</string>
 
     <key>Ancestors</key>
     <array>
@@ -17,7 +17,7 @@
     <true/>
 
     <key>Description</key>
-    <string>A CocoaPods based RESTful (backed by RestKit) application. It provides just an application delegate and a window along with Podfile skeleton.</string>
+    <string>A starting point for any CocoaPods based application. It provides just an application delegate and a window along with Podfile skeleton.</string>
 
     <key>Definitions</key>
     <dict>
@@ -35,24 +35,12 @@
             <key>Path</key>
             <string>Podfile</string>
         </dict>
-        <key>libxml2.dylib</key>
-        <dict>
-            <key>Group</key>
-            <array>
-                <string>lib</string>
-            </array>
-            <key>Path</key>
-            <string>/usr/lib/libxml2.dylib</string>
-            <key>PathType</key>
-            <string>CurrentSDK</string>
-        </dict>
     </dict>
 
     <key>Nodes</key>
     <array>
         <string>Bridging-Header.h</string>
         <string>../Podfile</string>
-        <string>libxml2.dylib</string>
     </array>
 
     <key>Platforms</key>
@@ -84,15 +72,10 @@
         <dict>
             <key>Frameworks</key>
             <array>
-                <string>CoreData</string>
-                <string>QuartzCore</string>
-                <string>SystemConfiguration</string>
-                <string>Security</string>
                 <string>UIKit</string>
                 <string>Foundation</string>
-                <string>CoreGraphics</string>
-                <string>CFNetwork</string>
                 <string>MobileCoreServices</string>
+                <string>SystemConfiguration</string>
             </array>
         </dict>
     </array>

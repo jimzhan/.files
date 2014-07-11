@@ -4,11 +4,10 @@
  *  @file    ___FILENAME___
  *  @author  ___FULLUSERNAME___
  *
+ *  Copyright © ___YEAR___ ___FULLUSERNAME___.
  *
  *  Use this file to import your target's public
  *  headers that you would like to expose to Swift.
- *
- *  Copyright © ___YEAR___ ___FULLUSERNAME___.
  *  ------------------------------------------------------------
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -23,6 +22,7 @@
  *  limitations under the License.
  *  ------------------------------------------------------------
  */
+
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
