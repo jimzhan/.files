@@ -10,7 +10,7 @@
 
     <key>Ancestors</key>
     <array>
-        <string>com.apple.dt.unit.emptyApplication</string>
+        <string>me.funbox.templates.iphoneos.CocoaPods</string>
     </array>
 
     <key>Concrete</key>
@@ -21,19 +21,12 @@
 
     <key>Definitions</key>
     <dict>
-        <key>Bridging-Header.h</key>
+        <key>Sources/Bridging-Header.h</key>
         <dict>
             <key>Group</key>
-            <string>Supporting Files</string>
+            <string>Sources</string>
             <key>Path</key>
-            <string>Bridging-Header.h</string>
-        </dict>
-        <key>../Podfile</key>
-        <dict>
-            <key>Group</key>
-            <string>Supporting Files</string>
-            <key>Path</key>
-            <string>Podfile</string>
+            <string>Sources/Bridging-Header.h</string>
         </dict>
         <key>Sources/HTTPSessionManager.swift</key>
         <dict>
@@ -46,8 +39,7 @@
 
     <key>Nodes</key>
     <array>
-        <string>Bridging-Header.h</string>
-        <string>../Podfile</string>
+        <string>Sources/Bridging-Header.h</string>
         <string>Sources/HTTPSessionManager.swift</string>
     </array>
 
@@ -56,36 +48,13 @@
         <string>com.apple.platform.iphoneos</string>
     </array>
 
-    <key>Project</key>
-    <dict>
-        <key>SDK</key>
-        <string>iphoneos</string>
-        <key>Configurations</key>
-        <dict>
-            <key>Debug</key>
-            <dict>
-                <key>SWIFT_OBJC_BRIDGING_HEADER</key>
-                <string>$(PROJECT_NAME)/Bridging-Header.h</string>
-            </dict>
-            <key>Release</key>
-            <dict>
-                <key>SWIFT_OBJC_BRIDGING_HEADER</key>
-                <string>$(PROJECT_NAME)/Bridging-Header.h</string>
-            </dict>
-        </dict>
-    </dict>
-
     <key>Targets</key>
     <array>
         <dict>
             <key>Frameworks</key>
             <array>
-                <string>UIKit</string>
-                <string>Foundation</string>
                 <string>CoreGraphics</string>
                 <string>Security</string>
-                <string>MobileCoreServices</string>
-                <string>SystemConfiguration</string>
             </array>
         </dict>
     </array>

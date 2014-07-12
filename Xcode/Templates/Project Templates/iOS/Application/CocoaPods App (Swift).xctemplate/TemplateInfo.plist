@@ -21,12 +21,12 @@
 
     <key>Definitions</key>
     <dict>
-        <key>Bridging-Header.h</key>
+        <key>Sources/Bridging-Header.h</key>
         <dict>
             <key>Group</key>
-            <string>Supporting Files</string>
+            <string>Sources</string>
             <key>Path</key>
-            <string>Bridging-Header.h</string>
+            <string>Sources/Bridging-Header.h</string>
         </dict>
         <key>../Podfile</key>
         <dict>
@@ -39,7 +39,7 @@
 
     <key>Nodes</key>
     <array>
-        <string>Bridging-Header.h</string>
+        <string>Sources/Bridging-Header.h</string>
         <string>../Podfile</string>
     </array>
 
