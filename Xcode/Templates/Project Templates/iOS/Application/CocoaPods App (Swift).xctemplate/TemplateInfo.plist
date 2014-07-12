@@ -17,7 +17,7 @@
     <true/>
 
     <key>Description</key>
-    <string>A starting point for any CocoaPods based application. It provides just an application delegate and a window along with Podfile skeleton.</string>
+    <string>A starting point for any CocoaPods based application.</string>
 
     <key>Definitions</key>
     <dict>
