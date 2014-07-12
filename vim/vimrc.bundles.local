@@ -4,6 +4,11 @@ UnBundle    'spf13/vim-autoclose'
 UnBundle    'spf13/PIV'
 
 
+""
+" Apple Swift Supports
+""
+Bundle      'toyamarinyon/vim-swift.git'
+
 " ### MiniBufExpl (replace builtin's bufferline)###
 UnBundle    'vim-bufferline'
 Bundle      'fholgado/minibufexpl.vim'
