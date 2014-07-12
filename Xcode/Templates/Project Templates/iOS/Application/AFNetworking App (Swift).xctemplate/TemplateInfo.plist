@@ -21,6 +21,13 @@
 
     <key>Definitions</key>
     <dict>
+        <key>../Podfile</key>
+        <dict>
+            <key>Group</key>
+            <string>Supporting Files</string>
+            <key>Path</key>
+            <string>Podfile</string>
+        </dict>
         <key>Sources/Bridging-Header.h</key>
         <dict>
             <key>Group</key>
@@ -39,6 +46,7 @@
 
     <key>Nodes</key>
     <array>
+        <string>../Podfile</string>
         <string>Sources/Bridging-Header.h</string>
         <string>Sources/HTTPSessionManager.swift</string>
     </array>
