@@ -21,20 +21,12 @@
 
     <key>Definitions</key>
     <dict>
-        <key>../Podfile</key>
-        <dict>
-            <key>Group</key>
-            <string>Supporting Files</string>
-            <key>Path</key>
-            <string>Podfile</string>
-        </dict>
-        <key>Sources/Bridging-Header.h</key>
-        <dict>
-            <key>Group</key>
-            <string>Sources</string>
-            <key>Path</key>
-            <string>Sources/Bridging-Header.h</string>
-        </dict>
+        <key>../Podfile:AFNetworking</key>
+        <string>
+pod "AFNetworking", "~&gt; 2.0"
+        </string>
+        <key>Sources/Bridging-Header.h:import:AFNetworking</key>
+        <string>#import &lt;AFNetworking/AFNetworking.h&gt;</string>
         <key>Sources/HTTPSessionManager.swift</key>
         <dict>
             <key>Group</key>
@@ -46,14 +38,9 @@
 
     <key>Nodes</key>
     <array>
-        <string>../Podfile</string>
-        <string>Sources/Bridging-Header.h</string>
+        <string>../Podfile:AFNetworking</string>
+        <string>Sources/Bridging-Header.h:import:AFNetworking</string>
         <string>Sources/HTTPSessionManager.swift</string>
-    </array>
-
-    <key>Platforms</key>
-    <array>
-        <string>com.apple.platform.iphoneos</string>
     </array>
 
     <key>Targets</key>

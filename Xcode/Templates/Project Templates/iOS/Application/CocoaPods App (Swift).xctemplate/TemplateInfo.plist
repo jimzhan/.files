@@ -21,26 +21,64 @@
 
     <key>Definitions</key>
     <dict>
+        <!-- APL Source File Declarations@Beginning -->
+        <key>*:APLV2</key>
+<string>/**
+ *  ------------------------------------------------------------
+ *  @project    ___PROJECTNAME___
+ *  @file       ___FILENAME___
+ *  @date       ___DATE___
+ *  @author     ___FULLUSERNAME___
+ *
+ *  Copyright © ___YEAR___ ___FULLUSERNAME___.
+ *
+ *  Use this file to import your target's public
+ *  headers that you would like to expose to Swift.
+ *  ------------------------------------------------------------
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *  ------------------------------------------------------------
+ */
+ </string>
+        <!-- APL Source File Declarations@end -->
+
+        <!-- imports -->
+        <key>*:import:UIKit</key>
+        <string>#import &lt;UIKit/UIKit.h&gt;</string>
+        <key>*:import:Foundation</key>
+        <string>#import &lt;Foundation/Foundation.h&gt;</string>
+        <!-- Supporting Files -->
+        <key>../Podfile</key>
+        <dict>
+            <key>Beginning</key>
+            <string>platform    :ios,    "7.0"</string>
+            <key>Group</key>
+            <string>Supporting Files</string>
+        </dict>
+        <!-- Bridging supporting for Swift -->
         <key>Sources/Bridging-Header.h</key>
         <dict>
             <key>Group</key>
             <string>Sources</string>
-            <key>Path</key>
-            <string>Sources/Bridging-Header.h</string>
-        </dict>
-        <key>../Podfile</key>
-        <dict>
-            <key>Group</key>
-            <string>Supporting Files</string>
-            <key>Path</key>
-            <string>Podfile</string>
         </dict>
     </dict>
 
     <key>Nodes</key>
     <array>
-        <string>Sources/Bridging-Header.h</string>
         <string>../Podfile</string>
+        <string>Sources/Bridging-Header.h</string>
+        <string>Sources/Bridging-Header.h:APLV2</string>
+        <string>Sources/Bridging-Header.h:import:UIKit</string>
+        <string>Sources/Bridging-Header.h:import:Foundation</string>
     </array>
 
     <key>Platforms</key>
