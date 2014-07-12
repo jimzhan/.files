@@ -35,12 +35,20 @@
             <key>Path</key>
             <string>Podfile</string>
         </dict>
+        <key>Sources/HTTPSessionManager.swift</key>
+        <dict>
+            <key>Group</key>
+            <string>Sources</string>
+            <key>Path</key>
+            <string>Sources/HTTPSessionManager.swift</string>
+        </dict>
     </dict>
 
     <key>Nodes</key>
     <array>
         <string>Bridging-Header.h</string>
         <string>../Podfile</string>
+        <string>Sources/HTTPSessionManager.swift</string>
     </array>
 
     <key>Platforms</key>
