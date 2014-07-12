@@ -48,6 +48,7 @@
  *  limitations under the License.
  *  ------------------------------------------------------------
  */
+
  </string>
         <!-- APL Source File Declarations@end -->
 
@@ -95,12 +96,12 @@
             <key>Debug</key>
             <dict>
                 <key>SWIFT_OBJC_BRIDGING_HEADER</key>
-                <string>$(PROJECT_NAME)/Bridging-Header.h</string>
+                <string>$(PROJECT_NAME)/Sources/Bridging-Header.h</string>
             </dict>
             <key>Release</key>
             <dict>
                 <key>SWIFT_OBJC_BRIDGING_HEADER</key>
-                <string>$(PROJECT_NAME)/Bridging-Header.h</string>
+                <string>$(PROJECT_NAME)/Sources/Bridging-Header.h</string>
             </dict>
         </dict>
     </dict>
