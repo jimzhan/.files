@@ -16,33 +16,6 @@
     <key>Concrete</key>
     <true/>
 
-	<key>Options</key>
-	<array>
-		<dict>
-			<key>Identifier</key>
-			<string>languageChoice</string>
-			<key>Units</key>
-			<dict>
-				<key>Swift</key>
-				<dict>
-					<key>Definitions</key>
-					<dict>
-						<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
-						<string>self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-// Override point for customization after application launch.
-self.window!.rootViewController = AppViewController()
-self.window!.backgroundColor = UIColor.whiteColor()</string>
-						<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:return</key>
-						<string>self.window!.makeKeyAndVisible()
-return true
-</string>
-					</dict>
-				</dict>
-			</dict>
-		</dict>
-	</array>
-
-
     <key>Description</key>
     <string>A starting point for any CocoaPods based application.</string>
 
@@ -95,13 +68,13 @@ return true
             <key>Group</key>
             <string>Supporting Files</string>
         </dict>
-        <!-- Application base view controller -->
-        <key>Sources/AppViewController.swift</key>
+        <!-- App-based constants -->
+        <key>Sources/Constants.swift</key>
         <dict>
             <key>Group</key>
             <string>Sources</string>
             <key>Path</key>
-            <string>Sources/AppViewController.swift</string>
+            <string>Sources/Constants.swift</string>
         </dict>
     </dict>
 
@@ -112,7 +85,7 @@ return true
         <string>Bridging-Header.h:APLV2</string>
         <string>Bridging-Header.h:import:UIKit</string>
         <string>Bridging-Header.h:import:Foundation</string>
-        <string>Sources/AppViewController.swift</string>
+        <string>Sources/Constants.swift</string>
     </array>
 
     <key>Platforms</key>
