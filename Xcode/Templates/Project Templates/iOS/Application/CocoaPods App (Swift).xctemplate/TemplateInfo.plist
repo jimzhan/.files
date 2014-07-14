@@ -16,6 +16,33 @@
     <key>Concrete</key>
     <true/>
 
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Units</key>
+			<dict>
+				<key>Swift</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
+						<string>self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+// Override point for customization after application launch.
+self.window!.rootViewController = AppViewController()
+self.window!.backgroundColor = UIColor.whiteColor()</string>
+						<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:return</key>
+						<string>self.window!.makeKeyAndVisible()
+return true
+</string>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+
+
     <key>Description</key>
     <string>A starting point for any CocoaPods based application.</string>
 
@@ -63,20 +90,29 @@
             <string>Supporting Files</string>
         </dict>
         <!-- Bridging supporting for Swift -->
-        <key>Sources/Bridging-Header.h</key>
+        <key>Bridging-Header.h</key>
+        <dict>
+            <key>Group</key>
+            <string>Supporting Files</string>
+        </dict>
+        <!-- Application base view controller -->
+        <key>Sources/AppViewController.swift</key>
         <dict>
             <key>Group</key>
             <string>Sources</string>
+            <key>Path</key>
+            <string>Sources/AppViewController.swift</string>
         </dict>
     </dict>
 
     <key>Nodes</key>
     <array>
         <string>../Podfile</string>
-        <string>Sources/Bridging-Header.h</string>
-        <string>Sources/Bridging-Header.h:APLV2</string>
-        <string>Sources/Bridging-Header.h:import:UIKit</string>
-        <string>Sources/Bridging-Header.h:import:Foundation</string>
+        <string>Bridging-Header.h</string>
+        <string>Bridging-Header.h:APLV2</string>
+        <string>Bridging-Header.h:import:UIKit</string>
+        <string>Bridging-Header.h:import:Foundation</string>
+        <string>Sources/AppViewController.swift</string>
     </array>
 
     <key>Platforms</key>
@@ -93,12 +129,12 @@
             <key>Debug</key>
             <dict>
                 <key>SWIFT_OBJC_BRIDGING_HEADER</key>
-                <string>$(PROJECT_NAME)/Sources/Bridging-Header.h</string>
+                <string>$(PROJECT_NAME)/Bridging-Header.h</string>
             </dict>
             <key>Release</key>
             <dict>
                 <key>SWIFT_OBJC_BRIDGING_HEADER</key>
-                <string>$(PROJECT_NAME)/Sources/Bridging-Header.h</string>
+                <string>$(PROJECT_NAME)/Bridging-Header.h</string>
             </dict>
         </dict>
     </dict>

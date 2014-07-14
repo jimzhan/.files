@@ -25,7 +25,7 @@
         <string>
 pod "AFNetworking", "~&gt; 2.0"
         </string>
-        <key>Sources/Bridging-Header.h:import:AFNetworking</key>
+        <key>Bridging-Header.h:import:AFNetworking</key>
         <string>#import &lt;AFNetworking/AFNetworking.h&gt;</string>
         <key>Sources/HTTPSessionManager.swift</key>
         <dict>
@@ -39,7 +39,7 @@ pod "AFNetworking", "~&gt; 2.0"
     <key>Nodes</key>
     <array>
         <string>../Podfile:AFNetworking</string>
-        <string>Sources/Bridging-Header.h:import:AFNetworking</string>
+        <string>Bridging-Header.h:import:AFNetworking</string>
         <string>Sources/HTTPSessionManager.swift</string>
     </array>
 
