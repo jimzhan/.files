@@ -28,6 +28,8 @@ pod "AFNetworkActivityLogger", "~&gt; 2.0"
         </string>
         <key>Bridging-Header.h:import:AFNetworking</key>
         <string>#import &lt;AFNetworking/AFNetworking.h&gt;</string>
+        <key>Bridging-Header.h:import:AFNetworkActivityLogger</key>
+        <string>#import &lt;AFNetworkActivityLogger/AFNetworkActivityLogger.h&gt;</string>
         <key>Sources/HTTPSessionManager.swift</key>
         <dict>
             <key>Group</key>
@@ -41,6 +43,7 @@ pod "AFNetworkActivityLogger", "~&gt; 2.0"
     <array>
         <string>../Podfile:AFNetworking</string>
         <string>Bridging-Header.h:import:AFNetworking</string>
+        <string>Bridging-Header.h:import:AFNetworkActivityLogger</string>
         <string>Sources/HTTPSessionManager.swift</string>
     </array>
 
