@@ -24,6 +24,7 @@
         <key>../Podfile:AFNetworking</key>
         <string>
 pod "AFNetworking", "~&gt; 2.0"
+pod "AFNetworkActivityLogger", "~&gt; 2.0"
         </string>
         <key>Bridging-Header.h:import:AFNetworking</key>
         <string>#import &lt;AFNetworking/AFNetworking.h&gt;</string>
