@@ -9,12 +9,15 @@ set fileencodings=ucs-bom,utf-8,chinese,euc-jp,gb18030,gbk,big5,latin1
 
 
 colorscheme vividchalk
+" disable visual vertical line
+" disable block-based spell checking
+hi clear SpellBad
+hi SpellBad cterm=underline
 
 let mapleader = ','
 """"set pastetoggle=<C-S-P>
 set t_Co=256
 set cursorline
-set cursorcolumn
 
 " toggle folding using `space`. (spf13 use it to open ONLY).
 "   do not fold lines under 5.

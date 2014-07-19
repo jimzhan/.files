@@ -1,5 +1,3 @@
-UnBundle    'Puppet-Syntax-Highlighting'
-UnBundle    'scrooloose/syntastic'
 UnBundle    'spf13/vim-autoclose'
 UnBundle    'spf13/PIV'
 
