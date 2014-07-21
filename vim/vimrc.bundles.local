@@ -1,17 +1,31 @@
 UnBundle    'spf13/vim-autoclose'
 UnBundle    'spf13/PIV'
 
-
 ""
 " Apple Swift Supports
 ""
 Bundle      'toyamarinyon/vim-swift.git'
 
+""
 " ### MiniBufExpl (replace builtin's bufferline)###
+""
 UnBundle    'vim-bufferline'
 Bundle      'fholgado/minibufexpl.vim'
 
-
+""
 " ### Dash ###
+""
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
+
+
+""
+" File Templates
+""
+Bundle 'aperezdc/vim-template'
+
+
+""
+" MRU for recent files
+"
+Bundle 'yegappan/mru'
