@@ -11,6 +11,7 @@
 	<key>Ancestors</key>
 	<array>
 		<string>com.apple.dt.unit.cocoaTouchApplicationBase</string>
+        <string>com.apple.dt.unit.prefixable</string>
 	</array>
 
     <key>Concrete</key>
@@ -75,6 +76,20 @@
 
 	<key>Options</key>
 	<array>
+        <!-- Lagacy Prefixable Supports -->
+		<dict>
+			<key>Identifier</key>
+			<string>classPrefix</string>
+			<key>Name</key>
+			<string>Class Prefix</string>
+			<key>Description</key>
+			<string>The prefix to prepend to all created classes</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Placeholder</key>
+			<string>XYZ</string>
+		</dict>
+
 		<dict>
 			<key>Identifier</key>
 			<string>languageChoice</string>
@@ -96,6 +111,7 @@ return YES;
 </string>
 					</dict>
 				</dict>
+
 				<key>Swift</key>
 				<dict>
 					<key>Definitions</key>
