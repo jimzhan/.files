@@ -91,3 +91,8 @@ let g:miniBufExplorerMoreThanOne = 0
 "let g:miniBufExplUseSingleClick = 1
 "let g:miniBufExplCheckDupeBufs = 0
 
+
+""
+" Local ignore cases for NERTree
+""
+let NERDTreeIgnore = ['\.DS_Store$']

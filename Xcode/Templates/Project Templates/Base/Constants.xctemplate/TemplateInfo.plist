@@ -7,10 +7,16 @@
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 
 	<key>Identifier</key>
-	<string>com.apple.dt.unit.prefixable</string>
+	<string>me.funbox.xcode.templates.Constants</string>
 
     <key>Definitions</key>
     <dict>
+        <!-- imports -->
+        <key>*:import:UIKit</key>
+        <string>#import &lt;UIKit/UIKit.h&gt;</string>
+        <key>*:import:Foundation</key>
+        <string>#import &lt;Foundation/Foundation.h&gt;</string>
+
         <!-- APL Source File Declarations@Beginning -->
         <key>*:APLV2</key>
 <string>/**
