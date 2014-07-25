@@ -17,7 +17,7 @@
     <true />
 
     <key>Description</key>
-    <string>Provides a starting point for any CocoaTouch-based application</string>
+    <string>Provides a starting point for any CocoaTouch-based application, along with Bridging header supports for Swift.</string>
 
     <key>Platforms</key>
     <array>
