@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+
+	<key>Identifier</key>
+    <string>me.funbox.xcode.templates.iphoneos.applicationBase</string>
+
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.cocoaTouchApplicationBase</string>
+	</array>
+
+    <key>Concrete</key>
+    <true />
+
+    <key>Description</key>
+    <string>Provides a starting point for any CocoaTouch-based application</string>
+
+    <key>Platforms</key>
+    <array>
+        <string>com.apple.platform.iphoneos</string>
+    </array>
+
+	<key>Definitions</key>
+	<dict>
+        <!-- APL Source File Declarations@Beginning -->
+        <key>*:APLV2</key>
+<string>/**
+ *  ------------------------------------------------------------
+ *  @project    ___PROJECTNAME___
+ *  @file       ___FILENAME___
+ *  @date       ___DATE___
+ *  @author     ___FULLUSERNAME___
+ *
+ *  Copyright © ___YEAR___ ___FULLUSERNAME___.
+ *  ------------------------------------------------------------
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *  ------------------------------------------------------------
+ */
+ </string>
+        <!-- APL Source File Declarations@end -->
+
+        <!-- imports -->
+        <key>*:import:UIKit</key>
+        <string>#import &lt;UIKit/UIKit.h&gt;</string>
+        <key>*:import:Foundation</key>
+        <string>#import &lt;Foundation/Foundation.h&gt;</string>
+
+        <key>Sources/.gitkeep</key>
+        <dict>
+            <key>Group</key>
+            <string>Sources</string>
+            <key>Path</key>
+            <string>Sources/.gitkeep</string>
+        </dict>
+	</dict>
+
+	<key>Nodes</key>
+	<array>
+        <key>Sources/.gitkeep</key>
+	</array>
+
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Units</key>
+			<dict>
+				<key>Objective-C</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>*:implementation:methods:awakeFromNib:super</key>
+						<string>[super awakeFromNib];</string>
+						<key>AppDelegate.m:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
+						<string>self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+// Override point for customization after application launch.
+self.window.backgroundColor = [UIColor whiteColor];</string>
+						<key>AppDelegate.m:implementation:methods:applicationdidFinishLaunchingWithOptions:return</key>
+						<string>[self.window makeKeyAndVisible];
+return YES;
+</string>
+					</dict>
+				</dict>
+				<key>Swift</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>*:implementation:methods:awakeFromNib:super</key>
+						<string>super.awakeFromNib()</string>
+						<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
+						<string>self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+// Override point for customization after application launch.
+self.window!.backgroundColor = UIColor.whiteColor()</string>
+						<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:return</key>
+						<string>self.window!.makeKeyAndVisible()
+return true
+</string>
+                        <!-- Bridging supporting for Swift -->
+                        <key>Bridging-Header.h</key>
+                        <dict>
+                            <key>Group</key>
+                            <string>Supporting Files</string>
+                        </dict>
+					</dict>
+
+
+                    <key>Nodes</key>
+                    <array>
+                        <string>Bridging-Header.h</string>
+                        <string>Bridging-Header.h:APLV2</string>
+                        <string>Bridging-Header.h:import:UIKit</string>
+                        <string>Bridging-Header.h:import:Foundation</string>
+                    </array>
+
+                    <!-- Bridging Header Building Settings for Swift -->
+                    <key>Project</key>
+                    <dict>
+                        <key>SDK</key>
+                        <string>iphoneos</string>
+                        <key>Configurations</key>
+                        <dict>
+                            <key>Debug</key>
+                            <dict>
+                                <key>SWIFT_OBJC_BRIDGING_HEADER</key>
+                                <string>$(PROJECT_NAME)/Bridging-Header.h</string>
+                            </dict>
+                            <key>Release</key>
+                            <dict>
+                                <key>SWIFT_OBJC_BRIDGING_HEADER</key>
+                                <string>$(PROJECT_NAME)/Bridging-Header.h</string>
+                            </dict>
+                        </dict>
+                    </dict>
+
+				</dict>
+			</dict>
+		</dict>
+	</array>
+
+</dict>
+</plist>

@@ -90,3 +90,4 @@ let g:miniBufExplorerMoreThanOne = 0
 "let g:miniBufExplTabWrap = 1
 "let g:miniBufExplUseSingleClick = 1
 "let g:miniBufExplCheckDupeBufs = 0
+

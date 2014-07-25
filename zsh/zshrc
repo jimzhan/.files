@@ -109,6 +109,8 @@ if [ -d /Applications/AppCode.app ]; then
     alias AppCode='open -a /Applications/AppCode.app'
 fi
 
+alias cdfb="cd ~/Dropbox/Apps/FarBox/jim.farbox.com/"
+
 
 ##-------------------
 ## Prompt Color Table Z shell

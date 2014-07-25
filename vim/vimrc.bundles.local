@@ -27,5 +27,16 @@ Bundle 'aperezdc/vim-template'
 
 ""
 " MRU for recent files
-"
+""
 Bundle 'yegappan/mru'
+
+
+""
+" grep for VIM
+""
+Bundle 'mileszs/ack.vim'
+
+""
+" Cocoa Supports
+""
+Bundle 'eraserhd/vim-ios'

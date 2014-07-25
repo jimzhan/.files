@@ -22,4 +22,12 @@
  */
 
 
+#import <Foundation/Foundation.h>
+#import "AFHTTPSessionManager.h"
 
+
+@interface HTTPSessionManager: AFHTTPSessionManager
+
++ (instancetype)sharedInstance;
+
+@end
