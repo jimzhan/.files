@@ -34,25 +34,10 @@
         <string>#import &lt;UIKit/UIKit.h&gt;</string>
         <key>*:import:Foundation</key>
         <string>#import &lt;Foundation/Foundation.h&gt;</string>
-
-        <key>Sources/.gitkeep</key>
-        <dict>
-            <key>Group</key>
-            <string>Sources</string>
-            <key>Path</key>
-            <string>Sources/.gitkeep</string>
-        </dict>
-
-        <key>AppDelegate.swift</key>
-        <dict>
-            <key>Path</key>
-            <string>AppDelegate.swift</string>
-        </dict>
 	</dict>
 
 	<key>Nodes</key>
 	<array>
-        <key>Sources/.gitkeep</key>
 	</array>
 
 	<key>Options</key>
@@ -66,6 +51,22 @@
 				<dict>
 					<key>Definitions</key>
 					<dict>
+                        <key>AppDelegate.h</key>
+                        <dict>
+                            <key>Group</key>
+                            <string>Sources</string>
+                            <key>Path</key>
+                            <string>Sources/AppDelegate.h</string>
+                        </dict>
+                        <key>AppDelegate.m</key>
+                        <dict>
+                            <key>Group</key>
+                            <string>Sources</string>
+                            <key>Path</key>
+                            <string>Sources/AppDelegate.m</string>
+                        </dict>
+
+
 						<key>*:implementation:methods:awakeFromNib:super</key>
 						<string>[super awakeFromNib];</string>
 						<key>AppDelegate.m:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
@@ -77,12 +78,25 @@ self.window.backgroundColor = [UIColor whiteColor];</string>
 return YES;
 </string>
 					</dict>
+                    <key>Nodes</key>
+                    <array>
+                        <string>AppDelegate.h</string>
+                        <string>AppDelegate.m</string>
+                    </array>
 				</dict>
 
 				<key>Swift</key>
 				<dict>
 					<key>Definitions</key>
 					<dict>
+                        <key>AppDelegate.swift</key>
+                        <dict>
+                            <key>Group</key>
+                            <string>Sources</string>
+                            <key>Path</key>
+                            <string>Sources/AppDelegate.swift</string>
+                        </dict>
+
 						<key>*:implementation:methods:awakeFromNib:super</key>
 						<string>super.awakeFromNib()</string>
 						<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
@@ -104,6 +118,7 @@ return true
 
                     <key>Nodes</key>
                     <array>
+                        <string>AppDelegate.swift</string>
                         <string>Bridging-Header.h</string>
                         <string>Bridging-Header.h:APLV2</string>
                         <string>Bridging-Header.h:import:UIKit</string>
