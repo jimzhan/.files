@@ -65,19 +65,8 @@
                             <key>Path</key>
                             <string>Sources/AppDelegate.m</string>
                         </dict>
-
-
-						<key>*:implementation:methods:awakeFromNib:super</key>
-						<string>[super awakeFromNib];</string>
-						<key>AppDelegate.m:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
-						<string>self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-// Override point for customization after application launch.
-self.window.backgroundColor = [UIColor whiteColor];</string>
-						<key>AppDelegate.m:implementation:methods:applicationdidFinishLaunchingWithOptions:return</key>
-						<string>[self.window makeKeyAndVisible];
-return YES;
-</string>
 					</dict>
+
                     <key>Nodes</key>
                     <array>
                         <string>AppDelegate.h</string>
@@ -97,16 +86,6 @@ return YES;
                             <string>Sources/AppDelegate.swift</string>
                         </dict>
 
-						<key>*:implementation:methods:awakeFromNib:super</key>
-						<string>super.awakeFromNib()</string>
-						<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
-						<string>self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-// Override point for customization after application launch.
-self.window!.backgroundColor = UIColor.whiteColor()</string>
-						<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:return</key>
-						<string>self.window!.makeKeyAndVisible()
-return true
-</string>
                         <!-- Bridging supporting for Swift -->
                         <key>Bridging-Header.h</key>
                         <dict>
