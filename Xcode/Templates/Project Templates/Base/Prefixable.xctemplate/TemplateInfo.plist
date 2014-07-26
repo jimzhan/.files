@@ -7,7 +7,7 @@
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 
 	<key>Identifier</key>
-	<string>com.apple.dt.unit.prefixable</string>
+    <string>me.funbox.xcode.templates.prefixable</string>
 
 	<key>Options</key>
 	<array>

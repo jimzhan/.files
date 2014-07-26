@@ -7,7 +7,7 @@
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 
 	<key>Identifier</key>
-	<string>me.funbox.xcode.templates.Constants</string>
+	<string>me.funbox.xcode.templates.Definitions</string>
 
     <key>Definitions</key>
     <dict>
