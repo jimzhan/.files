@@ -44,17 +44,17 @@ pod "AFNetworkActivityLogger", "~&gt; 2.0"
         </dict>
     </array>
 
-	<key>Options</key>
-	<array>
-		<dict>
-			<key>Identifier</key>
-			<string>languageChoice</string>
-			<key>Units</key>
-			<dict>
-				<key>Objective-C</key>
-				<dict>
-					<key>Definitions</key>
-					<dict>
+    <key>Options</key>
+    <array>
+        <dict>
+            <key>Identifier</key>
+            <string>languageChoice</string>
+            <key>Units</key>
+            <dict>
+                <key>Objective-C</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
                         <key>Sources/HTTPSessionManager.h</key>
                         <dict>
                             <key>Group</key>
@@ -69,18 +69,18 @@ pod "AFNetworkActivityLogger", "~&gt; 2.0"
                             <key>Path</key>
                             <string>Sources/HTTPSessionManager.m</string>
                         </dict>
-					</dict>
+                    </dict>
                     <key>Nodes</key>
                     <array>
                         <string>Sources/HTTPSessionManager.h</string>
                         <string>Sources/HTTPSessionManager.m</string>
                     </array>
-				</dict>
+                </dict>
 
-				<key>Swift</key>
-				<dict>
-					<key>Definitions</key>
-					<dict>
+                <key>Swift</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
                         <key>Bridging-Header.h:import:AFNetworking</key>
                         <string>#import &lt;AFNetworking/AFNetworking.h&gt;</string>
                         <key>Bridging-Header.h:import:AFNetworkActivityLogger</key>
@@ -93,17 +93,17 @@ pod "AFNetworkActivityLogger", "~&gt; 2.0"
                             <key>Path</key>
                             <string>Sources/HTTPSessionManager.swift</string>
                         </dict>
-					</dict>
+                    </dict>
                     <key>Nodes</key>
                     <array>
                         <string>Bridging-Header.h:import:AFNetworking</string>
                         <string>Bridging-Header.h:import:AFNetworkActivityLogger</string>
                         <string>Sources/HTTPSessionManager.swift</string>
                     </array>
-				</dict>
-			</dict>
-		</dict>
-	</array>
+                </dict>
+            </dict>
+        </dict>
+    </array>
 
 </dict>
 </plist>
