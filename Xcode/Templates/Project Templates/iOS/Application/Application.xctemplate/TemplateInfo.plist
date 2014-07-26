@@ -2,18 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Kind</key>
-	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+    <key>Kind</key>
+    <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 
-	<key>Identifier</key>
+    <key>Identifier</key>
     <string>me.funbox.xcode.templates.iphoneos.applicationBase</string>
 
-	<key>Ancestors</key>
-	<array>
-		<string>com.apple.dt.unit.cocoaTouchApplicationBase</string>
+    <key>Ancestors</key>
+    <array>
+        <string>com.apple.dt.unit.cocoaTouchApplicationBase</string>
         <string>me.funbox.xcode.templates.Definitions</string>
-        <string>me.funbox.xcode.templates.prefixable</string>
-	</array>
+    </array>
 
     <key>Concrete</key>
     <true />
@@ -27,17 +26,17 @@
     </array>
 
 
-	<key>Options</key>
-	<array>
-		<dict>
-			<key>Identifier</key>
-			<string>languageChoice</string>
-			<key>Units</key>
-			<dict>
-				<key>Objective-C</key>
-				<dict>
-					<key>Definitions</key>
-					<dict>
+    <key>Options</key>
+    <array>
+        <dict>
+            <key>Identifier</key>
+            <string>languageChoice</string>
+            <key>Units</key>
+            <dict>
+                <key>Objective-C</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
                         <key>AppDelegate.h</key>
                         <dict>
                             <key>Group</key>
@@ -52,19 +51,19 @@
                             <key>Path</key>
                             <string>Sources/AppDelegate.m</string>
                         </dict>
-					</dict>
+                    </dict>
 
                     <key>Nodes</key>
                     <array>
                         <string>AppDelegate.h</string>
                         <string>AppDelegate.m</string>
                     </array>
-				</dict>
+                </dict>
 
-				<key>Swift</key>
-				<dict>
-					<key>Definitions</key>
-					<dict>
+                <key>Swift</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
                         <key>AppDelegate.swift</key>
                         <dict>
                             <key>Group</key>
@@ -79,7 +78,7 @@
                             <key>Group</key>
                             <string>Supporting Files</string>
                         </dict>
-					</dict>
+                    </dict>
 
 
                     <key>Nodes</key>
@@ -111,10 +110,10 @@
                         </dict>
                     </dict>
 
-				</dict>
-			</dict>
-		</dict>
-	</array>
+                </dict>
+            </dict>
+        </dict>
+    </array>
 
 </dict>
 </plist>
