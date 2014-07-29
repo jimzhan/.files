@@ -40,7 +40,7 @@ static NSString const * kAppBaseURL = @"";
         instance.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
     });
 
-    return instance
+    return instance;
 }
 
 @end
