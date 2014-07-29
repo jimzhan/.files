@@ -55,6 +55,15 @@ pod "AFNetworkActivityLogger", "~&gt; 2.0"
                 <dict>
                     <key>Definitions</key>
                     <dict>
+                        <!-- Overwrite Application.xctemplate's implementations -->
+                        <key>AppDelegate.m</key>
+                        <dict>
+                            <key>Group</key>
+                            <string>Sources</string>
+                            <key>Path</key>
+                            <string>Sources/AppDelegate.m</string>
+                        </dict>
+
                         <key>Sources/HTTPSessionManager.h</key>
                         <dict>
                             <key>Group</key>
@@ -72,6 +81,8 @@ pod "AFNetworkActivityLogger", "~&gt; 2.0"
                     </dict>
                     <key>Nodes</key>
                     <array>
+                        <!-- Overwrite Application.xctemplate's implementations -->
+                        <string>AppDelegate.m</string>
                         <string>Sources/HTTPSessionManager.h</string>
                         <string>Sources/HTTPSessionManager.m</string>
                     </array>

@@ -25,7 +25,7 @@
 #import "HTTPSessionManager.h"
 
 
-static NSString const * kAppBaseURL = @"";
+static NSString * const kAppBaseURL = @"";
 
 
 @implementation HTTPSessionManager
