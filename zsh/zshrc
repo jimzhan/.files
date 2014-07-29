@@ -111,6 +111,8 @@ fi
 
 alias cdfb="cd ~/Dropbox/Apps/FarBox/jim.farbox.com/"
 
+alias xcode='open *.xcworkspace'
+
 
 ##-------------------
 ## Prompt Color Table Z shell

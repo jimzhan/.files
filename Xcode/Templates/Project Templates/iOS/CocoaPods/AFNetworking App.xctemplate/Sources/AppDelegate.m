@@ -44,7 +44,7 @@
     [NSURLCache setSharedURLCache:cache];
 
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
-    [[AFNetworkActivityLogger sharedLogger] setLevel:AFNetAFLoggerLevelDebug];
+    [[AFNetworkActivityLogger sharedLogger] setLevel:AFLoggerLevelDebug];
     [[AFNetworkActivityLogger sharedLogger] startLogging];
 
 
