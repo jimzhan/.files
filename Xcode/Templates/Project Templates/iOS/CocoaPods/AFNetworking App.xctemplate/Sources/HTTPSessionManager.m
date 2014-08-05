@@ -21,7 +21,6 @@
  *  ------------------------------------------------------------
  */
 
-
 #import "HTTPSessionManager.h"
 
 
@@ -30,8 +29,8 @@ static NSString * const kAppBaseURL = @"";
 
 @implementation HTTPSessionManager
 
-+ (instancetype) sharedInstance {
-
++ (instancetype)sharedInstance 
+{
     static HTTPSessionManager *instance = nil;
     static dispatch_once_t token;
 

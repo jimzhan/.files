@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Kind</key>
+    <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+
+    <key>Identifier</key>
+    <string>me.funbox.xcode.templates.iphoneos.Nimbus</string>
+
+    <key>Ancestors</key>
+    <array>
+        <string>me.funbox.xcode.templates.iphoneos.applicationBase</string>
+    </array>
+
+    <key>Concrete</key>
+    <true/>
+
+    <key>Description</key>
+    <string>A starting point for any Nimbus based application.</string>
+
+    <key>Definitions</key>
+    <dict>
+        <!-- Supporting Files -->
+        <key>../Podfile</key>
+        <dict>
+            <key>Beginning</key>
+            <string>platform    :ios,    "7.0"</string>
+            <key>Group</key>
+            <string>Supporting Files</string>
+        </dict>
+        <key>../Podfile:Nimbus</key>
+        <string>
+pod "Nimbus"
+        </string>
+    </dict>
+
+    <key>Nodes</key>
+    <array>
+        <string>../Podfile</string>
+        <string>../Podfile:Nimbus</string>
+    </array>
+
+    <key>Targets</key>
+    <array>
+        <dict>
+            <key>Frameworks</key>
+            <array>
+                <string>UIKit</string>
+                <string>Foundation</string>
+                <string>MobileCoreServices</string>
+                <string>SystemConfiguration</string>
+            </array>
+        </dict>
+    </array>
+
+</dict>
+</plist>

@@ -22,7 +22,8 @@ Bundle 'rizzatti/dash.vim'
 ""
 " File Templates
 ""
-Bundle 'aperezdc/vim-template'
+"Bundle 'aperezdc/vim-template'
+Bundle 'jimzhan/vim-template'
 
 
 ""

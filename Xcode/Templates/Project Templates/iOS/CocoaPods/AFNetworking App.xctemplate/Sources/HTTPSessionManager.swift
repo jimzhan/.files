@@ -22,14 +22,14 @@
  */
 
 
-class HTTPSessionManager: AFHTTPSessionManager {
-
-    class var sharedInstance: HTTPSessionManager {
+class HTTPSessionManager: AFHTTPSessionManager 
+{
+    class var sharedInstance: HTTPSessionManager 
+    {
         struct Static {
             static let baseURL = NSURL(string: "<Fill Me In with Your Base URL>")
             static let instance: HTTPSessionManager = HTTPSessionManager(baseURL: baseURL)
         }
         return Static.instance
     }
-
 }
