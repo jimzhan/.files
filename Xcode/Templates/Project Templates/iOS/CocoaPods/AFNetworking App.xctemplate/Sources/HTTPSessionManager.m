@@ -37,6 +37,10 @@ static NSString * const kAppBaseURL = @"";
     dispatch_once(&token, ^{
         instance = [[self alloc] initWithBaseURL:[NSURL URLWithString:kAppBaseURL]];
         instance.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+        instance.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+        instance.requestSerializer = [AFJSONRequestSerializer new];
+        instance.responseSerializer = [AFJSONResponseSerializer new];
+        [instance.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     });
 
     return instance;
