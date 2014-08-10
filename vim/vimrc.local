@@ -6,6 +6,7 @@ else
 endif
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese,euc-jp,gb18030,gbk,big5,latin1
+autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
 
 
 colorscheme vividchalk
