@@ -96,4 +96,4 @@ let g:miniBufExplorerMoreThanOne = 0
 ""
 " Local ignore cases for NERTree
 ""
-let NERDTreeIgnore = ['\.DS_Store$']
+let NERDTreeIgnore=['\.DS_Store', '\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
