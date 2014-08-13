@@ -99,6 +99,7 @@ if [ ! -d $dotfiles ]; then
     mkdir $HOME/.ssh
   fi
   link $dotfiles/ssh/config     $HOME/.ssh/config
+  link $dotfile/npm/bowerrc     $HOME/.bowerrc
 
   setup_xcode true
 #================================================================================
