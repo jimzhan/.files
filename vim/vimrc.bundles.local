@@ -46,3 +46,8 @@ Bundle 'eraserhd/vim-ios'
 " HTML5 Supports
 ""
 Bundle 'othree/html5.vim'
+
+""
+" Google's Golang
+""
+Bundle 'fatih/vim-go'
