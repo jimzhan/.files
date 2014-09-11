@@ -56,13 +56,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export GOPATH="$HOME/Go"
 export PYTHONPATH=".:$HOME/Projects/tornext:$PYTHONPATH"
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:
-$HOME/bin:
-$HOME/local/bin:
-$HOME/python2/bin:
-$HOME/Projects/tornext/bin:
-$GOPATH/bin:
-$PATH"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin:$HOME/local/bin:$HOME/python2/bin:$HOME/Projects/tornext/bin:$GOPATH/bin:$PATH"
 #export PYTHONPATH="$HOME/Projects/tornext:$PYTHONPATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
