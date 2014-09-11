@@ -51,3 +51,8 @@ Bundle 'othree/html5.vim'
 " Google's Golang
 ""
 Bundle 'fatih/vim-go'
+
+""
+" Virtual clipboard (for tmux)
+""
+Bundle 'kana/vim-fakeclip'

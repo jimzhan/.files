@@ -11,8 +11,8 @@ autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType scss setlocal expandtab shiftwidth=2 softtabstop=2
 
 
-"colorscheme vividchalk
-colorscheme molokai
+colorscheme vividchalk
+let g:rehash256=1
 " disable visual vertical line
 " disable block-based spell checking
 hi clear SpellBad
@@ -140,6 +140,7 @@ endfunction
 let pyindent_nested_paren="&sw*2"
 let pyindent_open_paren="&sw*2"
 
-
-let g:molokai_original = 1
-let g:rehash256 = 1
+""
+" Tmux: Fixing pasting issue (Nothing in Register) when working under unname window.
+""
+set clipboard=unnamed
