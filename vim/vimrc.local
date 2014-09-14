@@ -144,3 +144,8 @@ let pyindent_open_paren="&sw*2"
 " Tmux: Fixing pasting issue (Nothing in Register) when working under unname window.
 ""
 set clipboard=unnamed
+
+""
+" CSApprox (Terminal Colors)
+""
+let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }

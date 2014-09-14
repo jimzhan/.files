@@ -2,6 +2,11 @@ UnBundle    'spf13/vim-autoclose'
 UnBundle    'spf13/PIV'
 
 ""
+" Gui Color Supports
+""
+Bundle 'godlygeek/csapprox'
+
+""
 " Apple Swift Supports
 ""
 Bundle      'toyamarinyon/vim-swift.git'

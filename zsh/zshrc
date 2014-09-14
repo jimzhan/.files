@@ -54,7 +54,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export GOPATH="$HOME/Go:$HOME/Go/Projects"
+export GOPATH="$HOME/Go"
 export GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
 export Go=$(brew --prefix)/Cellar/go/$GOVERSION
 export PYTHONPATH=".:$HOME/Projects/tornext:$PYTHONPATH"
