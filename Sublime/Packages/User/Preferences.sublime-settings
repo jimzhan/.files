@@ -1,6 +1,37 @@
 {
+	"color_scheme": "Packages/Theme - Freesia/Triplet.tmTheme",
+	"font_face": "PragmataPro",
+	"font_size": 14,
 	"ignored_packages":
 	[
-		"Vintage"
-	]
+//		"Vintage"
+	],
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+    "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "_build", "dist", "build", "site", "Distribution", "Build"],
+    "file_exclude_patterns":[
+	    "*.sw?",
+	    "*.tmTheme.cache",
+	    "*.tmPreferences.cache",
+	    "*.tmLanguage.cache",
+	    "*.pyc",
+	    "*.pyo",
+	    "*.exe",
+	    "*.dll",
+	    "*.obj",
+	    "*.o",
+	    "*.a",
+	    "*.lib",
+	    "*.so",
+	    "*.dylib",
+	    "*.ncb",
+	    "*.sdf",
+	    "*.suo",
+	    "*.pdb",
+	    "*.idb",
+	    ".DS_Store",
+	    "*.class",
+	    "*.psd",
+	    "*.db"
+	]	
 }

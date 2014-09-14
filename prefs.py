@@ -19,10 +19,11 @@ Usage: prefs.py <command> [options] [<args>...]
 
 Options:
     -h, --help          show this help message and exit.
+    --backup            backup user settings to repository.
+    --restore           restore user settings from repository.
 
 Commands:
-    backup              backup user settings to repository.
-    restore             restore user settings from repository.
+    sublime             Sublime Text preferences actions.
 
 See 'prefs <command> --help' for further information on a specific command.
 """
@@ -30,6 +31,8 @@ from __future__ import absolute_import
 
 import re
 import os.path
+import shlex
+import subprocess
 
 from docopt import docopt
 from subprocess import call
@@ -38,38 +41,31 @@ from subprocess import call
 root = os.path.abspath(os.path.dirname(__file__))
 
 
-backups = {
-    'Sublime': [
-        'cp -rp $HOME/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages $HOME/.dotfiles/Sublime/',
-        'cp -rp $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages $HOME/.dotfiles/Sublime/',
-        'cd $HOME/.dotfiles && git commit -a -m "Sublime settings backup" && git push'
-    ]
-}
+class Preference(object):
 
-restores = {
-    'Sublime': [
-    ]
-}
+    userdir = os.path.expanduser('~')
 
+    def log(self, message):
+        print message
 
-def log(message):
-    print(message)
+    def execute(self, cmd, cwd=root, **options):
+        process = subprocess.Popen(shlex.split(cmd), cwd=cwd, **options)
+        stdout, stderr = process.communicate()
+        return stdout, stderr
 
 
-def backup():
-    log('Start backing up Sublime Text...')
-    # cp -rp $HOME/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages ~/.dotfiles/Sublime/
-    src = '$HOME/Library/Application\ Support/Sublime\ Text\ 3'
+    def backup(self):
+        raise NotImplementedError
 
 
+    def restore(self):
+        raise NotImplementedError
 
-def restore():
-    pass
 
 
 class Manager(object):
 
-    basedir = os.path.dirname(__file__)
+    basedir = os.path.abspath(os.path.dirname(__file__))
 
     def __init__(self, docstring=__doc__, options_first=True, **kwargs):
         self.args = docopt(docstring, options_first=options_first, **kwargs)
@@ -84,14 +80,15 @@ class Manager(object):
         return argv
 
 
-    @property
-    def commands(self):
+    @classmethod
+    def get_commands(cls):
         """Find all available management commands.
 
         Returns: list of commands under `tornext.commands`.
         """
         pattern = re.compile(r'^([a-zA-Z]+)(\w?)(\.py)')
-        return [py[:-3] for py in os.listdir(self.basedir) if pattern.match(py)]
+        return [py[:-3] for py in os.listdir(cls.basedir) \
+                if pattern.match(py) and not py.startswith('prefs')]
 
 
     def dispatch(self):
@@ -102,4 +99,4 @@ class Manager(object):
             exit(call(['python', py] + self.argv))
 
 if __name__ == '__main__':
-    m = Manager()
+    Manager().dispatch()
