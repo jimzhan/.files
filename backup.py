@@ -63,14 +63,19 @@ def backup_sublime():
     log('Start backing up Sublime Text...')
     dst = os.path.join(root, 'Sublime/')
     src = os.path.join(user, 'Library/Application\ Support/Sublime\ Text\ 3')
-    packages = os.path.join(src, 'Packages')
-    installed_packages = os.path.join(src, 'Installed\ Packages')
+
+    Packages = 'Packages'
+    InstalledPackages = 'Installed\ Packages'
+
     # initialize first backup
-    if not (os.path.islink(packages) and os.path.islink(installed_packages)):
-        execute('mv %s %s %s' % (installed_packages, packages, dst))
+    if not (os.path.islink(os.path.join(src, Packages)) \
+            and os.path.islink(os.path.join(src, InstalledPackages))):
+        execute('mv %s %s %s' % (os.path.join(src, InstalledPackages), os.path.join(src, Packages), dst))
         execute('git add ./*')
         execute('git commit -a -m "Sublime settings backup"')
         execute('git push')
+        execute('ln -s %s %s' % (os.path.join(dst, Packages), os.path.join(src, Packages)))
+        execute('ln -s %s %s' % (os.path.join(dst, InstalledPackages), os.path.join(src, InstalledPackages)))
     else:
         execute('git commit -a -m "Sublime settings updates"')
         execute('git push')
