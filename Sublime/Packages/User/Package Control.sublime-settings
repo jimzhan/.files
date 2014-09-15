@@ -1,8 +1,11 @@
 {
 	"installed_packages":
 	[
+		"ConvertToUTF8",
+		"Emmet",
 		"GitGutter",
 		"GoSublime",
+		"MacTerminal",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeGit",

@@ -1,5 +1,4 @@
 {
-	"theme": "Soda Dark 3.sublime-theme",
 	"color_scheme": "Packages/Theme - Freesia/Triplet.tmTheme",
 	"file_exclude_patterns":
 	[
@@ -46,5 +45,6 @@
 	[
 	],
 	"tab_size": 4,
+	"theme": "Soda Dark 3.sublime-theme",
 	"translate_tabs_to_spaces": true
 }
