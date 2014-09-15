@@ -1,5 +1,12 @@
 {
+	"bold_folder_labels": true,
+    // Valid values are "smooth", "phase", "blink" and "solid".
+    "caret_style": "phase",
 	"color_scheme": "Packages/Theme - Freesia/Triplet.tmTheme",
+	"highlight_line": true,
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"fade_fold_buttons": false,
 	"file_exclude_patterns":
 	[
 		"*.sw?",

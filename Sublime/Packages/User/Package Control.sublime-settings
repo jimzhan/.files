@@ -2,12 +2,15 @@
 	"installed_packages":
 	[
 		"ConvertToUTF8",
+		"CursorRuler",
+		"DashDoc",
 		"Emmet",
 		"FileHeader",
 		"GitGutter",
 		"GoSublime",
 		"MacTerminal",
 		"SideBarEnhancements",
+		"SublimeBlockCursor",
 		"SublimeCodeIntel",
 		"SublimeGit",
 		"Theme - Freesia",
