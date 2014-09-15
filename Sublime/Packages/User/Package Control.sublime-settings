@@ -3,6 +3,7 @@
 	[
 		"ConvertToUTF8",
 		"Emmet",
+		"FileHeader",
 		"GitGutter",
 		"GoSublime",
 		"MacTerminal",
