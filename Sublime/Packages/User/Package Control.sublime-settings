@@ -1,11 +1,14 @@
 {
 	"installed_packages":
 	[
-		"GitCommitMsg",
 		"GitGutter",
 		"GoSublime",
 		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeGit",
 		"Theme - Freesia",
+		"Theme - Soda",
+		"Vintageous",
 		"WordCount"
 	]
 }
