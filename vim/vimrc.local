@@ -64,45 +64,7 @@ map <C-">       csW"
 " ### Plugin: Tagbar ###
 let g:tagbar_width = 25
 
-" ### Plugin: scrooloose/nerdtree ###
-map <C-o>   :NERDTreeToggle<CR>
 
-" ### Plugin: fholgado/minibufexpl.vim ###
-" buffer shortcuts
-:nmap <C-l>     :MBEbn<cr>
-:nmap <C-h>     :MBEbp<cr>
-:nmap <C-k>     :MBEbd<cr>
-:nmap <C-t>     :MBEToggle<cr>
-" MiniBufExpl Colors
-""let g:did_minibufexplorer_syntax_inits = 1
-hi MBENormal               ctermfg=darkgrey
-hi MBEChanged              ctermfg=red
-hi MBEVisibleNormal        ctermfg=blue
-hi MBEVisibleChanged       ctermfg=red
-hi MBEVisibleActiveNormal  ctermfg=green
-hi MBEVisibleActiveChanged ctermfg=red
-
-" place the buffers's windows on top.
-let g:miniBufExplBRSplit = 0
-let g:miniBufExplorerMoreThanOne = 0
-"let g:miniBufExplForceSyntaxEnable = 0
-"let g:miniBufExplMapCTabSwitchBufs = 1
-"let g:miniBufExplMapWindowNavVim = 1
-"let g:miniBufExplMapWindowNavArrows = 1
-"let g:miniBufExplMaxSize = 0
-"let g:miniBufExplModSelTarget = 1
-"let g:miniBufExplTabWrap = 1
-"let g:miniBufExplUseSingleClick = 1
-"let g:miniBufExplCheckDupeBufs = 0
-
-
-""
-" Local ignore cases for NERTree
-""
-let NERDTreeIgnore=['\.DS_Store', '\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-
-
-" ############################## Coding Settings ##############################
 " Indent Python in the Google way.
 
 setlocal indentexpr=GetGooglePythonIndent(v:lnum)

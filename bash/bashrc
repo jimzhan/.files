@@ -1,0 +1,18 @@
+# Color supports
+#source $HOME/.bash/themes/colors.theme.bash
+#source $HOME/.bash/themes/sexy/sexy.theme.bash
+
+# Environment settings
+export GOPATH="$HOME/Go"
+export Go=$(brew --prefix)/Cellar/go/$(brew list go | head -n 1 | cut -d '/' -f 6)
+
+export PYTHONPATH=".:$HOME/Projects/tornext:$PYTHONPATH"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:$HOME/local/bin:$Go/libexec/bin:$HOME/Go/bin:$PATH"
+
+
+# List direcory contents
+alias lsa='ls -lah'
+alias l='ls -lah'
+alias ll='ls -lh'
+alias la='ls -lAh'
+

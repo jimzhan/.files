@@ -2,13 +2,13 @@
 	"installed_packages":
 	[
 		"ConvertToUTF8",
-		"CursorRuler",
 		"DashDoc",
 		"Emmet",
 		"FileHeader",
 		"GitGutter",
 		"GoSublime",
 		"MacTerminal",
+		"Monokai Gray",
 		"SideBarEnhancements",
 		"SublimeBlockCursor",
 		"SublimeCodeIntel",
@@ -16,6 +16,6 @@
 		"Theme - Freesia",
 		"Theme - Soda",
 		"Vintageous",
-		"WordCount"
+		"Wombat Theme"
 	]
 }
