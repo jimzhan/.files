@@ -108,6 +108,7 @@ alias vi="vim"
 ##-------------------
 ## Personnal Aliases
 ##-------------------
+alias du="du -sh"
 alias ip="ipython"
 alias xcode='open *.xcworkspace'
 
