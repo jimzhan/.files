@@ -54,11 +54,11 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export GOPATH="$HOME/Go"
+#export GOPATH="$HOME/Go"
 export GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
 export Go=$(brew --prefix)/Cellar/go/$GOVERSION
 export PYTHONPATH=".:$HOME/Projects/tornext:$PYTHONPATH"
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:$HOME/local/bin:$Go/libexec/bin:$HOME/Go/bin:$PATH"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:$HOME/local/bin:$Go/bin:$Go/libexec/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -111,6 +111,8 @@ alias vi="vim"
 alias du="du -sh"
 alias ip="ipython"
 alias xcode='open *.xcworkspace'
+alias server="python -m SimpleHTTPServer"
+alias ls="gls --color=auto --group-directories-first"
 
 
 ##-------------------

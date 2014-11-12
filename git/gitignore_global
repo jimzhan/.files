@@ -17,6 +17,8 @@ dist
 dist/*
 *egg-info
 *egg-info/*
+.sass-cache
+.sass-cache/*
 
 
 # Packages #
@@ -34,6 +36,9 @@ dist/*
 # Exclude temp nibs and swap files
 *~.nib
 *.swp
+.tmp
+node_modules
+bower_components
 
 # Logs and databases #
 ######################
