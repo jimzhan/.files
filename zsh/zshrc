@@ -109,10 +109,14 @@ alias vi="vim"
 ## Personnal Aliases
 ##-------------------
 alias du="du -sh"
-alias ip="ipython"
 alias xcode='open *.xcworkspace'
 alias server="python -m SimpleHTTPServer"
-alias ls="gls --color=auto --group-directories-first"
+if [ -x /usr/local/bin/ipython ]; then
+  alias ip="ipython"
+fi
+if [ -x /usr/local/bin/gls ]; then
+  alias ls="gls --color=auto --group-directories-first"
+fi
 
 
 ##-------------------
