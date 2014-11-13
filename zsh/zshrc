@@ -45,7 +45,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git golang osx)
+plugins=(git golang osx python)
 
 # Automatically update ZSH without prompting
 DISABLE_UPDATE_PROMPT=true
