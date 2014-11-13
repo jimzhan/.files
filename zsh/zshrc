@@ -103,8 +103,13 @@ alias vi="vim"
 ##+ be converted into scripts and removed from here.
 ##
 ##============================================================
-
-
+##-------------------
+## LS Colors
+##-------------------
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+if [ -x /usr/local/bin/gdircolors ]; then
+  eval $(gdircolors $HOME/.dotfiles/dircolors/dircolors.256dark)
+fi
 ##-------------------
 ## Personnal Aliases
 ##-------------------
@@ -117,8 +122,6 @@ fi
 if [ -x /usr/local/bin/gls ]; then
   alias ls="gls --color=auto --group-directories-first"
 fi
-
-
 ##-------------------
 ## direnv
 ##-------------------
