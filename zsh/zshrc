@@ -8,10 +8,6 @@ export LC_ALL="en_US.UTF-8"
 # time that oh-my-zsh is loaded.
 ZSH_THEME="avit"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
@@ -49,79 +45,15 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-#export GOPATH="$HOME/Go"
-export GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
-export Go=$(brew --prefix)/Cellar/go/$GOVERSION
-export PYTHONPATH=".:$HOME/Projects/tornext:$PYTHONPATH"
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:$HOME/local/bin:$Go/bin:$Go/libexec/bin:$PATH"
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-#
-
+plugins=(git golang osx)
 
 # Automatically update ZSH without prompting
 DISABLE_UPDATE_PROMPT=true
 
-# NVM
-if [ -s ~/.nvm/nvm.sh ]; then
-    NVM_DIR=~/.nvm
-    source ~/.nvm/nvm.sh
-fi
+source $ZSH/oh-my-zsh.sh
+source "$HOME/.dotfiles/zsh/env.zsh"
+source "$HOME/.dotfiles/zsh/alias.zsh"
 
-# use MacVim to avoid the old system vim
-alias vi="vim"
-#if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
-    #alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-#fi
-
-#============================================================
-#
-##  ALIASES AND FUNCTIONS
-##
-##  Arguably, some functions defined here are quite big.
-##  If you want to make this file smaller, these functions can
-##+ be converted into scripts and removed from here.
-##
-##============================================================
-##-------------------
-## LS Colors
-##-------------------
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-if [ -x /usr/local/bin/gdircolors ]; then
-  eval $(gdircolors $HOME/.dotfiles/dircolors/dircolors.256dark)
-fi
-##-------------------
-## Personnal Aliases
-##-------------------
-alias du="du -sh"
-alias xcode='open *.xcworkspace'
-alias server="python -m SimpleHTTPServer"
-if [ -x /usr/local/bin/ipython ]; then
-  alias ip="ipython"
-fi
-if [ -x /usr/local/bin/gls ]; then
-  alias ls="gls --color=auto --group-directories-first"
-fi
 ##-------------------
 ## direnv
 ##-------------------
