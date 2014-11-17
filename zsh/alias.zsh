@@ -9,7 +9,7 @@ alias vi="vim"
 ##-------------------
 ## Personnal Aliases
 ##-------------------
-alias ag="ag --page='less -R'"
+alias ag="ag --page=less"
 alias du="du -sh"
 alias xcode='open *.xcworkspace'
 alias server="python -m SimpleHTTPServer"

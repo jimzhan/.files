@@ -7,11 +7,15 @@ fi
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 export EDITOR="vim"
-#export GOPATH="$HOME/Go"
+#-------------------
+# Golang Environment
+#-------------------
 export GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
 export Go=$(brew --prefix)/Cellar/go/$GOVERSION
-export PYTHONPATH=".:$HOME/Projects/tornext:$PYTHONPATH"
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:$HOME/local/bin:$Go/bin:$Go/libexec/bin:$PATH"
+export GOPATH="$HOME/Go"
+export GOBIN="$GOPATH/bin"
+
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:$HOME/local/bin:$GOBIN:$Go/bin:$Go/libexec/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -22,6 +26,4 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 export LESS="-R"
-export LESSOPEN="pygmentize -gf terminal $1"

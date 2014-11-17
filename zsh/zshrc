@@ -45,7 +45,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(colorize command-not-found cp git golang osx python)
+plugins=(colorize command-not-found cp git golang osx python tmux)
 
 # Automatically update ZSH without prompting
 DISABLE_UPDATE_PROMPT=true
@@ -53,6 +53,11 @@ DISABLE_UPDATE_PROMPT=true
 source $ZSH/oh-my-zsh.sh
 source "$HOME/.dotfiles/zsh/env.zsh"
 source "$HOME/.dotfiles/zsh/alias.zsh"
+
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART_ONCE=true
+alias mx=tmuxinator
+
 ##-------------------
 ## direnv
 ##-------------------
