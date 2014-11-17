@@ -1,7 +1,7 @@
 # ~/.tmuxinator/Golang.yml
 
 name: Golang
-root: ~/
+root: ~/Go/src/github.com/goanywhere/web
 
 # Optional tmux socket
 # socket_name: foo
