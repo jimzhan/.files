@@ -1,7 +1,7 @@
-# ~/.tmuxinator/Go.yml
+# ~/.tmuxinator/Golang.yml
 
-name: Go
-root: ~/Go/src/github.com/goanywhere/web
+name: Golang
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -20,8 +20,8 @@ root: ~/Go/src/github.com/goanywhere/web
 
 windows:
   - editor:
-      layout: 0d94,162x47,0,0[162x43,0,0{111x43,0,0,0,50x43,112,0,2},162x3,0,44,1]
+      layout: e166,170x51,0,0[170x45,0,0{115x45,0,0,0,54x45,116,0,3},170x5,0,46,2]
       panes:
         - vim
         - goconvey
-        - echo "CMD Goes here"
+        - echo "cmd goes here"
