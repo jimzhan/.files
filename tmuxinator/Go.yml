@@ -23,5 +23,5 @@ windows:
       layout: e166,170x51,0,0[170x45,0,0{115x45,0,0,0,54x45,116,0,3},170x5,0,46,2]
       panes:
         - vim
-        - goconvey
         - echo "cmd goes here"
+        - goconvey

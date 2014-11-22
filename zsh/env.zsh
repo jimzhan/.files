@@ -14,6 +14,7 @@ export GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
 export Go=$(brew --prefix)/Cellar/go/$GOVERSION
 export GOPATH="$HOME/Go"
 export GOBIN="$GOPATH/bin"
+export GoAnywhere="$GOPATH/src/github.com/goanywhere"
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:$HOME/local/bin:$GOBIN:$Go/bin:$Go/libexec/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"

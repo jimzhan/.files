@@ -19,6 +19,8 @@ dist/*
 *egg-info/*
 .sass-cache
 .sass-cache/*
+*Package Control.cache
+*Package Control.cache/
 
 
 # Packages #
