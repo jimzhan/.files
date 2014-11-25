@@ -21,6 +21,8 @@ dist/*
 .sass-cache/*
 *Package Control.cache
 *Package Control.cache/
+tmp
+tmp/*
 
 
 # Packages #
