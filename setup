@@ -1,9 +1,7 @@
 #!/usr/bin/env sh
-
+zsh="$HOME/.oh-my-zsh"
 dotfiles="$HOME/.dotfiles"
 repos="https://github.com/jimzhan/dotfiles.git"
-
-zsh="$dotfiles/zsh/oh-my-zsh"
 
 Xcode=$HOME/Library/Developer/Xcode
 XcodeKeys=$Xcode/UserData/KeyBindings
@@ -66,15 +64,14 @@ printf '\033[0;34m%s\033[0m\n' "Setting up preferences..."
 
 if [ ! -d $dotfiles ]; then
   # setup a brand new system
-  git clone --recursive $repos $dotfiles
-  cd $dotfiles
-  git submodule foreach git pull
+  git clone git://github.com/robbyrussell/oh-my-zsh.git $zsh
+  git clone $repos $dotfiles
 
   # zsh (as dotfiles's submodule)
   printf '\033[0;34m%s\033[0m\n' "Setting up ZSH..."
   export ZSH="$zsh"
   chsh -s /bin/zsh
-  link $dotfiles/zsh/zshrc	$HOME/.zshrc
+  link $dotfiles/shell/zshrc	$HOME/.zshrc
   printf "\e[32m[✔]\e[0m Successfully installed ZSH."
   echo "======================================================================"
 
@@ -90,15 +87,29 @@ if [ ! -d $dotfiles ]; then
     mkdir $HOME/.ssh
   fi
   link $dotfiles/ssh/config     $HOME/.ssh/config
-  link $dotfile/npm/bowerrc     $HOME/.bowerrc
 
   setup_xcode true
 #================================================================================
 else
   cd $dotfiles
-  printf '\033[0;34m%s\033[0m\n' "Updating ZSH..."
+  printf '\033[0;34m%s\033[0m\n' "Updating Preferences..."
   git pull
-  git submodule foreach git pull
+
+  # zsh
+  printf '\033[0;34m%s\033[0m\n' "Updating zsh..."
+  git pull
+  cd $zsh
+  git pull
+  link $dotfiles/shell/zshrc	$HOME/.zshrc
+
+  link $dotfiles/tmux/tmux.conf             $HOME/.tmux.conf
+
+  link $dotfiles/git/gitconfig        $HOME/.gitconfig
+  link $dotfiles/git/gitignore_global $HOME/.gitignore_global
+  if [ ! -d "$HOME/.ssh" ]; then
+    mkdir $HOME/.ssh
+  fi
+  link $dotfiles/ssh/config     $HOME/.ssh/config
 
   setup_xcode false
 fi
