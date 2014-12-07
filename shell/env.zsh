@@ -2,7 +2,7 @@
 # LS Colors
 #-------------------
 if [ -x /usr/local/bin/gdircolors ]; then
-  eval $(gdircolors $HOME/.dotfiles/dircolors/dircolors.256dark)
+  eval $(gdircolors $HOME/.dotfiles/shell/dircolors.256dark)
 fi
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
