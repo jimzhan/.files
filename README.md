@@ -9,6 +9,6 @@ Copy and paste the following line into your terminal:
 
 Or manually clone dotfiles and run the installer script:
 
-    git clone https://github.com/jimzhan/dotfiles.git ~/.dotfiles
-    cd ~/.dotfiles
+    git clone https://github.com/jimzhan/dotfiles.git ~/.files
+    cd ~/.files
     ./setup

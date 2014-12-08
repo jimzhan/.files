@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 zsh="$HOME/.oh-my-zsh"
-dotfiles="$HOME/.dotfiles"
+dotfiles="$HOME/.files"
 repos="https://github.com/jimzhan/dotfiles.git"
 
 Xcode=$HOME/Library/Developer/Xcode
