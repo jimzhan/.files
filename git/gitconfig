@@ -14,10 +14,10 @@
   br = branch
   rb = rebase
   dci = dcommit
-  sbi = submodule init
-  sbu = submodule update
-  sbp = submodule foreach git pull
-  sbc = submodule foreach git co master
+  smi = submodule init
+  smu = submodule update
+  smp = submodule foreach git pull
+  smc = submodule foreach git co master
 [core]
 	excludesfile = /Users/jim/.gitignore_global
 [difftool "sourcetree"]

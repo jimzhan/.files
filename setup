@@ -59,8 +59,7 @@ setup_xcode() {
   fi
 }
 
-echo "\n======================================================================"
-printf '\033[0;34m%s\033[0m\n' "Setting up preferences..."
+printf '\033[0;34m%s\033[0m\n' "Checking preferences..."
 
 if [ ! -d $dotfiles ]; then
   # setup a brand new system
