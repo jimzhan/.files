@@ -6,6 +6,24 @@
 # be converted into scripts and removed from here.
 # ============================================================
 alias vi="vim"
+
+##-------------------
+## GIT Aliases
+##-------------------
+alias st="status"
+alias ci="commit -am"
+alias l="log --oneline --decorate -12 --color"
+alias ll="log --oneline --decorate --color"
+alias lc="log --graph --color"
+alias co="checkout"
+alias br="branch"
+alias rb="rebase"
+alias dci="dcommit"
+alias smi="submodule init"
+alias smu="submodule update"
+alias smp="submodule foreach git pull"
+alias smc="submodule foreach git co master"
+
 ##-------------------
 ## Personnal Aliases
 ##-------------------
