@@ -50,6 +50,9 @@ plugins=(colorize command-not-found cp git golang osx python tmux)
 # Automatically update ZSH without prompting
 DISABLE_UPDATE_PROMPT=true
 
+# Custom Prompt Symbol
+ZSH_PROMPT_SYMBOL="❤ "
+
 source $ZSH/oh-my-zsh.sh
 source "$HOME/.files/shell/zsh.env"
 source "$HOME/.files/shell/zsh.alias"
@@ -57,6 +60,7 @@ source "$HOME/.files/shell/zsh.alias"
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOSTART_ONCE=true
 alias mx=tmuxinator
+
 
 ##------------------------------
 ## Growl for Notification Center
