@@ -58,6 +58,16 @@ ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOSTART_ONCE=true
 alias mx=tmuxinator
 
+##------------------------------
+## Growl for Notification Center
+##------------------------------
+function notice() {
+  if [ -x "/usr/local/bin/terminal-notifier" ]; then
+    terminal-notifier -activate com.googlecode.iterm2 -title "iTerm2" -message "$@"
+    say "$@"
+  fi
+}
+
 ##-------------------
 ## direnv
 ##-------------------

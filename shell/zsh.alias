@@ -12,6 +12,7 @@ alias vi="vim"
 ##-------------------
 alias ag="ag --page=less"
 alias du="du -sh"
+alias got="go get -v"
 alias xcode='open *.xcworkspace'
 alias server="python -m SimpleHTTPServer"
 if [ -x /usr/local/bin/ipython ]; then
