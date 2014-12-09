@@ -50,9 +50,6 @@ plugins=(colorize command-not-found cp git golang osx python tmux)
 # Automatically update ZSH without prompting
 DISABLE_UPDATE_PROMPT=true
 
-# Custom Prompt Symbol
-ZSH_PROMPT_SYMBOL="❤ "
-
 source $ZSH/oh-my-zsh.sh
 source "$HOME/.files/shell/zsh.env"
 source "$HOME/.files/shell/zsh.alias"
