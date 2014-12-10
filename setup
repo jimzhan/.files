@@ -8,6 +8,22 @@ XcodeKeys=$Xcode/UserData/KeyBindings
 XcodeThemes=$Xcode/UserData/FontAndColorThemes
 XcodeTemplates=$Xcode/Templates
 
+log() {
+    printf '\033[0;34m%s\033[0m\n' "${1}"
+}
+
+info() {
+    printf "\e[34m[I]\e[0m ${1}\n"
+}
+
+error() {
+    printf "\e[31m[✘]\e[0m ${1}\n"
+}
+
+success() {
+    printf "\e[32m[✔]\e[0m ${1}\n"
+}
+
 # to error out
 warn() {
   echo "$1" >&2
@@ -59,43 +75,56 @@ setup_xcode() {
   fi
 }
 
-printf '\033[0;34m%s\033[0m\n' "Checking preferences..."
-
+# ---------------------------------------------------------------------------
+# Setup Preferences
+# ---------------------------------------------------------------------------
 if [ ! -d $dotfiles ]; then
-  # setup a brand new system
-  git clone git://github.com/robbyrussell/oh-my-zsh.git $zsh
+  log "Setting up dotfiles..."
+  if [ ! -d $zsh ]; then
+    git clone git://github.com/robbyrussell/oh-my-zsh.git $zsh
+  fi
   git clone $repos $dotfiles
 
   # zsh (as dotfiles's submodule)
-  printf '\033[0;34m%s\033[0m\n' "Setting up ZSH..."
+  log "Setting up ZSH..."
   export ZSH="$zsh"
   chsh -s /bin/zsh
-  link $dotfiles/shell/zshrc	$HOME/.zshrc
-  printf "\e[32m[✔]\e[0m Successfully installed ZSH."
-  echo "======================================================================"
+  link $dotfiles/shell/zshrc    $HOME/.zshrc
+
+  success "ZSH installed."
 
   # tmux
-  printf '\033[0;34m%s\033[0m\n' "Setting up TMUX..."
+  log "Setting up TMUX..."
   link $dotfiles/tmux/tmux.conf             $HOME/.tmux.conf
 
   # dev
-  printf '\033[0;34m%s\033[0m\n' "Setting up git & ssh..."
+  log "Setting up GIT & ssh..."
   link $dotfiles/git/gitconfig        $HOME/.gitconfig
   link $dotfiles/git/gitignore_global $HOME/.gitignore_global
   if [ ! -d "$HOME/.ssh" ]; then
     mkdir $HOME/.ssh
   fi
-  link $dotfiles/ssh/config     $HOME/.ssh/config
+  link $dotfiles/ssh/config         $HOME/.ssh/config
 
+  # ---------------------------------------------------------------------------
+  # Vim Setup 
+  # ---------------------------------------------------------------------------
+  link ${dotfiles}/vim/vimrc    $HOME/.vimrc
+  link ${dotfiles}/vim          $HOME/.vim
+
+  # Xcode
   setup_xcode true
-#================================================================================
+
+# ---------------------------------------------------------------------------
+# Update Preferences
+# ---------------------------------------------------------------------------
 else
+  log "Updating dotfiles..."
   cd $dotfiles
-  printf '\033[0;34m%s\033[0m\n' "Updating Preferences..."
   git pull
 
   # zsh
-  printf '\033[0;34m%s\033[0m\n' "Updating zsh..."
+  log "Updating ZSH..."
   git pull
   cd $zsh
   git pull
@@ -109,6 +138,9 @@ else
     mkdir $HOME/.ssh
   fi
   link $dotfiles/ssh/config     $HOME/.ssh/config
+
+  link ${dotfiles}/vim/vimrc    $HOME/.vimrc
+  link ${dotfiles}/vim          $HOME/.vim
 
   setup_xcode false
 fi
