@@ -1,0 +1,5 @@
+# Ignore Bundles
+# ---------------
+.netrwhist
+bundle/
+bundle/*
