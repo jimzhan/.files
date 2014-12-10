@@ -89,28 +89,11 @@ if [ ! -d $dotfiles ]; then
   log "Setting up ZSH..."
   export ZSH="$zsh"
   chsh -s /bin/zsh
-  link $dotfiles/shell/zshrc    $HOME/.zshrc
-
   success "ZSH installed."
 
-  # tmux
-  log "Setting up TMUX..."
-  link $dotfiles/tmux/tmux.conf             $HOME/.tmux.conf
-
-  # dev
-  log "Setting up GIT & ssh..."
-  link $dotfiles/git/gitconfig        $HOME/.gitconfig
-  link $dotfiles/git/gitignore_global $HOME/.gitignore_global
   if [ ! -d "$HOME/.ssh" ]; then
     mkdir $HOME/.ssh
   fi
-  link $dotfiles/ssh/config         $HOME/.ssh/config
-
-  # ---------------------------------------------------------------------------
-  # Vim Setup 
-  # ---------------------------------------------------------------------------
-  link ${dotfiles}/vim/vimrc    $HOME/.vimrc
-  link ${dotfiles}/vim          $HOME/.vim
 
   # Xcode
   setup_xcode true
@@ -128,19 +111,19 @@ else
   git pull
   cd $zsh
   git pull
-  link $dotfiles/shell/zshrc	$HOME/.zshrc
-
-  link $dotfiles/tmux/tmux.conf             $HOME/.tmux.conf
-
-  link $dotfiles/git/gitconfig        $HOME/.gitconfig
-  link $dotfiles/git/gitignore_global $HOME/.gitignore_global
-  if [ ! -d "$HOME/.ssh" ]; then
-    mkdir $HOME/.ssh
-  fi
-  link $dotfiles/ssh/config     $HOME/.ssh/config
-
-  link ${dotfiles}/vim/vimrc    $HOME/.vimrc
-  link ${dotfiles}/vim          $HOME/.vim
 
   setup_xcode false
 fi
+
+# ---------------------------------------------------------------------------
+# Ensure We Have Linked All dot files.
+# ---------------------------------------------------------------------------
+link $dotfiles/shell/zshrc          $HOME/.zshrc
+link $dotfiles/tmux/tmux.conf       $HOME/.tmux.conf
+
+link $dotfiles/git/gitconfig        $HOME/.gitconfig
+link $dotfiles/git/gitignore_global $HOME/.gitignore_global
+link $dotfiles/ssh/config           $HOME/.ssh/config
+
+link ${dotfiles}/vim/vimrc          $HOME/.vimrc
+link ${dotfiles}/vim                $HOME/.vim
