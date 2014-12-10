@@ -1,5 +1,5 @@
 ""  ------------------------------------------------------------
-" *  @file       dotvim.vim
+" *  @file       vimrc
 " *  @date       2014
 " *  @author     Jim Zhan <jim.zhan@me.com>
 " *
@@ -258,7 +258,7 @@ endif
 
 
 " ---------------------------------------------------------------------------
-" Plugins Manager: Setup Plugins Support.
+" Plugins Manager: Setup Custom Plugins Support.
 " ---------------------------------------------------------------------------
 call dotvim.InitializePlugins(expand('~/.vimrc.plugins'))
 
