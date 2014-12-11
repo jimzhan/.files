@@ -35,10 +35,9 @@ NeoBundle 'moll/vim-bbye'
 "  Themes: Color Themes
 " ---------------------------------------------------------------------------
 NeoBundle 'tomasr/molokai'
-NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'chriskempson/base16-vim'
 let g:rehash256=1
 let g:molokai_original = 1
-let g:solarized_termcolors=256
 " ---------------------------------------------------------------------------
 
 

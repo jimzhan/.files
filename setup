@@ -84,10 +84,7 @@ if [ ! -d $dotfiles ]; then
   if [ ! -d $zsh ]; then
     git clone git://github.com/robbyrussell/oh-my-zsh.git $zsh
   fi
-  git clone $repos $dotfiles
-
-  log "Installing Fonts for Powerline-Shell..."
-  curl $PowerlineFont -L -o - | sh
+  git clone --recursive $repos $dotfiles
 
   # zsh (as dotfiles's submodule)
   log "Setting up ZSH..."
@@ -109,6 +106,9 @@ else
   log "Updating dotfiles..."
   cd $dotfiles
   git pull
+  if [ -f "${dotfiles}/.gitmodules" ]; then
+    git submodule foreach git pull
+  fi
 
   # zsh
   log "Updating ZSH..."
