@@ -266,7 +266,8 @@ call dotvim.InitializePlugins(expand('~/.vimrc.plugins'))
 " ---------------------------------------------------------------------------
 " Color Theme: Molokia with custom error sign symbol.
 " ---------------------------------------------------------------------------
-colorscheme molokai
+"colorscheme molokai
+colorscheme base16-flat
 
 
 " ---------------------------------------------------------------------------

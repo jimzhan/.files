@@ -38,6 +38,7 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'chriskempson/base16-vim'
 let g:rehash256=1
 let g:molokai_original = 1
+let base16colorspace=256
 " ---------------------------------------------------------------------------
 
 
