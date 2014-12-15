@@ -2,7 +2,6 @@
 zsh="$HOME/.oh-my-zsh"
 dotfiles="$HOME/.files"
 repos="https://github.com/jimzhan/dotfiles.git"
-PowerlineFont="https://raw.githubusercontent.com/powerline/fonts/master/install.sh"
 
 Xcode=$HOME/Library/Developer/Xcode
 XcodeKeys=$Xcode/UserData/KeyBindings
@@ -135,3 +134,7 @@ link ${dotfiles}/vim                $HOME/.vim
 link ${dotfiles}/iTerm/com.googlecode.iterm2.plist  $HOME/Library/Preferences/com.googlecode.iterm2.plist
 
 link ${dotfiles}/pydistutils.cfg    $HOME/.pydistutils.cfg
+
+link ${dotfiles}/config             $HOME/.config
+
+cp ${dotfiles}/fonts/*  $HOME/Library/Fonts/
