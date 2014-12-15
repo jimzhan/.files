@@ -28,17 +28,9 @@ function usePowerline() {
   fi
 }
 
-isOnline() {
-  ping -c 1 114.114.114.114>>/dev/null
-  if [ $? -eq  0 ]; then
-    return 1
-  else
-    return 0
-  fi
-}
-
+# work with $HOME/.online via $HOME/Library/LaunchAgents/io.goanywhere.connectivity.plist
 function prompt_online() {
-  if [ isOnline ]; then
+  if [ -f $HOME/.online ]; then
     echo '%{%F{red}%}❤ '
   else
     echo '%{%F{grey}%}❤ '

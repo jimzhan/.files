@@ -105,18 +105,21 @@ else
   log "Updating dotfiles..."
   cd $dotfiles
   git pull
-  if [ -f "${dotfiles}/.gitmodules" ]; then
-    git submodule foreach git pull
-  fi
+  git submodule update --init --recursive
 
   # zsh
   log "Updating ZSH..."
-  git pull
   cd $zsh
   git pull
 
   setup_xcode false
 fi
+
+# ---------------------------------------------------------------------------
+# LaunchAgent Services
+# ---------------------------------------------------------------------------
+link $dotfiles/shell/io.goanywhere.connectivity.plist   $HOME/Library/LaunchAgents/io.goanywhere.connectivity.plist
+launchctl load $HOME/Library/LaunchAgents/io.goanywhere.connectivity.plist
 
 # ---------------------------------------------------------------------------
 # Ensure We Have Linked All dot files.
