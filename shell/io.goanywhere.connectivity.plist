@@ -14,7 +14,7 @@
   <integer>1</integer>
 
   <key>StartInterval</key>
-  <integer>5</integer>
+  <integer>1</integer>
 
   <key>RunAtLoad</key>
   <true/>
