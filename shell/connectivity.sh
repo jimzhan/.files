@@ -17,7 +17,9 @@
 
 offline=`dig 114.114.114.114 +time=1 +short 189.cn A | grep -c "no servers could be reached"`
 if [[ "$offline" == "0" ]]; then
-  touch $HOME/.online
+  if [ ! -f $HOME/.online ]; then
+    touch $HOME/.online
+  fi
 else
   if [ -f $HOME/.online ]; then
     rm $HOME/.online
