@@ -29,10 +29,18 @@ function usePowerline() {
 }
 
 isOnline() {
-  local offline=`dig 8.8.4.4 +time=1 +short 189.cn A | grep -c "no servers could be reached"`
-  if [[ "$offline" == "0" ]]; then
-    return 0
-  else
+  ping -c 1 114.114.114.114>>/dev/null
+  if [ $? -eq  0 ]; then
     return 1
+  else
+    return 0
+  fi
+}
+
+function prompt_online() {
+  if [ isOnline ]; then
+    echo '%{%F{red}%}❤ '
+  else
+    echo '%{%F{grey}%}❤ '
   fi
 }

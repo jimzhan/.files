@@ -122,7 +122,9 @@ fi
 # Ensure We Have Linked All dot files.
 # ---------------------------------------------------------------------------
 link $dotfiles/shell/zshrc          $HOME/.zshrc
+
 link $dotfiles/tmux/tmux.conf       $HOME/.tmux.conf
+link $dotfiles/tmuxinator           $HOME/.tmuxinator
 
 link $dotfiles/git/gitconfig        $HOME/.gitconfig
 link $dotfiles/git/gitignore_global $HOME/.gitignore_global
@@ -137,4 +139,4 @@ link ${dotfiles}/pydistutils.cfg    $HOME/.pydistutils.cfg
 
 link ${dotfiles}/config             $HOME/.config
 
-cp ${dotfiles}/fonts/*  $HOME/Library/Fonts/
+cp ${dotfiles}/fonts/*              $HOME/Library/Fonts/
