@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>io.goanywhere.connectivity</string>
+  <string>me.funbox.network.connectivity</string>
 
   <key>ProgramArguments</key>
   <array>
-    <string>/Users/jim/.files/shell/connectivity.sh</string>
+    <string>/Users/jim/.files/LaunchAgents/me.funbox.network.connectivity.sh</string>
   </array>
 
   <key>Nice</key>

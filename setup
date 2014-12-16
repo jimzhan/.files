@@ -118,8 +118,13 @@ fi
 # ---------------------------------------------------------------------------
 # LaunchAgent Services
 # ---------------------------------------------------------------------------
-link $dotfiles/shell/io.goanywhere.connectivity.plist   $HOME/Library/LaunchAgents/io.goanywhere.connectivity.plist
-launchctl load $HOME/Library/LaunchAgents/io.goanywhere.connectivity.plist
+for filepath in $HOME/.files/LaunchAgents/*.plist
+do
+    filename=$(basename $filepath)
+    link $dotfiles/LaunchAgents/$filename   $HOME/Library/LaunchAgents/$filename
+    launchctl load $HOME/Library/LaunchAgents/$filename
+done
+
 
 # ---------------------------------------------------------------------------
 # Ensure We Have Linked All dot files.
