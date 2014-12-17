@@ -1,3 +1,4 @@
+source "$HOME/.files/shell/prompt.zsh"
 #----------------------------------
 # Environment Variables & Functions
 #----------------------------------
@@ -24,6 +25,10 @@ local address="`ifconfig | grep "inet " | grep -v 127.0.0. | awk '{ print $2  }'
 #-------------------
 # Powerline + Prompt
 #-------------------
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}git:"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+
+
 # Plain Prompt
 PROMPT='╭ ${cwd} $(git_prompt_info) $(z_version)${linebreak}╰ $(prompt_online) '
 RPROMPT=%{${lineup}%}%{$fg[blue]%}%t%{$reset_color%}%{${linedown}%}

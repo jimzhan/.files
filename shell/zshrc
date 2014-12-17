@@ -51,9 +51,9 @@ plugins=(colorize command-not-found cp git golang osx python tmux)
 DISABLE_UPDATE_PROMPT=true
 
 source $ZSH/oh-my-zsh.sh
-source "$HOME/.files/shell/zsh.functions"
-source "$HOME/.files/shell/zsh.env"
-source "$HOME/.files/shell/zsh.alias"
+source "$HOME/.files/shell/functions.zsh"
+source "$HOME/.files/shell/env.zsh"
+source "$HOME/.files/shell/alias.zsh"
 
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOSTART_ONCE=true
