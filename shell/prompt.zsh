@@ -12,22 +12,33 @@ function batteryStatus() {
 }
 
 BatteryPrompt() {
-#%{$fg[red]%}%? ↵%{$reset_color%}
 # f1 = 98%
 # f2 = discharging
 # f3 = 2:02 remaining
+    #local percent=`pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d'%'`
+    #status="pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f2 -d';'"
+    #----------------------
     # Running with Battery
+    #----------------------
     if [ "$(batteryStatus)" = "discharging" ]; then
-        # yellow    [⏚  98%]: running with battery.
-        echo -n "%{$fg[yellow]%}[⏚ $(batteryPercentage)%%]%{$reset_color%}"
-    # Running with Power Adaptor
+        if [[ "$(batteryPercentage)" =~ "[0-5][0-9]" ]]; then
+            # red [⏚  58%]: running with battery.
+            echo -e "%{$fg[red]%}[⏚  $(batteryPercentage)%%]%{$reset_color%}"
+        else
+            # yellow    [⏚  98%]: running with battery.
+            echo -e "%{$fg[yellow]%}[⏚  $(batteryPercentage)%%]%{$reset_color%}"
+        fi
+    #-----------------
+    # Running with AC
+    #-----------------
     else
+        # Running with Power Adaptor
         if [ "$(batteryPercentage)" = "100" ]; then
             # green [⌁ charged]: full charged with power.
-            echo -n "%{$fg[green]%}[⌁$(batteryStatus)]%{$reset_color%}"
+            echo -e "%{$fg[green]%}[⌁$(batteryStatus)]%{$reset_color%}"
         else
             # yellow [⌁ 98%]: charging with percentage.
-            echo -n "%{$fg[yellow]%}[⌁$(batteryPercentage)%%]%{$reset_color%}"
+            echo -e "%{$fg[yellow]%}[⌁$(batteryPercentage)%%]%{$reset_color%}"
         fi
     fi
 }
