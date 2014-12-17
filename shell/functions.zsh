@@ -27,12 +27,3 @@ function usePowerline() {
     source $Python/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
   fi
 }
-
-# work with $HOME/.online via $HOME/Library/LaunchAgents/io.goanywhere.connectivity.plist
-function prompt_online() {
-  if [ -f $HOME/.online ]; then
-    echo '%{%F{red}%}❤ '
-  else
-    echo '%{%F{grey}%}❤ '
-  fi
-}
