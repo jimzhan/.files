@@ -25,8 +25,15 @@ snippet APL "Apache License Ver. 2.0 for GoAnywhere"
 $0
 endsnippet
 
+
 snippet main "standard main function"
 func main() {
 	$0
 }
+endsnippet
+
+
+snippet here "current working file"
+_, filename, _, _ := runtime.Caller(1)
+here, _ = filepath.Abs(path.Dir(filename))
 endsnippet

@@ -17,6 +17,7 @@ alias xcode='open *.xcworkspace'
 alias server="python -m SimpleHTTPServer"
 alias lstcp="lsof -i -n -P | grep TCP"
 alias lsudp="lsof -i -n -P | grep UDP"
+alias v="vim"
 if [ -x /usr/local/bin/ipython ]; then
   alias ip="ipython"
 fi
