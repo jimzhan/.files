@@ -56,6 +56,9 @@ export GoAnywhere="$GOPATH/src/github.com/goanywhere"
 #-------------------
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/2.7/bin:$GOBIN:$Go/bin:$Go/libexec/bin:/usr/local/opt/gettext/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
+if [ -d $HOME/Library/Python/2.7/lib/python/site-packages/django/bin ]; then
+    export PATH="$HOME/Library/Python/2.7/lib/python/site-packages/django/bin:$PATH"
+fi
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
