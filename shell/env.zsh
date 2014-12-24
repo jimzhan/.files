@@ -1,5 +1,11 @@
 source "$HOME/.files/shell/prompt.zsh"
 #----------------------------------
+# Custom Proxy File
+#----------------------------------
+if [ -f "$HOME/Proxy" ]; then
+    source "$HOME/Proxy"
+fi
+#----------------------------------
 # Environment Variables & Functions
 #----------------------------------
 export EDITOR="vim"
