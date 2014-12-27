@@ -147,4 +147,7 @@ link ${dotfiles}/pydistutils.cfg    $HOME/.pydistutils.cfg
 
 link ${dotfiles}/config             $HOME/.config
 
+link ${dotfiles}/bowerrc            $HOME/.bowerrc
+
 cp ${dotfiles}/fonts/*              $HOME/Library/Fonts/
+
