@@ -20,6 +20,8 @@
   smc = submodule foreach git co master
 [core]
 	excludesfile = /Users/jim/.gitignore_global
+[color]
+	ui = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
