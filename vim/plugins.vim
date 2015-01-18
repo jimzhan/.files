@@ -101,11 +101,11 @@ NeoBundle 'scrooloose/nerdcommenter'
 "  Status: Status Line Enhancement
 " ---------------------------------------------------------------------------
 NeoBundle 'bling/vim-airline'
+let g:airline_powerline_fonts=1
 "let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
-
 
 
 " ---------------------------------------------------------------------------
