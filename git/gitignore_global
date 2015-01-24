@@ -13,6 +13,8 @@ __pycache__/*
 # Exclude the build directory
 build
 build/*
+_workspace
+_workspace/*
 dist
 dist/*
 *egg-info
@@ -23,6 +25,7 @@ dist/*
 *Package Control.cache/
 tmp
 tmp/*
+Readme
 
 
 # Packages #
