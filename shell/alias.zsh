@@ -6,10 +6,6 @@
 # be converted into scripts and removed from here.
 # ============================================================
 alias vi="vim"
-if [ -x /usr/local/bin/nvim ]; then
-    alias vi="nvim"
-    alias vim="nvim"
-fi
 
 ##-------------------
 ## Personnal Aliases
