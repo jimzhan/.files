@@ -194,7 +194,7 @@ if g:dotvim.trailing_whitespace
 endif
 " ---------------------------------------------------------------------------
 autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
-autocmd FileType css,haskell,html,jinja,js,puppet,ruby,sass,scss,yml setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType css,haskell,html,jinja,js,jsx,puppet,ruby,sass,scss,yml setlocal expandtab shiftwidth=2 softtabstop=2
 " preceding line best in a plugin but here for now.
 
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
