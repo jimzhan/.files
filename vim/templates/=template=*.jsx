@@ -1,6 +1,7 @@
 /**
 * @jsx React.DOM
 */
-var React = require('react');
+"use strict";
 
+import React from "react";
 
