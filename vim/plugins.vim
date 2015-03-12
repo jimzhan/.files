@@ -162,10 +162,9 @@ NeoBundle 'leafgarland/typescript-vim'
 " ---------------------------------------------------------------------------
 " React JSX
 " ---------------------------------------------------------------------------
-NeoBundle 'jsx/jsx.vim'
-"NeoBundle 'mxw/vim-jsx'
-"let g:jsx_ext_required = 1
-"let g:jsx_pragma_required = 0
+NeoBundle 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
+let g:jsx_pragma_required = 0
 " ---------------------------------------------------------------------------
 " Coffee Scripts
 " ---------------------------------------------------------------------------
@@ -186,7 +185,7 @@ let g:syntastic_check_on_open = 1
 if has('balloon_eval')
     let g:syntastic_enable_balloons = 1
 endif
-
+let g:syntastic_javascript_checkers = ['eslint']
 
 " ---------------------------------------------------------------------------
 "  Editing:
