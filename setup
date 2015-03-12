@@ -153,7 +153,7 @@ link ${dotfiles}/pydistutils.cfg    $HOME/.pydistutils.cfg
 link ${dotfiles}/config             $HOME/.config
 
 link ${dotfiles}/bowerrc            $HOME/.bowerrc
-link ${dotfiles}/eslintrc           $HOME/.eslintrc
+link ${dotfiles}/jshintrc           $HOME/.jshintrc
 
 cp ${dotfiles}/fonts/*              $HOME/Library/Fonts/
 

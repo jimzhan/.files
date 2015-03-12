@@ -62,7 +62,6 @@ NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 " ---------------------------------------------------------------------------
 
 
-
 " ---------------------------------------------------------------------------
 "  File Manager: NERDTree + Ctrlp + ag
 " ---------------------------------------------------------------------------
@@ -77,7 +76,7 @@ NeoBundle 'kien/ctrlp.vim'
 " Place the window on Top.
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
-
+" ---------------------------------------------------------------------------
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
         \ 'dir':  '\.git$\|\.hg$\|\.svn$',
@@ -156,19 +155,12 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'lepture/vim-jinja'
 au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 " ---------------------------------------------------------------------------
-" TypeScript
-" ---------------------------------------------------------------------------
-NeoBundle 'leafgarland/typescript-vim'
-" ---------------------------------------------------------------------------
 " React JSX
 " ---------------------------------------------------------------------------
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 let g:jsx_pragma_required = 0
-" ---------------------------------------------------------------------------
-" Coffee Scripts
-" ---------------------------------------------------------------------------
-NeoBundle 'kchmck/vim-coffee-script'
 " ---------------------------------------------------------------------------
 
 
@@ -185,8 +177,7 @@ let g:syntastic_check_on_open = 1
 if has('balloon_eval')
     let g:syntastic_enable_balloons = 1
 endif
-let g:syntastic_javascript_checkers = ['eslint']
-
+let g:syntastic_javascript_checkers = ['jsxhint']
 " ---------------------------------------------------------------------------
 "  Editing:
 "   * Emmet: previously known as Zen Coding is a web-developer’s toolkit that
