@@ -155,12 +155,16 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'lepture/vim-jinja'
 au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 " ---------------------------------------------------------------------------
-" React JSX
+" Javascript: React JSX
 " ---------------------------------------------------------------------------
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 let g:jsx_pragma_required = 0
+
+NeoBundle 'othree/yajs.vim'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
+let g:used_javascript_libs = 'underscore,react'
 " ---------------------------------------------------------------------------
 
 
@@ -188,7 +192,7 @@ let g:syntastic_javascript_checkers = ['jsxhint']
 " ---------------------------------------------------------------------------
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'terryma/vim-multiple-cursors'
 
 
@@ -206,7 +210,7 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'"
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+   let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 inoremap <expr><TAB>    pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -227,4 +231,4 @@ let g:ultisnips_python_style = "google"     " Available Styles: doxygen | sphinx
 "  Templates: File Templates
 " ---------------------------------------------------------------------------
 NeoBundle 'aperezdc/vim-template'
-let g:template_dir = expand('~/.vim/templates')
+let g:templates_directory = expand('~/.vim/templates')

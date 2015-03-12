@@ -197,6 +197,7 @@ autocmd BufRead,BufNewFile *.coffee set filetype=coffee
 autocmd BufRead,BufNewFile *.es6 set filetype=javascript
 autocmd BufRead,BufNewFile *.html.twig set filetype=html.twig
 "autocmd FileType css,haskell,html,jinja,js,puppet,ruby,sass,scss,yml setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType xml,js,jsx,javascript setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 " preceding line best in a plugin but here for now.
