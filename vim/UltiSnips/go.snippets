@@ -34,6 +34,16 @@ endsnippet
 
 
 snippet here "current working file"
-_, filename, _, _ := runtime.Caller(1)
-here, _ = filepath.Abs(path.Dir(filename))
+_, filename, _, _ := runtime.Caller(0)
+here, _ := filepath.Abs(path.Dir(filename))
+endsnippet
+
+
+snippet log "Sirupsen/logrus"
+log "github.com/Sirupsen/logrus"
+endsnippet
+
+
+snippet convey "GoConvey"
+. "github.com/smartystreets/goconvey/convey"
 endsnippet
