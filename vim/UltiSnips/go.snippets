@@ -47,3 +47,11 @@ endsnippet
 snippet convey "GoConvey"
 . "github.com/smartystreets/goconvey/convey"
 endsnippet
+
+
+snippet GoConvey "GoConvey Test"
+func Test${1}(t *testing.T) {
+	Convey("$0", t, func() {
+	})
+}
+endsnippet
