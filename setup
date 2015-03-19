@@ -130,6 +130,7 @@ done
 # Ensure We Have Linked All dot files.
 # ---------------------------------------------------------------------------
 link $dotfiles/shell/zshrc          $HOME/.zshrc
+link $dotfiles/editorconfig         $HOME/.editorconfig
 
 link $dotfiles/tmux/tmux.conf       $HOME/.tmux.conf
 link $dotfiles/tmuxinator           $HOME/.tmuxinator
@@ -150,7 +151,6 @@ link ${dotfiles}/iTerm/com.googlecode.iterm2.plist  $HOME/Library/Preferences/co
 
 link ${dotfiles}/pydistutils.cfg    $HOME/.pydistutils.cfg
 
-link ${dotfiles}/config             $HOME/.config
 
 link ${dotfiles}/bowerrc            $HOME/.bowerrc
 link ${dotfiles}/jshintrc           $HOME/.jshintrc

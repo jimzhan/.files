@@ -228,7 +228,9 @@ let g:ultisnips_python_style = "google"     " Available Styles: doxygen | sphinx
 
 
 " ---------------------------------------------------------------------------
-"  Templates: File Templates
+"  Editor & Templates: File Templates
 " ---------------------------------------------------------------------------
+NeoBundle 'editorconfig/editorconfig-vim'
+
 NeoBundle 'aperezdc/vim-template'
 let g:templates_directory = expand('~/.vim/templates')
