@@ -32,7 +32,7 @@ let g:dotvim.path = {}
 " ---------------------------------------------------------------------------
 "  Functions
 " ---------------------------------------------------------------------------
-" Initialize directories 
+" Initialize directories
 function! dotvim.InitializeDirectories()
     let parent = $HOME
     let prefix = 'vim'
@@ -74,7 +74,7 @@ function! dotvim.InitializeDirectories()
 endfunction
 call dotvim.InitializeDirectories()
 
-" Initialize NERDTree as needed 
+" Initialize NERDTree as needed
 function! dotvim.NERDTreeInitAsNeeded()
     redir => bufoutput
     buffers!
@@ -243,7 +243,6 @@ function! dotvim.ToggleNERDTreeAndTagbar()
         endif
     endfor
 endfunction
-
 
 
 " ---------------------------------------------------------------------------

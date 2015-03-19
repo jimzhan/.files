@@ -10,7 +10,7 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 
 
-[**.{css,html,js,json,jsx,es6,es7,xml}]
+[**.{css,html,js,json,jsx,es6,es7,xml,vim}]
 indent_size = 2
 indent_style = space
 
