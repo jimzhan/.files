@@ -1,0 +1,6 @@
+colorscheme solarized
+
+winsize 130 80                " workspace size
+set guioptions-=T             " Remove the toolbar
+set shell=/bin/bash           " Use basic bash ONLY.
+set guifont=PragmataPro\ for\ Powerline\:h14

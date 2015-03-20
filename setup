@@ -140,11 +140,12 @@ link $dotfiles/git/gitignore_global $HOME/.gitignore_global
 link $dotfiles/ssh/config           $HOME/.ssh/config
 
 if [ -x /usr/local/bin/nvim ]; then
-  link ${dotfiles}/vim/vimrc        $HOME/.nvimrc
   link ${dotfiles}/vim              $HOME/.nvim
+  link ${dotfiles}/vim/vimrc        $HOME/.nvimrc
 else
-  link ${dotfiles}/vim/vimrc        $HOME/.nvimrc
-  link ${dotfiles}/vim              $HOME/.nvim
+  link ${dotfiles}/vim              $HOME/.vim
+  link ${dotfiles}/vim/vimrc        $HOME/.vimrc
+  link ${dotfiles}/vim/gvimrc       $HOME/.gvimrc
 fi
 
 link ${dotfiles}/iTerm/com.googlecode.iterm2.plist  $HOME/Library/Preferences/com.googlecode.iterm2.plist

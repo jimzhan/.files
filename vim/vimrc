@@ -27,22 +27,22 @@ source $HOME/.vim/foundation.vim
 " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
 " across (heterogeneous) systems easier.
 if has('win32') || has('win64')
-    set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-    " Be nice and check for multi_byte even if the config requires
-    " multi_byte support most of the time
-    if has("multi_byte")
-        " Windows cmd.exe still uses cp850. If Windows ever moved to
-        " Powershell as the primary terminal, this would be utf-8
-        set termencoding=cp850
-        " Let Vim use utf-8 internally, because many scripts require this
-        set encoding=utf-8
-        setglobal fileencoding=utf-8
-        " Windows has traditionally used cp1252, so it's probably wise to
-        " fallback into cp1252 instead of eg. iso-8859-15.
-        " Newer Windows files might contain utf-8 or utf-16 LE so we might
-        " want to try them first.
-        set fileencodings=ucs-bom,utf-8,utf-16le,cp1252,iso-8859-15,chinese,euc-jp,gb18030,gbk,big5,latin1
-    endif
+  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+  " Be nice and check for multi_byte even if the config requires
+  " multi_byte support most of the time
+  if has("multi_byte")
+    " Windows cmd.exe still uses cp850. If Windows ever moved to
+    " Powershell as the primary terminal, this would be utf-8
+    set termencoding=cp850
+    " Let Vim use utf-8 internally, because many scripts require this
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+    " Windows has traditionally used cp1252, so it's probably wise to
+    " fallback into cp1252 instead of eg. iso-8859-15.
+    " Newer Windows files might contain utf-8 or utf-16 LE so we might
+    " want to try them first.
+    set fileencodings=ucs-bom,utf-8,utf-16le,cp1252,iso-8859-15,chinese,euc-jp,gb18030,gbk,big5,latin1
+  endif
 endif
 
 
@@ -50,26 +50,29 @@ endif
 "  General
 " ---------------------------------------------------------------------------
 set background=dark         " Assume a dark background
+set t_Co=256                " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
+
 if !has('gui')
   set term=$TERM            " Make arrow and other keys work
 endif
+
 filetype plugin indent on   " Automatically detect file types.
 syntax on                   " Syntax highlighting
 scriptencoding utf-8
 
 if g:dotvim.use_system_clipboard
-    if has('clipboard')
-        if has('unnamedplus')  " When possible use + register for copy-paste
-            set clipboard=unnamed,unnamedplus
-        else         " On mac and Windows, use * register for copy-paste
-            set clipboard=unnamed
-        endif
+  if has('clipboard')
+    if has('unnamedplus')  " When possible use + register for copy-paste
+      set clipboard=unnamed,unnamedplus
+    else         " On mac and Windows, use * register for copy-paste
+      set clipboard=unnamed
     endif
+  endif
 endif
 " ---------------------------------------------------------------------------
 if g:dotvim.autochdir
-    " Always switch to the current file directory
-    autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+  " Always switch to the current file directory
+  autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 endif
 
 set autowrite                                   " Automatically write a file when leaving a modified buffer
@@ -94,25 +97,25 @@ au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 "  let g:dotvim.restore_cursor = 0
 " ---------------------------------------------------------------------------
 if g:dotvim.restore_cursor
-    function! ResCur()
-        if line("'\"") <= line("$")
-            normal! g`"
-            return 1
-        endif
-    endfunction
+  function! ResCur()
+    if line("'\"") <= line("$")
+      normal! g`"
+      return 1
+    endif
+  endfunction
 
-    augroup resCur
-        autocmd!
-        autocmd BufWinEnter * call ResCur()
-    augroup END
+  augroup resCur
+    autocmd!
+    autocmd BufWinEnter * call ResCur()
+  augroup END
 endif
 
 " Setting up the directories
 set backup                      " Backups are nice ...
 if has('persistent_undo')
-    set undofile                " So is persistent undo ...
-    set undolevels=1000         " Maximum number of changes that can be undone
-    set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
+  set undofile                " So is persistent undo ...
+  set undolevels=1000         " Maximum number of changes that can be undone
+  set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
 endif
 
 " To disable views add the following to your .vimrc file:
@@ -120,11 +123,11 @@ endif
 "  let g:dotvim.no_views = 1
 " ---------------------------------------------------------------------------
 if !exists('g:dotvim.no_views')
-    " Add exclusions to mkview and loadview
-    " eg: *.*, svn-commit.tmp
-    let g:skipview_files = [
-        \ '\[example pattern\]'
-        \ ]
+  " Add exclusions to mkview and loadview
+  " eg: *.*, svn-commit.tmp
+  let g:skipview_files = [
+\   '\[example pattern\]'
+\ ]
 endif
 
 
@@ -141,10 +144,10 @@ highlight clear LineNr          " Current line number row will have same backgro
 highlight clear CursorLineNr    " Remove highlight color from current line number
 
 if has('cmdline_info')
-    set ruler                   " Show the ruler
-    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
-    set showcmd                 " Show partial commands in status line and
-                                " Selected characters/lines in visual mode
+  set ruler                   " Show the ruler
+  set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
+  set showcmd                 " Show partial commands in status line and
+                              " Selected characters/lines in visual mode
 endif
 
 set laststatus=2                " For vim-airline
@@ -189,8 +192,8 @@ set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
 set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 " ---------------------------------------------------------------------------
 if g:dotvim.trailing_whitespace
-    autocmd FileType c,cpp,coffee,html,java,php,javascript,puppet,python,rust,twig,xml,yml,perl
-            \ autocmd BufWritePre <buffer> call dotvim.StripTrailingWhitespace()
+  autocmd FileType c,cpp,coffee,html,java,php,javascript,puppet,python,rust,twig,xml,yml,perl
+    \ autocmd BufWritePre <buffer> call dotvim.StripTrailingWhitespace()
 endif
 " ---------------------------------------------------------------------------
 autocmd BufRead,BufNewFile *.coffee set filetype=coffee
@@ -234,30 +237,6 @@ nmap <leader>9 :set foldlevel=9<CR>
 :nmap <S-w>     :tabclose<CR>
 :nmap <S-h>     :tabprevious<CR>
 :nmap <S-l>     :tabnext<CR>
-
-
-" ---------------------------------------------------------------------------
-"  GUI: basic gvim settings instead of .gvimrc.
-" ---------------------------------------------------------------------------
-" GVIM- (here instead of .gvimrc)
-if has('gui_running')
-    set lines=80                " 80 lines height for workspace
-    set columns=130             " 130 columns width for workspace
-    set guioptions-=T           " Remove the toolbar
-    set shell=/bin/bash         " Use basic bash ONLY.
-
-    if has("gui_macvim")
-        set guifont=PragmataPro:h14,Menlo\ Regular:h14
-    elseif has("gui_gtk2")
-        set guifont=Inconsolata\ 12
-    elseif has("gui_win32")
-        set guifont=Consolas:h11:cANSI
-    endif
-else
-    if &term == 'xterm' || &term == 'screen'
-        set t_Co=256            " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
-    endif
-endif
 
 
 " ---------------------------------------------------------------------------
