@@ -35,6 +35,7 @@ NeoBundle 'yonchu/accelerated-smooth-scroll'
 "  Themes: Color Themes
 " ---------------------------------------------------------------------------
 NeoBundle 'tomasr/molokai'
+NeoBundle 'chriskempson/Vim-Tomorrow-Theme'
 NeoBundle 'chriskempson/base16-vim'
 "config:tomasr/molokai|chriskempson/base16-vim {{
   let g:rehash256=1

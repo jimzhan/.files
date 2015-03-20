@@ -1,4 +1,4 @@
-colorscheme solarized
+colorscheme molokai
 
 winsize 130 80                " workspace size
 set guioptions-=T             " Remove the toolbar
