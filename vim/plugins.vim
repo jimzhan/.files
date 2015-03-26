@@ -20,6 +20,7 @@
 "  Fundamental Envionment
 " ---------------------------------------------------------------------------
 NeoBundle 'moll/vim-bbye'
+NeoBundle 'yonchu/accelerated-smooth-scroll'
 NeoBundle 'Shougo/vimproc', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
@@ -28,7 +29,7 @@ NeoBundle 'Shougo/vimproc', {
 \     'unix' : 'make -f make_unix.mak',
 \    },
 \ }
-NeoBundle 'yonchu/accelerated-smooth-scroll'
+
 
 
 " ---------------------------------------------------------------------------
@@ -36,8 +37,7 @@ NeoBundle 'yonchu/accelerated-smooth-scroll'
 " ---------------------------------------------------------------------------
 NeoBundle 'tomasr/molokai'
 NeoBundle 'chriskempson/Vim-Tomorrow-Theme'
-NeoBundle 'chriskempson/base16-vim'
-"config:tomasr/molokai|chriskempson/base16-vim {{
+NeoBundle 'chriskempson/base16-vim' "{{
   let g:rehash256=1
   let g:molokai_original = 1
   let base16colorspace=256
@@ -49,8 +49,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 "  GIT Manager: Fugitive + GitGutter
 " ---------------------------------------------------------------------------
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'airblade/vim-gitgutter'
-"config:airblade/vim-gitgutter {{
+NeoBundle 'airblade/vim-gitgutter' "{{
   nnoremap <silent> <leader>gs :Gstatus<CR>
   nnoremap <silent> <leader>gd :Gdiff<CR>
   nnoremap <silent> <leader>gc :Gcommit<CR>
@@ -69,17 +68,14 @@ NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 " ---------------------------------------------------------------------------
 "nnoremap <C-o> :VimFiler -buffer-name=explorer -split -simple -winwidth=35 -toggle -no-quit<CR>
 " ---------------------------------------------------------------------------
-NeoBundle 'scrooloose/nerdtree', {'depends': 'jistr/vim-nerdtree-tabs'}
-"config:scrooloose/nerdtree {{
+NeoBundle 'scrooloose/nerdtree', {'depends': 'jistr/vim-nerdtree-tabs'} " {{
   map <C-o>   <plug>NERDTreeTabsToggle<CR>
   let NERDTreeShowBookmarks   = 1
   let g:NERDTreeChDirMode     = 2
   let NERDTreeIgnore=['\.DS_Store', '\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 "}}
 " ---------------------------------------------------------------------------
-NeoBundle 'kien/ctrlp.vim'
-"config:kien/ctrlp.vim {{
-  " Place the window on Top.
+NeoBundle 'kien/ctrlp.vim' "{{
   let g:ctrlp_match_window_bottom = 0
   let g:ctrlp_match_window_reversed = 0
   " ---------------------------------------------------------------------------
@@ -88,8 +84,8 @@ NeoBundle 'kien/ctrlp.vim'
 \   'dir':  '\.git$\|\.hg$\|\.svn$',
 \   'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$'
 \ }
-  set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-""}}
+ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+"}}
 " ---------------------------------------------------------------------------
 if executable('ag')
   NeoBundle 'mileszs/ack.vim'
@@ -106,8 +102,7 @@ NeoBundle 'scrooloose/nerdcommenter'
 " ---------------------------------------------------------------------------
 "  Status: Status Line Enhancement
 " ---------------------------------------------------------------------------
-NeoBundle 'bling/vim-airline'
-"config:bling/vim-airline {{
+NeoBundle 'bling/vim-airline' "{{
   let g:airline_powerline_fonts=1
   "let g:airline_theme='badwolf'
   let g:airline#extensions#tabline#enabled = 1
@@ -119,8 +114,7 @@ NeoBundle 'bling/vim-airline'
 " ---------------------------------------------------------------------------
 "  Tags: Source Code Tags
 " ---------------------------------------------------------------------------
-"config:majutsushi/tagbar {{
-if executable('ctags')
+if executable('ctags') " {{
   NeoBundle 'majutsushi/tagbar'
   let g:tagbar_width=30
   "autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx,*.go call tagbar#autoopen()
@@ -143,7 +137,6 @@ if executable('ctags')
   endif
 endif
 "}}
-"
 
 
 " ---------------------------------------------------------------------------
@@ -151,17 +144,16 @@ endif
 " ---------------------------------------------------------------------------
 " Golang Supports
 " ---------------------------------------------------------------------------
-NeoBundle 'fatih/vim-go'
-"config:fatih/vim-go {{
+NeoBundle 'fatih/vim-go' "{{
   "let g:go_fmt_autosave = 0
   let g:go_fmt_command = "goimports"
   nnoremap <silent> <leader>bb :GoInstall<CR>
 "}}
+
 " ---------------------------------------------------------------------------
 " Markdown
 " ---------------------------------------------------------------------------
-NeoBundle 'tpope/vim-markdown'
-"config:tpope/vim-markdown {{
+NeoBundle 'tpope/vim-markdown' " {{
   au BufRead,BufNewFile *.md set filetype=markdown
 "}}
 " ---------------------------------------------------------------------------
@@ -173,8 +165,7 @@ au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 " ---------------------------------------------------------------------------
 " Javascript: React JSX
 " ---------------------------------------------------------------------------
-NeoBundle 'mxw/vim-jsx', {'depends': 'pangloss/vim-javascript'}
-"config:mxw/vim-jsx {{
+NeoBundle 'mxw/vim-jsx', {'depends': 'pangloss/vim-javascript'} " {{
   let g:jsx_ext_required = 0
   let g:jsx_pragma_required = 0
 "}}
@@ -187,8 +178,7 @@ let g:used_javascript_libs = 'underscore,react'
 " ---------------------------------------------------------------------------
 "  Syntax: Static Syntax Checking
 " ---------------------------------------------------------------------------
-NeoBundle 'scrooloose/syntastic'
-"config:scrooloose/syntastic {{
+NeoBundle 'scrooloose/syntastic' "{{
   hi SyntasticErrorSign ctermfg=196 guifg=#FF0000
   let g:syntastic_enable_signs = 1
   let g:syntastic_error_symbol = "✗"
@@ -218,8 +208,7 @@ NeoBundle 'editorconfig/editorconfig-vim'
 " ---------------------------------------------------------------------------
 "  Authocomplete: Autocomplete & Code Snippets
 " ---------------------------------------------------------------------------
-NeoBundle 'Shougo/neocomplete'
-"config:Shougo/neocomplete {{
+NeoBundle 'Shougo/neocomplete' " {{
   set completeopt-=preview
   " Disable AutoComplPop.
   let g:acp_enableAtStartup = 0
@@ -237,8 +226,7 @@ NeoBundle 'Shougo/neocomplete'
   inoremap <expr><CR>     pumvisible() ? neocomplete#close_popup() : "\<CR>"
 "}}
 " ---------------------------------------------------------------------------
-NeoBundle 'honza/vim-snippets', {'depends': 'SirVer/ultisnips'}
-"config:SirVer/ultisnips {{
+NeoBundle 'honza/vim-snippets', {'depends': 'SirVer/ultisnips'} " {{
   let g:UltiSnipsEditSplit="vertical"
   let g:UltiSnipsExpandTrigger="<TAB>"
   let g:UltiSnipsJumpForwardTrigger="<TAB>"
@@ -252,7 +240,9 @@ NeoBundle 'honza/vim-snippets', {'depends': 'SirVer/ultisnips'}
 " ---------------------------------------------------------------------------
 "  Editor & Templates: File Templates
 " ---------------------------------------------------------------------------
-NeoBundle 'aperezdc/vim-template'
-"config:aperezdc/vim-template {{
+NeoBundle 'aperezdc/vim-template' " {{
   let g:templates_directory = expand('~/.vim/templates')
 "}}
+
+
+NeoBundle 'benmills/vimux'
