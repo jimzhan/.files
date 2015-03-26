@@ -10,6 +10,7 @@ alias vi="vim"
 ##-------------------
 ## Personnal Aliases
 ##-------------------
+alias rm="trash"
 alias ag="ag --page=less"
 alias du="du -sh"
 alias got="go get -v"
