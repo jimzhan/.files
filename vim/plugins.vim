@@ -75,22 +75,46 @@ NeoBundle 'scrooloose/nerdtree', {'depends': 'jistr/vim-nerdtree-tabs'} " {{
   let NERDTreeIgnore=['\.DS_Store', '\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 "}}
 " ---------------------------------------------------------------------------
-NeoBundle 'kien/ctrlp.vim' "{{
-  let g:ctrlp_match_window_bottom = 0
-  let g:ctrlp_match_window_reversed = 0
-  " ---------------------------------------------------------------------------
-  let g:ctrlp_working_path_mode = 'ra'
-  let g:ctrlp_custom_ignore = {
-\   'dir':  '\.git$\|\.hg$\|\.svn$',
-\   'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$'
-\ }
- set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+NeoBundle "Shougo/unite.vim", {'depends': 'Shougo/neomru.vim'} "{{
+  call unite#filters#matcher_default#use(['matcher_fuzzy'])
+  call unite#filters#sorter_default#use(['sorter_rank'])
+
+  let g:unite_prompt = "❤  "
+  let g:unite_winheight = 20
+  let g:unite_split_rule = 'botright'
+  let g:unite_enable_ignore_case = 1
+  let g:unite_enable_smart_case = 1
+  let g:unite_enable_start_insert = 1
+
+  let g:unite_data_directory = '~/.vim/tmp/unite'
+  let g:unite_source_file_mru_limit = 200
+  let g:unite_source_history_yank_enable = 1
+  let g:unite_source_rec_max_cache_files=5000
+  call unite#custom#source('file_rec,file_rec/async', 'ignore_pattern', '(\.meta$|\.tmp)')
+
+  nnoremap <Leader>y  :Unite history/yank<CR>
+  nnoremap <Leader>/  :Unite grep:.<cr>
+  nnoremap <Leader>s  :Unite -quick-match buffer<CR>
+  nnoremap <Leader>n  :Unite -buffer-name=New -profile-name=files file/new<CR>
+  nnoremap <Leader>f  :Unite -buffer-name=files buffer file_mru bookmark file<CR>
+
+  autocmd FileType unite call s:unite_my_settings()
+  function! s:unite_my_settings()
+    imap <silent><buffer> <C-k> <C-p>
+    imap <silent><buffer> <C-j> <C-n>
+    imap <silent><buffer> <C-d> <CR>
+  endfunction
+
+  if executable('ag')
+    let g:unite_source_grep_command = 'ag'
+    let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup -g ""'
+    "let g:unite_source_grep_default_opts='--nocolor --nogroup --column'
+    let g:unite_source_grep_default_opts = '--line-numbers --nocolor --nogroup --hidden --ignore ' .
+                                        \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+    let g:unite_source_grep_recursive_opt = ''
+  endif
 "}}
 " ---------------------------------------------------------------------------
-if executable('ag')
-  NeoBundle 'mileszs/ack.vim'
-  let g:ackprg = 'ag --nogroup --nocolor --column'
-endif
 
 
 " ---------------------------------------------------------------------------

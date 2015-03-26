@@ -189,11 +189,11 @@ function! dotvim.InitializePlugins(config)
     set runtimepath+=~/.vim/bundle/neobundle.vim/
     call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundleFetch 'Shougo/neobundle.vim'
+    call neobundle#end()
     source ~/.vim/plugins.vim
     if filereadable(a:config)
         source a:config
     endif
-    call neobundle#end()
     filetype indent plugin on
     NeoBundleCheck
     if g:dotvim.bundle.Initialized == 0
