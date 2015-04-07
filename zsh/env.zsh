@@ -1,4 +1,4 @@
-source "$HOME/.files/shell/prompt.zsh"
+source "$HOME/.files/zsh/prompt.zsh"
 #-------------------
 # System Paths
 #-------------------
@@ -65,7 +65,7 @@ export Vim=$(brew --prefix)/Cellar/vim/$(brew list vim | head -n 1 | cut -d '/' 
 # LS Colors
 #-------------------
 if [ -x /usr/local/bin/gdircolors ]; then
-  eval $(gdircolors $HOME/.files/shell/dircolors.256dark)
+  eval $(gdircolors $HOME/.files/zsh/dircolors.256dark)
 fi
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 

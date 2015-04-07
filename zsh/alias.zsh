@@ -6,12 +6,12 @@
 # be converted into scripts and removed from here.
 # ============================================================
 alias vi="vim"
+alias vim='vim --servername vim'
 
 ##-------------------
 ## Personnal Aliases
 ##-------------------
 alias e="emacs"
-alias v="vim"
 alias rm="trash"
 alias ag="ag --page=less"
 alias du="du -sh"
@@ -20,7 +20,6 @@ alias xcode='open *.xcworkspace'
 alias server="python -m SimpleHTTPServer"
 alias lstcp="lsof -i -n -P | grep TCP"
 alias lsudp="lsof -i -n -P | grep UDP"
-alias v="vim"
 if [ -x /usr/local/bin/ipython ]; then
   alias ip="ipython"
 fi
