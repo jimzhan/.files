@@ -10,6 +10,8 @@ alias vi="vim"
 ##-------------------
 ## Personnal Aliases
 ##-------------------
+alias e="emacs"
+alias v="vim"
 alias rm="trash"
 alias ag="ag --page=less"
 alias du="du -sh"

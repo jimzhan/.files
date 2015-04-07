@@ -1,4 +1,23 @@
 source "$HOME/.files/shell/prompt.zsh"
+#-------------------
+# System Paths
+#-------------------
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/2.7/bin:$GOBIN:$Go/bin:$Go/libexec/bin:/usr/local/opt/gettext/bin:/usr/local/opt/redis/bin:$PATH"
+export MANPATH="/usr/local/man:$MANPATH"
+if [ -d $HOME/Library/Python/2.7/lib/python/site-packages/django/bin ]; then
+    export PATH="$HOME/Library/Python/2.7/lib/python/site-packages/django/bin:$PATH"
+fi
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+export LESS="-R"
+
 #----------------------------------
 # Custom Proxy File
 #----------------------------------
@@ -41,6 +60,7 @@ RPROMPT=%{${lineup}%}$(BatteryPrompt)%{${linedown}%}
   #archey -c
 #fi
 
+export Vim=$(brew --prefix)/Cellar/vim/$(brew list vim | head -n 1 | cut -d '/' -f 6)
 #-------------------
 # LS Colors
 #-------------------
@@ -57,21 +77,3 @@ export Go=$(brew --prefix)/Cellar/go/$GoVersion
 export GOPATH="$HOME/Go"
 export GOBIN="$GOPATH/bin"
 export GoAnywhere="$GOPATH/src/github.com/goanywhere"
-#-------------------
-# System Paths
-#-------------------
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/2.7/bin:$GOBIN:$Go/bin:$Go/libexec/bin:/usr/local/opt/gettext/bin:/usr/local/opt/redis/bin:$PATH"
-export MANPATH="/usr/local/man:$MANPATH"
-if [ -d $HOME/Library/Python/2.7/lib/python/site-packages/django/bin ]; then
-    export PATH="$HOME/Library/Python/2.7/lib/python/site-packages/django/bin:$PATH"
-fi
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-export LESS="-R"

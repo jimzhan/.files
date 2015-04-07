@@ -225,9 +225,18 @@ NeoBundle 'scrooloose/syntastic' "{{
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'terryma/vim-multiple-cursors' "{{{
+function! Multiple_cursors_before()
+  exe 'NeoCompleteLock'
+  echo 'Disabled autocomplete'
+endfunction
 
+function! Multiple_cursors_after()
+  exe 'NeoCompleteUnlock'
+  echo 'Enabled autocomplete'
+endfunction
+"}}}
 
 " ---------------------------------------------------------------------------
 "  Authocomplete: Autocomplete & Code Snippets
