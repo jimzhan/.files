@@ -17,7 +17,7 @@
 " See the License for the specific language governing permissions and
 " limitations under the License.
 " ------------------------------------------------------------
-"  Fundamental Envionment
+"  Plugins: Fundamental Envionment
 " ---------------------------------------------------------------------------
 NeoBundle 'moll/vim-bbye'
 NeoBundle 'yonchu/accelerated-smooth-scroll'
@@ -65,14 +65,12 @@ NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 " ---------------------------------------------------------------------------
 "  File Manager: NERDTree + Ctrlp + ag
 " ---------------------------------------------------------------------------
-"nnoremap <C-o> :VimFiler -buffer-name=explorer -split -simple -winwidth=35 -toggle -no-quit<CR>
-" ---------------------------------------------------------------------------
-NeoBundle 'scrooloose/nerdtree', {'depends': 'jistr/vim-nerdtree-tabs'} " {{
-  map <C-o>   <plug>NERDTreeTabsToggle<CR>
-  let NERDTreeShowBookmarks   = 1
-  let g:NERDTreeChDirMode     = 2
-  let NERDTreeIgnore=['\.DS_Store', '\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-"}}
+"NeoBundle 'scrooloose/nerdtree', {'depends': 'jistr/vim-nerdtree-tabs'} " {{
+  "map <C-o>   <plug>NERDTreeTabsToggle<CR>
+  "let NERDTreeShowBookmarks   = 1
+  "let g:NERDTreeChDirMode     = 2
+  "let NERDTreeIgnore=['\.DS_Store', '\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+""}}
 " ---------------------------------------------------------------------------
 NeoBundle "Shougo/unite.vim", {'depends': 'Shougo/neomru.vim'} "{{
   call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -85,7 +83,7 @@ NeoBundle "Shougo/unite.vim", {'depends': 'Shougo/neomru.vim'} "{{
   let g:unite_enable_smart_case = 1
   let g:unite_enable_start_insert = 1
 
-  let g:unite_data_directory = '~/.vim/tmp/unite'
+  let g:unite_data_directory = '~/.vim/cache/unite'
   let g:unite_source_file_mru_limit = 200
   let g:unite_source_history_yank_enable = 1
   let g:unite_source_rec_max_cache_files=5000
@@ -114,7 +112,23 @@ NeoBundle "Shougo/unite.vim", {'depends': 'Shougo/neomru.vim'} "{{
   endif
 "}}
 " ---------------------------------------------------------------------------
-
+NeoBundle 'Shougo/vimfiler.vim', {'depends': 'Shougo/unite.vim'} "{{{
+  let g:vimfiler_ignore_pattern = '\%(.DS_Store\|.pyc\|.git\w*\|.sw\w*\|.hg\|.svn\)$'
+  let g:vimfiler_as_default_explorer = 1
+  let g:vimfiler_safe_mode_by_default = 1
+  let g:vimfiler_data_directory = $HOME."/.vim/cache/vimfiler"
+  nnoremap <C-o> :VimFilerExplorer -buffer-name=Explorer -toggle -split -simple -winwidth=30 -no-quit<CR>
+  "nnoremap <C-o> :VimFilerBufferDir -buffer-name=Explorer -toggle -split -simple -winwidth=30 -invisible -no-quit<CR>
+  let g:vimfiler_tree_leaf_icon = ''
+  let g:vimfiler_tree_opened_icon = '▾'
+  let g:vimfiler_tree_closed_icon = '▸'
+  let g:vimfiler_default_columns = ''
+  let g:vimfiler_explorer_columns = ''
+  let g:vimfiler_tree_indentation = 3
+  let g:vimfiler_file_icon = '-'
+  let g:vimfiler_readonly_file_icon = 'RO'
+  let g:vimfiler_marked_file_icon = '*'
+"}}}
 
 " ---------------------------------------------------------------------------
 "  Comment Helper: NERDCommentor
@@ -205,10 +219,11 @@ NeoBundle 'scrooloose/syntastic' "{{
   hi SyntasticErrorSign ctermfg=196 guifg=#FF0000
   let g:syntastic_enable_signs = 1
   let g:syntastic_error_symbol = "✗"
-  let g:syntastic_style_error_symbol = "✗>"
-  "let g:syntastic_warning_symbol = "▶"
-  let g:syntastic_warning_symbol = "❤"
+  let g:syntastic_style_error_symbol = '✠'
+  let g:syntastic_warning_symbol = "▶"
+  let g:syntastic_style_warning_symbol = '☢'
   let g:syntastic_check_on_open = 1
+
   if has('balloon_eval')
       let g:syntastic_enable_balloons = 1
   endif

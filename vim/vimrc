@@ -17,10 +17,23 @@
 " See the License for the specific language governing permissions and
 " limitations under the License.
 " ------------------------------------------------------------
-"  Environment
+"  Environment Settings/Functions
 " ---------------------------------------------------------------------------
 set nocompatible
-source $HOME/.vim/foundation.vim
+let g:dotvim = {}
+let g:dotvim.autochdir = 1
+let g:dotvim.restore_cursor = 1
+let g:dotvim.trailing_whitespace = 1
+let g:dotvim.use_system_clipboard = 0
+
+let g:dotvim.bundle = {}
+let g:dotvim.bundle.Initialized = 1
+
+let g:dotvim.path = {}
+
+source $HOME/.vim/core/functions.vim
+
+call dotvim.Initialize()
 " ------------------------------------------------------------
 " Windows Compatible
 " ---------------------------------------------------------------------------
@@ -132,7 +145,7 @@ endif
 
 
 " ---------------------------------------------------------------------------
-"  Vim UI
+"  User Interface
 " ---------------------------------------------------------------------------
 set tabpagemax=15               " Only show 15 tabs
 set showmode                    " Display the current mode
@@ -173,7 +186,6 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic white
 "set foldlevel=9
 "set foldminlines=6
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc':'zo')<CR>
-
 
 
 " ---------------------------------------------------------------------------
@@ -246,6 +258,9 @@ nmap <leader>9 :set foldlevel=9<CR>
 vmap <Leader>y "+y
 map  <Leader>p "+p
 map  <Leader>d "+d
+" Windows Sizes
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 
 " ---------------------------------------------------------------------------
@@ -269,4 +284,3 @@ call dotvim.Finalize()
 " ---------------------------------------------------------------------------
 "  Local Settings
 " ---------------------------------------------------------------------------
-

@@ -16,24 +16,10 @@
 " WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 " See the License for the specific language governing permissions and
 " limitations under the License.
-" ------------------------------------------------------------
-"  Constants
-" ---------------------------------------------------------------------------
-let g:dotvim = {}
-let g:dotvim.autochdir = 1
-let g:dotvim.restore_cursor = 1
-let g:dotvim.trailing_whitespace = 1
-let g:dotvim.use_system_clipboard = 0
-
-let g:dotvim.bundle = {}
-let g:dotvim.bundle.Initialized = 1
-
-let g:dotvim.path = {}
 " ---------------------------------------------------------------------------
 "  Functions
 " ---------------------------------------------------------------------------
-" Initialize directories
-function! dotvim.InitializeDirectories()
+function! dotvim.Initialize()
     let parent = $HOME
     let prefix = 'vim'
     let dir_list = {
@@ -71,20 +57,6 @@ function! dotvim.InitializeDirectories()
             exec "set " . settingname . "=" . directory
         endif
     endfor
-endfunction
-call dotvim.InitializeDirectories()
-
-" Initialize NERDTree as needed
-function! dotvim.NERDTreeInitAsNeeded()
-    redir => bufoutput
-    buffers!
-    redir END
-    let idx = stridx(bufoutput, "NERD_tree")
-    if idx > -1
-        NERDTreeMirror
-        NERDTreeFind
-        wincmd l
-    endif
 endfunction
 
 " Strip whitespace
@@ -161,17 +133,17 @@ let pyindent_open_paren="&sw*2"
 " ---------------------------------------------------------------------------
 "  Logger: debug logger..
 " ---------------------------------------------------------------------------
-"function! dotvim.log(msg, ...)
-    "let is_unite = get(a:000, 0, 0)
-    "let msg = type(a:msg) == type([]) ? a:msg : split(a:msg, '\n')
-    "call extend(s:log, msg)
+function! dotvim.log(msg, ...)
+    let is_unite = get(a:000, 0, 0)
+    let msg = type(a:msg) == type([]) ? a:msg : split(a:msg, '\n')
+    call extend(s:log, msg)
 
-    "if !(&filetype == 'unite' || is_unite)
-        "call neobundle#util#redraw_echo(msg)
-    "endif
+    if !(&filetype == 'unite' || is_unite)
+        call neobundle#util#redraw_echo(msg)
+    endif
 
-    "call s:append_log_file(msg)
-"endfunction
+    call s:append_log_file(msg)
+endfunction
 
 
 " ---------------------------------------------------------------------------
@@ -200,6 +172,7 @@ function! dotvim.InitializePlugins(config)
         :NeoBundleInstall
     endif
 endfunction
+
 " ---------------------------------------------------------------------------
 " Make the ErrorSign of Syntastic in red along with default background color.
 function! dotvim.ResetSyntasticColors()
@@ -208,42 +181,6 @@ function! dotvim.ResetSyntasticColors()
             \' ctermbg=' . synIDattr(synIDtrans(hlID('SignColumn')), 'bg', 'cterm')
 endfunction
 " ---------------------------------------------------------------------------
-" Toggle NERDTree along with Tagbar.
-nnoremap <Leader>nt     :call dotvim.ToggleNERDTreeAndTagbar()<CR>
-function! dotvim.ToggleNERDTreeAndTagbar()
-    let w:jumpbacktohere = 1
-
-    " Detect which plugins are open
-    if exists('t:NERDTreeBufName')
-        let nerdtree_open = bufwinnr(t:NERDTreeBufName) != -1
-    else
-        let nerdtree_open = 0
-    endif
-    let tagbar_open = bufwinnr('__Tagbar__') != -1
-
-    " Perform the appropriate action
-    if nerdtree_open && tagbar_open
-        NERDTreeClose
-        TagbarClose
-    elseif nerdtree_open
-        TagbarOpen
-    elseif tagbar_open
-        NERDTree
-    else
-        NERDTree
-        TagbarOpen
-    endif
-
-    " Jump back to the original window
-    for window in range(1, winnr('$'))
-        execute window . 'wincmd w'
-        if exists('w:jumpbacktohere')
-            unlet w:jumpbacktohere
-            break
-        endif
-    endfor
-endfunction
-
 
 " ---------------------------------------------------------------------------
 "  Finalizer: To finalize settings after all.

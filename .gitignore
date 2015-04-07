@@ -5,3 +5,4 @@
 NeoBundle.lock
 bundle/
 bundle/*
+cache

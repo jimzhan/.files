@@ -57,7 +57,7 @@ RPROMPT=%{${lineup}%}$(BatteryPrompt)%{${linedown}%}
 
 # Welcome Message (Apple Logo & Hardware Info.)
 #if [ -x /usr/local/bin/archey ]; then
-  #archey -c
+    #archey -c
 #fi
 
 export Vim=$(brew --prefix)/Cellar/vim/$(brew list vim | head -n 1 | cut -d '/' -f 6)
