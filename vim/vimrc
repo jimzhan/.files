@@ -217,6 +217,7 @@ autocmd FileType haskell,rust setlocal nospell
 imap jj <ESC>           " Shortcut to ESC
 let mapleader = ','     " The default Leader is '\'.
 " Code folding options
+" ----------------
 nmap <leader>0 :set foldlevel=0<CR>
 nmap <leader>1 :set foldlevel=1<CR>
 nmap <leader>2 :set foldlevel=2<CR>
@@ -228,15 +229,23 @@ nmap <leader>7 :set foldlevel=7<CR>
 nmap <leader>8 :set foldlevel=8<CR>
 nmap <leader>9 :set foldlevel=9<CR>
 " Buffer Switching
+" ----------------
 :nmap <C-l>     :bnext<CR>
 :nmap <C-h>     :bprevious<CR>
 " Plugin 'moll/vim-bbye' here to avoid closing window unexpectedly.
+" ----------------
 :nmap <C-k>     :Bdelete<CR>
 " Tabs
+" ----------------
 :nmap <S-t>     :tabnew<CR>
 :nmap <S-w>     :tabclose<CR>
 :nmap <S-h>     :tabprevious<CR>
 :nmap <S-l>     :tabnext<CR>
+" System Clipboard
+" ----------------
+vmap <Leader>y "+y
+map  <Leader>p "+p
+map  <Leader>d "+d
 
 
 " ---------------------------------------------------------------------------

@@ -92,7 +92,7 @@ NeoBundle "Shougo/unite.vim", {'depends': 'Shougo/neomru.vim'} "{{
   let g:unite_source_rec_max_cache_files=5000
   call unite#custom#source('file_rec,file_rec/async', 'ignore_pattern', '(\.meta$|\.tmp)')
 
-  nnoremap <Leader>y  :Unite history/yank<CR>
+  "nnoremap <Leader>y  :Unite history/yank<CR>
   nnoremap <Leader>/  :Unite grep:.<cr>
   nnoremap <Leader>s  :Unite -quick-match buffer<CR>
   nnoremap <Leader>n  :Unite -buffer-name=New -profile-name=files file/new<CR>
@@ -133,7 +133,7 @@ NeoBundle 'bling/vim-airline' "{{
   " Show just the filename
   let g:airline#extensions#tabline#fnamemod = ':t'
 "}}
-"
+
 
 " ---------------------------------------------------------------------------
 "  Tags: Source Code Tags
@@ -166,7 +166,7 @@ endif
 " ---------------------------------------------------------------------------
 "  Languages:
 " ---------------------------------------------------------------------------
-" Golang Supports
+" * Golang Supports
 " ---------------------------------------------------------------------------
 NeoBundle 'fatih/vim-go' "{{
   "let g:go_fmt_autosave = 0
@@ -187,7 +187,7 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'lepture/vim-jinja'
 au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 " ---------------------------------------------------------------------------
-" Javascript: React JSX
+" React JSX
 " ---------------------------------------------------------------------------
 NeoBundle 'mxw/vim-jsx', {'depends': 'pangloss/vim-javascript'} " {{
   let g:jsx_ext_required = 0
@@ -277,5 +277,3 @@ NeoBundle 'aperezdc/vim-template' " {{
   let g:templates_directory = expand('~/.vim/templates')
 "}}
 
-
-NeoBundle 'benmills/vimux'
