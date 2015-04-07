@@ -63,14 +63,7 @@ NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 
 
 " ---------------------------------------------------------------------------
-"  File Manager: NERDTree + Ctrlp + ag
-" ---------------------------------------------------------------------------
-"NeoBundle 'scrooloose/nerdtree', {'depends': 'jistr/vim-nerdtree-tabs'} " {{
-  "map <C-o>   <plug>NERDTreeTabsToggle<CR>
-  "let NERDTreeShowBookmarks   = 1
-  "let g:NERDTreeChDirMode     = 2
-  "let NERDTreeIgnore=['\.DS_Store', '\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-""}}
+"  File Manager: VimFiler + Unite
 " ---------------------------------------------------------------------------
 NeoBundle "Shougo/unite.vim", {'depends': 'Shougo/neomru.vim'} "{{
   call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -151,7 +144,7 @@ NeoBundle 'bling/vim-airline' "{{
 " ---------------------------------------------------------------------------
 "  Tags: Source Code Tags
 " ---------------------------------------------------------------------------
-if executable('ctags') " {{
+if executable('ctags') "{{
   NeoBundle 'majutsushi/tagbar'
   let g:tagbar_width=30
   "autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx,*.go call tagbar#autoopen()
@@ -182,7 +175,7 @@ endif
 " * Golang Supports
 " ---------------------------------------------------------------------------
 NeoBundle 'fatih/vim-go' "{{
-  "let g:go_fmt_autosave = 0
+  let g:go_fmt_autosave = 0
   let g:go_fmt_command = "goimports"
   nnoremap <silent> <leader>bb :GoInstall<CR>
 "}}

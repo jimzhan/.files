@@ -162,10 +162,12 @@ function! dotvim.InitializePlugins(config)
     call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundleFetch 'Shougo/neobundle.vim'
     call neobundle#end()
+
     source ~/.vim/plugins.vim
     if filereadable(a:config)
         source a:config
     endif
+
     filetype indent plugin on
     NeoBundleCheck
     if g:dotvim.bundle.Initialized == 0
