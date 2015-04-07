@@ -30,6 +30,75 @@ NeoBundle 'Shougo/vimproc', {
 \    },
 \ }
 
+" ---------------------------------------------------------------------------
+"  File Manager: VimFiler + Unite
+" ---------------------------------------------------------------------------
+NeoBundle "Shougo/unite.vim", {'depends': 'Shougo/neomru.vim'} "{{{
+  call unite#filters#matcher_default#use(['matcher_fuzzy'])
+  call unite#filters#sorter_default#use(['sorter_rank'])
+
+  let g:unite_prompt = "➤ "
+  let g:unite_winheight = 20
+  let g:unite_split_rule = 'botright'
+  let g:unite_enable_ignore_case = 1
+  let g:unite_enable_smart_case = 1
+  let g:unite_enable_start_insert = 1
+
+  let g:unite_data_directory = '~/.vim/cache/unite'
+  let g:unite_source_file_mru_limit = 200
+  let g:unite_source_history_yank_enable = 1
+  let g:unite_source_rec_max_cache_files=5000
+  call unite#custom#source('file_rec,file_rec/async', 'ignore_pattern', '(\.meta$|\.tmp)')
+
+  "nnoremap <Leader>y  :Unite history/yank<CR>
+  nnoremap <Leader>/  :Unite grep:.<cr>
+  "nnoremap <Leader>s  :Unite -quick-match buffer<CR>
+  "nnoremap <Leader>n  :Unite -buffer-name=New -profile-name=files file/new<CR>
+  nnoremap <Leader>f  :Unite -buffer-name=files buffer file_mru bookmark file<CR>
+
+  autocmd FileType unite call s:unite_my_settings()
+  function! s:unite_my_settings()
+    imap <silent><buffer> <C-k> <C-p>
+    imap <silent><buffer> <C-j> <C-n>
+    imap <silent><buffer> <C-d> <CR>
+  endfunction
+
+  if executable('ag')
+    let g:unite_source_grep_command = 'ag'
+    let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup -g ""'
+    "let g:unite_source_grep_default_opts='--nocolor --nogroup --column'
+    let g:unite_source_grep_default_opts = '--line-numbers --nocolor --nogroup --hidden --ignore ' .
+                                        \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+    let g:unite_source_grep_recursive_opt = ''
+  endif
+"}}}
+
+
+" ---------------------------------------------------------------------------
+NeoBundle 'Shougo/vimfiler.vim', {'depends': 'Shougo/unite.vim'} "{{{
+  let g:vimfiler_enable_auto_cd = 1
+  let g:vimfiler_as_default_explorer = 1
+  let g:vimfiler_safe_mode_by_default = 1
+  let g:vimfiler_ignore_pattern = '\%(.DS_Store\|.pyc\|.git\w*\|.sw\w*\|.hg\|.svn\)$'
+  let g:vimfiler_data_directory = $HOME."/.vim/cache/vimfiler"
+
+  let g:vimfiler_tree_leaf_icon = ''
+  let g:vimfiler_tree_opened_icon = '▾'
+  let g:vimfiler_tree_closed_icon = '▸'
+  let g:vimfiler_default_columns = ''
+  let g:vimfiler_explorer_columns = ''
+  let g:vimfiler_tree_indentation = 3
+  let g:vimfiler_file_icon = '○'
+  let g:vimfiler_readonly_file_icon = 'RO'
+  let g:vimfiler_marked_file_icon = '*'
+
+  nmap <silent><buffer><expr> <Cr> vimfiler#smart_cursor_map(
+    \ "\<Plug>(vimfiler_expand_tree)",
+    \ "\<Plug>(vimfiler_edit_file)")
+
+  nnoremap <C-o> :VimFilerExplorer -buffer-name=Explorer -parent -toggle -split -simple -winwidth=30 -no-quit<CR>
+"}}}
+
 
 " ---------------------------------------------------------------------------
 "  Themes: Color Themes
@@ -61,67 +130,6 @@ NeoBundle 'airblade/vim-gitgutter' "{{
 "}}
 NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 
-
-" ---------------------------------------------------------------------------
-"  File Manager: VimFiler + Unite
-" ---------------------------------------------------------------------------
-NeoBundle "Shougo/unite.vim", {'depends': 'Shougo/neomru.vim'} "{{
-  call unite#filters#matcher_default#use(['matcher_fuzzy'])
-  call unite#filters#sorter_default#use(['sorter_rank'])
-
-  let g:unite_prompt = "❤  "
-  let g:unite_winheight = 20
-  let g:unite_split_rule = 'botright'
-  let g:unite_enable_ignore_case = 1
-  let g:unite_enable_smart_case = 1
-  let g:unite_enable_start_insert = 1
-
-  let g:unite_data_directory = '~/.vim/cache/unite'
-  let g:unite_source_file_mru_limit = 200
-  let g:unite_source_history_yank_enable = 1
-  let g:unite_source_rec_max_cache_files=5000
-  call unite#custom#source('file_rec,file_rec/async', 'ignore_pattern', '(\.meta$|\.tmp)')
-
-  "nnoremap <Leader>y  :Unite history/yank<CR>
-  nnoremap <Leader>/  :Unite grep:.<cr>
-  nnoremap <Leader>s  :Unite -quick-match buffer<CR>
-  nnoremap <Leader>n  :Unite -buffer-name=New -profile-name=files file/new<CR>
-  nnoremap <Leader>f  :Unite -buffer-name=files buffer file_mru bookmark file<CR>
-
-  autocmd FileType unite call s:unite_my_settings()
-  function! s:unite_my_settings()
-    imap <silent><buffer> <C-k> <C-p>
-    imap <silent><buffer> <C-j> <C-n>
-    imap <silent><buffer> <C-d> <CR>
-  endfunction
-
-  if executable('ag')
-    let g:unite_source_grep_command = 'ag'
-    let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup -g ""'
-    "let g:unite_source_grep_default_opts='--nocolor --nogroup --column'
-    let g:unite_source_grep_default_opts = '--line-numbers --nocolor --nogroup --hidden --ignore ' .
-                                        \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
-    let g:unite_source_grep_recursive_opt = ''
-  endif
-"}}
-" ---------------------------------------------------------------------------
-NeoBundle 'Shougo/vimfiler.vim', {'depends': 'Shougo/unite.vim'} "{{{
-  let g:vimfiler_ignore_pattern = '\%(.DS_Store\|.pyc\|.git\w*\|.sw\w*\|.hg\|.svn\)$'
-  let g:vimfiler_as_default_explorer = 1
-  let g:vimfiler_safe_mode_by_default = 1
-  let g:vimfiler_data_directory = $HOME."/.vim/cache/vimfiler"
-  nnoremap <C-o> :VimFilerExplorer -buffer-name=Explorer -toggle -split -simple -winwidth=30 -no-quit<CR>
-  "nnoremap <C-o> :VimFilerBufferDir -buffer-name=Explorer -toggle -split -simple -winwidth=30 -invisible -no-quit<CR>
-  let g:vimfiler_tree_leaf_icon = ''
-  let g:vimfiler_tree_opened_icon = '▾'
-  let g:vimfiler_tree_closed_icon = '▸'
-  let g:vimfiler_default_columns = ''
-  let g:vimfiler_explorer_columns = ''
-  let g:vimfiler_tree_indentation = 3
-  let g:vimfiler_file_icon = '-'
-  let g:vimfiler_readonly_file_icon = 'RO'
-  let g:vimfiler_marked_file_icon = '*'
-"}}}
 
 " ---------------------------------------------------------------------------
 "  Comment Helper: NERDCommentor
@@ -208,20 +216,20 @@ let g:used_javascript_libs = 'underscore,react'
 " ---------------------------------------------------------------------------
 "  Syntax: Static Syntax Checking
 " ---------------------------------------------------------------------------
-NeoBundle 'scrooloose/syntastic' "{{
+NeoBundle 'scrooloose/syntastic' "{{{
   hi SyntasticErrorSign ctermfg=196 guifg=#FF0000
   let g:syntastic_enable_signs = 1
-  let g:syntastic_error_symbol = "✗"
+  let g:syntastic_error_symbol = "✘"
+  let g:syntastic_warning_symbol = "➤ "
   let g:syntastic_style_error_symbol = '✠'
-  let g:syntastic_warning_symbol = "▶"
   let g:syntastic_style_warning_symbol = '☢'
   let g:syntastic_check_on_open = 1
 
   if has('balloon_eval')
-      let g:syntastic_enable_balloons = 1
+    let g:syntastic_enable_balloons = 1
   endif
   let g:syntastic_javascript_checkers = ['jsxhint']
-"}}
+"}}}
 " ---------------------------------------------------------------------------
 "  Editing:
 "   * Emmet: previously known as Zen Coding is a web-developer’s toolkit that
@@ -230,6 +238,12 @@ NeoBundle 'scrooloose/syntastic' "{{
 "   * AutoPairs: Insert or delete brackets, parens, quotes in pair.
 "   * Multiple Curosr: Multiple selection/editing like Sublime Text.
 " ---------------------------------------------------------------------------
+NeoBundle 'godlygeek/tabular' "{{{
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+"}}}
 NeoBundle 'mattn/emmet-vim' "{{{
   let g:user_emmet_settings = {
   \    'indentation' : '  '
