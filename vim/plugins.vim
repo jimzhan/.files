@@ -31,7 +31,6 @@ NeoBundle 'Shougo/vimproc', {
 \ }
 
 
-
 " ---------------------------------------------------------------------------
 "  Themes: Color Themes
 " ---------------------------------------------------------------------------
@@ -207,7 +206,8 @@ NeoBundle 'scrooloose/syntastic' "{{
   let g:syntastic_enable_signs = 1
   let g:syntastic_error_symbol = "✗"
   let g:syntastic_style_error_symbol = "✗>"
-  let g:syntastic_warning_symbol = "⚠"
+  "let g:syntastic_warning_symbol = "▶"
+  let g:syntastic_warning_symbol = "❤"
   let g:syntastic_check_on_open = 1
   if has('balloon_eval')
       let g:syntastic_enable_balloons = 1
@@ -222,7 +222,12 @@ NeoBundle 'scrooloose/syntastic' "{{
 "   * AutoPairs: Insert or delete brackets, parens, quotes in pair.
 "   * Multiple Curosr: Multiple selection/editing like Sublime Text.
 " ---------------------------------------------------------------------------
-NeoBundle 'mattn/emmet-vim'
+NeoBundle 'mattn/emmet-vim' "{{{
+  let g:user_emmet_settings = {
+  \    'indentation' : '  '
+  \}
+  let g:user_emmet_expandabbr_key="<C-e>"
+"}}}
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'editorconfig/editorconfig-vim'
