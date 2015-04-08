@@ -139,10 +139,6 @@ link $dotfiles/ssh/config           $HOME/.ssh/config
 link $dotfiles/git/gitconfig        $HOME/.gitconfig
 link $dotfiles/git/gitignore_global $HOME/.gitignore_global
 
-link ${dotfiles}/vim              $HOME/.vim
-link ${dotfiles}/vim/vimrc        $HOME/.vimrc
-link ${dotfiles}/vim/gvimrc       $HOME/.gvimrc
-
 link ${dotfiles}/jshintrc           $HOME/.jshintrc
 link ${dotfiles}/pydistutils.cfg    $HOME/.pydistutils.cfg
 link ${dotfiles}/iTerm/com.googlecode.iterm2.plist  $HOME/Library/Preferences/com.googlecode.iterm2.plist

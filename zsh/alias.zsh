@@ -6,7 +6,7 @@
 # be converted into scripts and removed from here.
 # ============================================================
 alias vi="vim"
-alias vim='vim --servername vim'
+#alias vim='vim --servername vim'
 
 ##-------------------
 ## Personnal Aliases

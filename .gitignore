@@ -6,3 +6,6 @@ NeoBundle.lock
 bundle/
 bundle/*
 cache
+backup
+views
+undo
