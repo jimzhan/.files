@@ -1,8 +1,16 @@
 source "$HOME/.files/zsh/prompt.zsh"
 #-------------------
+# Golang Environment
+#-------------------
+export GoVersion=$(brew list go | head -n 1 | cut -d '/' -f 6)
+export Go=$(brew --prefix)/Cellar/go/$GoVersion
+export GOPATH="$HOME/Go"
+export GOBIN="$GOPATH/bin"
+export GoAnywhere="$GOPATH/src/github.com/goanywhere"
+#-------------------
 # System Paths
 #-------------------
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/2.7/bin:$GOBIN:$Go/bin:$Go/libexec/bin:/usr/local/opt/gettext/bin:/usr/local/opt/redis/bin:$PATH"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/2.7/bin:$GOBIN:$Go/bin:$Go/libexec/bin:$GOBIN:/usr/local/opt/gettext/bin:/usr/local/opt/redis/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 if [ -d $HOME/Library/Python/2.7/lib/python/site-packages/django/bin ]; then
     export PATH="$HOME/Library/Python/2.7/lib/python/site-packages/django/bin:$PATH"
@@ -69,11 +77,4 @@ if [ -x /usr/local/bin/gdircolors ]; then
 fi
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-#-------------------
-# Golang Environment
-#-------------------
-export GoVersion=$(brew list go | head -n 1 | cut -d '/' -f 6)
-export Go=$(brew --prefix)/Cellar/go/$GoVersion
-export GOPATH="$HOME/Go"
-export GOBIN="$GOPATH/bin"
-export GoAnywhere="$GOPATH/src/github.com/goanywhere"
+
