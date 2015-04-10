@@ -1,4 +1,5 @@
 source "$HOME/.files/zsh/prompt.zsh"
+export Vim=$HOME/.vim
 #-------------------
 # Golang Environment
 #-------------------
