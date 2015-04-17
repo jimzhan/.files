@@ -1,6 +1,6 @@
-# ~/.tmuxinator/web.yml
+# ~/.tmuxinator/node.yml
 
-name: web
+name: node
 root: .
 
 # Optional tmux socket
@@ -26,4 +26,4 @@ windows:
       layout: 94c1,136x44,0,0{89x44,0,0,0,46x44,90,0,1}
       panes:
         - vim
-        - web serve
+        - node start

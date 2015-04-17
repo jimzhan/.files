@@ -1,5 +1,6 @@
 source "$HOME/.files/zsh/prompt.zsh"
 export Vim=$HOME/.vim
+export VimRoot=$(brew --prefix)/Cellar/vim/$(brew list vim | head -n 1 | cut -d '/' -f 6)
 #-------------------
 # Golang Environment
 #-------------------
@@ -69,7 +70,6 @@ RPROMPT=%{${lineup}%}$(BatteryPrompt)%{${linedown}%}
     #archey -c
 #fi
 
-export Vim=$(brew --prefix)/Cellar/vim/$(brew list vim | head -n 1 | cut -d '/' -f 6)
 #-------------------
 # LS Colors
 #-------------------

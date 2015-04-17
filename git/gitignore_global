@@ -46,6 +46,7 @@ Readme
 .tmp
 node_modules
 bower_components
+jspm_packages
 
 # Logs and databases #
 ######################
