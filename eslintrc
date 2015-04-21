@@ -6,6 +6,7 @@
   },
   "rules": {
     "strict": 0,
+    "no-multi-spaces": false,
     "quotes": [2, "single"],
     "eol-last": [0],
     "no-mixed-requires": [0],
