@@ -129,6 +129,8 @@ done
 # ---------------------------------------------------------------------------
 # Ensure We Have Linked All dot files.
 # ---------------------------------------------------------------------------
+link $dotfile/proxyswitcher.rc      $HOME/.proxyswitcher.rc
+
 link $dotfiles/zsh/zshrc            $HOME/.zshrc
 link $dotfiles/editorconfig         $HOME/.editorconfig
 

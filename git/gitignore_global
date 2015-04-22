@@ -23,6 +23,8 @@ dist/*
 .sass-cache/*
 *Package Control.cache
 *Package Control.cache/
+pkg
+pkg/*
 tmp
 tmp/*
 Readme

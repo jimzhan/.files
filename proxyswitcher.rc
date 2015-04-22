@@ -1,0 +1,6 @@
+AutoDiscoveryProxy:
+AutoProxy:
+  URL: "file://localhost/Applications/Safari.app/Contents/Resources/autoproxy.pac"
+SocksProxy:
+  Host: 127.0.0.1
+  Port: 9394
