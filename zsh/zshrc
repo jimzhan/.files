@@ -58,7 +58,6 @@ ZSH_TMUX_AUTOSTART=false
 ZSH_TMUX_AUTOSTART_ONCE=true
 alias mx=tmuxinator
 
-
 ##------------------------------
 ## Growl for Notification Center
 ##------------------------------
@@ -104,7 +103,7 @@ fi
 if [ -x /usr/local/bin/gls ]; then
   alias ls="gls --color=auto --group-directories-first"
 fi
-#alias ll="ls -l --ignore=build --ignore=node_modules"
+alias ll="ls -l --ignore=build --ignore=node_modules"
 ##-------------------
 ## Golang Aliases
 ##-------------------
