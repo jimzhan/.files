@@ -1,6 +1,6 @@
 source "$HOME/.files/zsh/prompt.zsh"
 export Vim=$HOME/.vim
-export VimRoot=$(brew --prefix)/Cellar/vim/$(brew list vim | head -n 1 | cut -d '/' -f 6)
+#export VimRoot=$(brew --prefix)/Cellar/vim/$(brew list vim | head -n 1 | cut -d '/' -f 6)
 #-------------------
 # Workspace
 #-------------------

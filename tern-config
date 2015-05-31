@@ -1,0 +1,7 @@
+{
+  "libs": [
+    "fluxible",
+    "react",
+    "jquery"
+  ]
+}
