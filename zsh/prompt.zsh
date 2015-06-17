@@ -51,6 +51,6 @@ OnlinePrompt() {
   if [ -f $HOME/.online ]; then
     echo "%{$fg[red]%}❤ %{$reset_color%}"
   else
-    echo "%{$fg[grey]%}❤ %{$reset_color%}"
+    echo "%{$fg[yellow]%}❤ %{$reset_color%}"
   fi
 }

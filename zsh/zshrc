@@ -107,5 +107,4 @@ alias ll="ls -l --ignore=build --ignore=node_modules"
 ##-------------------
 ## Golang Aliases
 ##-------------------
-alias gb="go build && go install"
 

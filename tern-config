@@ -1,7 +1,9 @@
 {
   "libs": [
     "fluxible",
+    "alt",
     "react",
+    "react-native",
     "jquery"
   ]
 }
