@@ -1,6 +1,6 @@
-# ~/.tmuxinator/cmd.yml
+# ~/.tmuxinator/web.yml
 
-name: cmd
+name: web
 root: .
 
 # Optional tmux socket

@@ -1,6 +1,6 @@
-# ~/.tmuxinator/cmd.yml
+# ~/.tmuxinator/rex.yml
 
-name: cmd
+name: rex
 root: .
 
 # Optional tmux socket
