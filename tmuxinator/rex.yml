@@ -1,6 +1,6 @@
-# ~/.tmuxinator/rex.yml
+# ~/.tmuxinator/cmd.yml
 
-name: rex
+name: cmd
 root: .
 
 # Optional tmux socket
@@ -18,12 +18,10 @@ root: .
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
 
-# vertical split
-#layout: 2bc2,134x44,0,0[134x32,0,0,1,134x11,0,33,2]
-#
 windows:
   - editor:
-      layout: 94c1,136x44,0,0{89x44,0,0,0,46x44,90,0,1}
+      layout: 97c3,158x40,0,0{109x40,0,0,0,48x40,110,0,1}
       panes:
         - vim
         - rex run
+
