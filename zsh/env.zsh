@@ -6,6 +6,16 @@ export Vim=$HOME/.vim
 #-------------------
 export Projects=$HOME/Projects
 #-------------------
+# FUCKING JAVA
+#-------------------
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export JAVACMD=$JAVA_HOME/bin/java
+export AntVersion=$(brew list ant | head -n 1 | cut -d '/' -f 6)
+export ANT_OPTS="-Dhttp.proxyHost=proxy -Dhttp.proxyPort=8080"
+export ANT_HOME=$(brew --prefix)/Cellar/ant/$AntVersion/libexec
+export ANT_LIB=$ANT_HOME/lib
+export CLASSPATH=".:$CLASSPATH"
+#-------------------
 # Golang Environment
 #-------------------
 export GoVersion=$(brew list go | head -n 1 | cut -d '/' -f 6)
