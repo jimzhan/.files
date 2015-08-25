@@ -80,3 +80,4 @@ xcuserdata
 Pods
 Podfile.lock
 .idea
+solr.xml
