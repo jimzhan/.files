@@ -27,7 +27,7 @@ export GoAnywhere="$GOPATH/src/github.com/goanywhere"
 #-------------------
 # System Paths
 #-------------------
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/2.7/bin:$GOBIN:$Go/bin:$Go/libexec/bin:$GOBIN:/usr/local/opt/gettext/bin:/usr/local/opt/redis/bin:$PATH"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/2.7/bin:$HOME/bin:$GOBIN:$Go/bin:$Go/libexec/bin:$GOBIN:/usr/local/opt/gettext/bin:/usr/local/opt/redis/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 if [ -d $HOME/Library/Python/2.7/lib/python/site-packages/django/bin ]; then
     export PATH="$HOME/Library/Python/2.7/lib/python/site-packages/django/bin:$PATH"

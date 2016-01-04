@@ -53,6 +53,9 @@ DISABLE_UPDATE_PROMPT=true
 source $ZSH/oh-my-zsh.sh
 source "$HOME/.files/zsh/functions.zsh"
 source "$HOME/.files/zsh/env.zsh"
+if [ -f "$HOME/.env.local" ]; then
+    source "$HOME/.env.local"
+fi
 
 ZSH_TMUX_AUTOSTART=false
 ZSH_TMUX_AUTOSTART_ONCE=true
