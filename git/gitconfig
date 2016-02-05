@@ -18,12 +18,13 @@
   smu = submodule update
   smp = submodule foreach git pull
   smc = submodule foreach git co master
+
 [core]
 	excludesfile = /Users/jim/.gitignore_global
 [color]
 	ui = true
-[commit]
-    template = ~/.gitmessage
+#[commit]
+#    template = ~/.gitmessage
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
