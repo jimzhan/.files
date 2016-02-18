@@ -98,7 +98,6 @@ alias du="du -sh"
 alias got="go get -v"
 alias pkg="npm install --verbose"
 alias xcode='open *.xcworkspace'
-alias server="python -m SimpleHTTPServer"
 alias lstcp="lsof -i -n -P | grep TCP"
 alias lsudp="lsof -i -n -P | grep UDP"
 alias node='node --harmony'

@@ -10,11 +10,11 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 
 
-[**.{css,html,js,json,jsx,xml,vim,rb,Rakefile,scss,ts}]
+[**.{css,html,json,xml,vim,rb,Rakefile,scss}]
 indent_size = 2
 indent_style = space
 
 
-[**.{go,go}]
+[**.{js,jsx,go,ts}]
 indent_size = 4
 indent_style = space
