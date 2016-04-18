@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 zsh="$HOME/.oh-my-zsh"
 dotfiles="$HOME/.files"
-repos="https://github.com/jimzhan/dotfiles.git"
+repos="https://github.com/jimzhan/.files.git"
 
 Xcode=$HOME/Library/Developer/Xcode
 XcodeKeys=$Xcode/UserData/KeyBindings
