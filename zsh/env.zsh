@@ -8,12 +8,10 @@ export Projects=$HOME/Projects
 #-------------------
 # FUCKING JAVA
 #-------------------
-export JAVA_HOME="$(/usr/libexec/java_home -v1.7)"
-export JAVACMD=$JAVA_HOME/bin/java
+export JAVA_HOME="$(/usr/libexec/java_home -v1.8)"
 export AntVersion=$(brew list ant | head -n 1 | cut -d '/' -f 6)
 export ANT_HOME=$(brew --prefix)/Cellar/ant/$AntVersion/libexec
 export ANT_OPTS="-Xmx512m -XX:MaxPermSize=256M"
-#export ANT_HOME="$HOME/Hybris/bin/platform/apache-ant-1.9.1"
 export ANT_LIB=$ANT_HOME/lib
 export CLASSPATH=".:lib:$CLASSPATH"
 #-------------------
