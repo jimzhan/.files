@@ -20,17 +20,11 @@
   smc = submodule foreach git co master
 
 [core]
-	excludesfile = /Users/jim/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [color]
 	ui = true
 #[commit]
 #    template = ~/.gitmessage
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [github]
 	user = jimzhan
 [filter "media"]
