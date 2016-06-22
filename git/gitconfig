@@ -20,7 +20,7 @@
   smc = submodule foreach git co master
 
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/jim/.gitignore_global
 [color]
 	ui = true
 #[commit]
@@ -35,3 +35,9 @@
 	smudge = git-lfs smudge %f
 	required = true
 	clean = git-lfs clean %f
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
